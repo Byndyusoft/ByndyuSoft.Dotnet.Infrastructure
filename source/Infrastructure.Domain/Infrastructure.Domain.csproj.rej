@@ -1,0 +1,10 @@
+--- Infrastructure.Domain.csproj
++++ Infrastructure.Domain.csproj
+@@ -73,6 +73,7 @@
+     <Compile Include="Comparers\EntityEqualityComparer.cs" />
+     <Compile Include="IEntity.cs" />
+     <Compile Include="ILinqProvider.cs" />
++    <Compile Include="IPagedEnumerable.cs" />
+     <Compile Include="IRepository.cs" />
+     <Compile Include="Properties\AssemblyInfo.cs" />
+     <Compile Include="Subpath.cs" />

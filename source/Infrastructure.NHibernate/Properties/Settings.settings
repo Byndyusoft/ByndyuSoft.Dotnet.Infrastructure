@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Infrastructure.NHibernate.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HibernateConfig" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">hibernate.config.xml</Value>
+    </Setting>
+    <Setting Name="LongConversationRequestKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LongConversationKey</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
