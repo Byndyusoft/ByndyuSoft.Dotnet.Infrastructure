@@ -1,13 +1,13 @@
-using System;
+п»їusing System;
 using FluentNHibernate.Mapping;
 using ByndyuSoft.Infrastructure.Domain;
 
 namespace ByndyuSoft.Infrastructure.NHibernate.Mappings
 {
 	///<summary>
-	/// Предоставляет базовый мапинг для <see cref="TEntity"/>
+	/// РџСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚ Р±Р°Р·РѕРІС‹Р№ РјР°РїРёРЅРі РґР»СЏ <see cref="TEntity"/>
 	///</summary>
-	///<typeparam name="TEntity">Тип сущности, должен реализовать интерфейс <see cref="IEntity"/></typeparam>
+	///<typeparam name="TEntity">РўРёРї СЃСѓС‰РЅРѕСЃС‚Рё, РґРѕР»Р¶РµРЅ СЂРµР°Р»РёР·РѕРІР°С‚СЊ РёРЅС‚РµСЂС„РµР№СЃ <see cref="IEntity"/></typeparam>
 	public abstract class EntityMap<TEntity> : ClassMap<TEntity> where TEntity : class, IEntity
 	{
 		protected EntityMap()

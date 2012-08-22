@@ -1,16 +1,16 @@
-using System;
+п»їusing System;
 using System.Text;
 using System.Xml.Linq;
 
 namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
     /// <summary>
-    ///   Расшерения для XDocument
+    ///   Р Р°СЃС€РµСЂРµРЅРёСЏ РґР»СЏ XDocument
     /// </summary>
     public static class XDocumentExtensions
     {
         /// <summary>
-        ///   Преобразовать документ в XML-строку
+        ///   РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РґРѕРєСѓРјРµРЅС‚ РІ XML-СЃС‚СЂРѕРєСѓ
         /// </summary>
         /// <param name="document"> </param>
         /// <returns> </returns>
@@ -20,10 +20,10 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
         }
 
         /// <summary>
-        ///   Преобразовать документ в XML-строку
+        ///   РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РґРѕРєСѓРјРµРЅС‚ РІ XML-СЃС‚СЂРѕРєСѓ
         /// </summary>
-        /// <param name="document"> Документ </param>
-        /// <param name="encoding"> Кодировка документа </param>
+        /// <param name="document"> Р”РѕРєСѓРјРµРЅС‚ </param>
+        /// <param name="encoding"> РљРѕРґРёСЂРѕРІРєР° РґРѕРєСѓРјРµРЅС‚Р° </param>
         /// <returns> </returns>
         public static string ToXml(this XDocument document, Encoding encoding)
         {
@@ -31,10 +31,10 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
         }
 
         /// <summary>
-        ///   Преобразовать документ в XML-строку
+        ///   РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РґРѕРєСѓРјРµРЅС‚ РІ XML-СЃС‚СЂРѕРєСѓ
         /// </summary>
-        /// <param name="document"> Документ </param>
-        /// <param name="options"> Опции сохранения </param>
+        /// <param name="document"> Р”РѕРєСѓРјРµРЅС‚ </param>
+        /// <param name="options"> РћРїС†РёРё СЃРѕС…СЂР°РЅРµРЅРёСЏ </param>
         /// <returns> </returns>
         public static string ToXml(this XDocument document, SaveOptions options)
         {
@@ -42,11 +42,11 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
         }
 
         /// <summary>
-        ///   Преобразовать документ в XML-строку
+        ///   РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РґРѕРєСѓРјРµРЅС‚ РІ XML-СЃС‚СЂРѕРєСѓ
         /// </summary>
-        /// <param name="document"> Документ </param>
-        /// <param name="encoding"> Кодировка документа </param>
-        /// <param name="options"> Опции сохранения </param>
+        /// <param name="document"> Р”РѕРєСѓРјРµРЅС‚ </param>
+        /// <param name="encoding"> РљРѕРґРёСЂРѕРІРєР° РґРѕРєСѓРјРµРЅС‚Р° </param>
+        /// <param name="options"> РћРїС†РёРё СЃРѕС…СЂР°РЅРµРЅРёСЏ </param>
         /// <returns> </returns>
         public static string ToXml(this XDocument document, Encoding encoding, SaveOptions options)
         {

@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using Microsoft.Web.Mvc;
@@ -6,12 +6,12 @@ using Microsoft.Web.Mvc;
 namespace ByndyuSoft.Infrastructure.Web.Mvc
 {
 	///<summary>
-	/// Расширения для UrlHelper
+	/// Р Р°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ UrlHelper
 	///</summary>
 	public static class UrlHelperExtensions
 	{
 		///<summary>
-		/// Метод, позволяет получить URL по заданному выражению.
+		/// РњРµС‚РѕРґ, РїРѕР·РІРѕР»СЏРµС‚ РїРѕР»СѓС‡РёС‚СЊ URL РїРѕ Р·Р°РґР°РЅРЅРѕРјСѓ РІС‹СЂР°Р¶РµРЅРёСЋ.
 		///</summary>
 		///<param name="urlHelper"></param>
 		///<param name="expression"></param>

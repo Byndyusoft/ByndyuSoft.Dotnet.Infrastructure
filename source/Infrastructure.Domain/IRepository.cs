@@ -1,32 +1,32 @@
-using System;
+п»їusing System;
 using JetBrains.Annotations;
 
 namespace ByndyuSoft.Infrastructure.Domain
 {
 	///<summary>
-	/// Интерфейс репозитория
+	/// РРЅС‚РµСЂС„РµР№СЃ СЂРµРїРѕР·РёС‚РѕСЂРёСЏ
 	///</summary>
-	///<typeparam name="TEntity">Тип сущности доменной модели</typeparam>
+	///<typeparam name="TEntity">РўРёРї СЃСѓС‰РЅРѕСЃС‚Рё РґРѕРјРµРЅРЅРѕР№ РјРѕРґРµР»Рё</typeparam>
 	public interface IRepository<TEntity>
 		where TEntity : IEntity
 	{
 	    ///<summary>
-		/// Получить сущность по идентификатору. В ряде случаев использование Load более предпочтительно.
-		/// Подробнее http://ayende.com/Blog/archive/2009/04/30/nhibernate-ndash-the-difference-between-get-load-and-querying-by.aspx
+		/// РџРѕР»СѓС‡РёС‚СЊ СЃСѓС‰РЅРѕСЃС‚СЊ РїРѕ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂСѓ. Р’ СЂСЏРґРµ СЃР»СѓС‡Р°РµРІ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ Load Р±РѕР»РµРµ РїСЂРµРґРїРѕС‡С‚РёС‚РµР»СЊРЅРѕ.
+		/// РџРѕРґСЂРѕР±РЅРµРµ http://ayende.com/Blog/archive/2009/04/30/nhibernate-ndash-the-difference-between-get-load-and-querying-by.aspx
 		///</summary>
 		///<param name="id"></param>
-		///<returns>Сущность с указанным Id, если существует. Иначе - null.</returns>
+		///<returns>РЎСѓС‰РЅРѕСЃС‚СЊ СЃ СѓРєР°Р·Р°РЅРЅС‹Рј Id, РµСЃР»Рё СЃСѓС‰РµСЃС‚РІСѓРµС‚. РРЅР°С‡Рµ - null.</returns>
 		[CanBeNull]
 		TEntity Get(int id);
 
 	    ///<summary>
-		/// Сохранить сущность
+		/// РЎРѕС…СЂР°РЅРёС‚СЊ СЃСѓС‰РЅРѕСЃС‚СЊ
 		///</summary>
 		///<param name="entity"></param>
 		void Add([NotNull] TEntity entity);
 
 		/// <summary>
-		/// Удалить сущность
+		/// РЈРґР°Р»РёС‚СЊ СЃСѓС‰РЅРѕСЃС‚СЊ
 		/// </summary>
 		/// <param name="entity"></param>
 		void Remove([NotNull] TEntity entity);

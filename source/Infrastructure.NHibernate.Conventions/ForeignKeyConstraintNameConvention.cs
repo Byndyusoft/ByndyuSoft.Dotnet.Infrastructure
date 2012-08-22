@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using FluentNHibernate;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
@@ -6,7 +6,7 @@ using FluentNHibernate.Conventions.Instances;
 namespace ByndyuSoft.Infrastructure.NHibernate.Conventions
 {
 	///<summary>
-	/// Соглашение для названий внешнийх ключей
+	/// РЎРѕРіР»Р°С€РµРЅРёРµ РґР»СЏ РЅР°Р·РІР°РЅРёР№ РІРЅРµС€РЅРёР№С… РєР»СЋС‡РµР№
 	///</summary>
 	public class ForeignKeyConstraintNameConvention : IReferenceConvention, IHasManyToManyConvention, IJoinedSubclassConvention, IJoinConvention, ICollectionConvention
 	{

@@ -1,10 +1,10 @@
-using System;
+п»їusing System;
 using NHibernate;
 
 namespace ByndyuSoft.Infrastructure.NHibernate
 {
     /// <summary>
-    /// Провайдер для сессии на запрос.
+    /// РџСЂРѕРІР°Р№РґРµСЂ РґР»СЏ СЃРµСЃСЃРёРё РЅР° Р·Р°РїСЂРѕСЃ.
     /// </summary>
     public class PerRequestSessionProvider : ISessionProvider, IDisposable
     {
@@ -15,7 +15,7 @@ namespace ByndyuSoft.Infrastructure.NHibernate
         private ITransaction transaction;
 
         /// <summary>
-        /// Конструктор
+        /// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
         /// </summary>
         /// <param name="sessionFactory"></param>
         /// <exception cref="ArgumentNullException"></exception>

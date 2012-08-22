@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using FluentNHibernate.Mapping;
 using ByndyuSoft.Infrastructure.Domain;
 

@@ -1,11 +1,11 @@
-using System;
+п»їusing System;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Inspections;
 
 namespace ByndyuSoft.Infrastructure.NHibernate.Conventions
 {
 	///<summary>
-	/// Соглашение для генерации имен таблиц many-to-many
+	/// РЎРѕРіР»Р°С€РµРЅРёРµ РґР»СЏ РіРµРЅРµСЂР°С†РёРё РёРјРµРЅ С‚Р°Р±Р»РёС† many-to-many
 	///</summary>
 	public class CustomManyToManyTableNameConvention : ManyToManyTableNameConvention
 	{

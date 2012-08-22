@@ -1,24 +1,24 @@
-using System;
+п»їusing System;
 
 namespace ByndyuSoft.Infrastructure.Domain
 {
 	///<summary>
-	/// Единица работы
+	/// Р•РґРёРЅРёС†Р° СЂР°Р±РѕС‚С‹
 	///</summary>
 	public interface IUnitOfWork : IDisposable
 	{
 		///<summary>
-		/// Сохранить ВСЕ изменения в базу
+		/// РЎРѕС…СЂР°РЅРёС‚СЊ Р’РЎР• РёР·РјРµРЅРµРЅРёСЏ РІ Р±Р°Р·Сѓ
 		///</summary>
 		void Commit();
 
 		/// <summary>
-		/// Пометить сущность для сохранения в базу
+		/// РџРѕРјРµС‚РёС‚СЊ СЃСѓС‰РЅРѕСЃС‚СЊ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІ Р±Р°Р·Сѓ
 		/// </summary>
 		void Save<TEntity>(TEntity entity) where TEntity : IEntity;
 
 		/// <summary>
-		/// Пометить сущность для удаления из базы
+		/// РџРѕРјРµС‚РёС‚СЊ СЃСѓС‰РЅРѕСЃС‚СЊ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РёР· Р±Р°Р·С‹
 		/// </summary>
 		void Delete<TEntity>(TEntity entity) where TEntity : IEntity;
 	}

@@ -1,11 +1,11 @@
-namespace ByndyuSoft.Infrastructure.Domain
+п»їnamespace ByndyuSoft.Infrastructure.Domain
 {
 	using Criterion;
 
 	/// <summary>
-	/// Стандартная реализация <see cref="IQueryFor{T}"/>
+	/// РЎС‚Р°РЅРґР°СЂС‚РЅР°СЏ СЂРµР°Р»РёР·Р°С†РёСЏ <see cref="IQueryFor{T}"/>
 	/// </summary>
-	/// <typeparam name="TResult">Результат возвращаемый запросом</typeparam>
+	/// <typeparam name="TResult">Р РµР·СѓР»СЊС‚Р°С‚ РІРѕР·РІСЂР°С‰Р°РµРјС‹Р№ Р·Р°РїСЂРѕСЃРѕРј</typeparam>
 	public class QueryFor<TResult> : IQueryFor<TResult>
 	{
 		private readonly IQueryFactory factory;

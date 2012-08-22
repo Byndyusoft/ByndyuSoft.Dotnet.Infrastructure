@@ -1,15 +1,15 @@
-namespace ByndyuSoft.Infrastructure.Domain
+п»їnamespace ByndyuSoft.Infrastructure.Domain
 {
 	using JetBrains.Annotations;
 
 	/// <summary>
-	/// Интерфейс для задания критериев запроса
+	/// РРЅС‚РµСЂС„РµР№СЃ РґР»СЏ Р·Р°РґР°РЅРёСЏ РєСЂРёС‚РµСЂРёРµРІ Р·Р°РїСЂРѕСЃР°
 	/// </summary>
-	/// <typeparam name="T">Тип возращаемого запросом значения</typeparam>
+	/// <typeparam name="T">РўРёРї РІРѕР·СЂР°С‰Р°РµРјРѕРіРѕ Р·Р°РїСЂРѕСЃРѕРј Р·РЅР°С‡РµРЅРёСЏ</typeparam>
 	public interface IQueryFor<out T>
 	{
 		/// <summary>
-		/// Добавить критерии запроса
+		/// Р”РѕР±Р°РІРёС‚СЊ РєСЂРёС‚РµСЂРёРё Р·Р°РїСЂРѕСЃР°
 		/// </summary>
 		/// <param name="criterion"></param>
 		/// <typeparam name="TCriterion"></typeparam>
@@ -18,10 +18,10 @@ namespace ByndyuSoft.Infrastructure.Domain
 		T With<TCriterion>(TCriterion criterion) where TCriterion : ICriterion;
 
 		/// <summary>
-		/// Добавить критерий для поиска доменной сущности по идентификатору
+		/// Р”РѕР±Р°РІРёС‚СЊ РєСЂРёС‚РµСЂРёР№ РґР»СЏ РїРѕРёСЃРєР° РґРѕРјРµРЅРЅРѕР№ СЃСѓС‰РЅРѕСЃС‚Рё РїРѕ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂСѓ
 		/// </summary>
-		/// <param name="id">Идентификатор доменной сущности</param>
-		/// <returns>Возвращает найденную доменную сущность, либо null</returns>
+		/// <param name="id">РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РґРѕРјРµРЅРЅРѕР№ СЃСѓС‰РЅРѕСЃС‚Рё</param>
+		/// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р№РґРµРЅРЅСѓСЋ РґРѕРјРµРЅРЅСѓСЋ СЃСѓС‰РЅРѕСЃС‚СЊ, Р»РёР±Рѕ null</returns>
 		[CanBeNull]
 		T ById(int id);
 	}

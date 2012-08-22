@@ -1,15 +1,15 @@
-using System;
+п»їusing System;
 using System.Reflection;
 
 namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
 	/// <summary>
-	/// Методы расширения для <see cref="ICustomAttributeProvider"/>
+	/// РњРµС‚РѕРґС‹ СЂР°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ <see cref="ICustomAttributeProvider"/>
 	/// </summary>
 	public static class CustomAttributeProviderExtensions
 	{
 		///<summary>
-		/// Строготипизированная версия метода GetCustomAttributes
+		/// РЎС‚СЂРѕРіРѕС‚РёРїРёР·РёСЂРѕРІР°РЅРЅР°СЏ РІРµСЂСЃРёСЏ РјРµС‚РѕРґР° GetCustomAttributes
 		///</summary>
 		///<param name="attributeProvider"></param>
 		///<param name="inherit"></param>

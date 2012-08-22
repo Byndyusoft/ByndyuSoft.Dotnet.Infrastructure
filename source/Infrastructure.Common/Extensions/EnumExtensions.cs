@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.ComponentModel;
 using System.Reflection;
 using JetBrains.Annotations;
@@ -6,14 +6,14 @@ using JetBrains.Annotations;
 namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
 	///<summary>
-	/// Методы расширения для перечислений
+	/// РњРµС‚РѕРґС‹ СЂР°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ РїРµСЂРµС‡РёСЃР»РµРЅРёР№
 	///</summary>
 	public static class EnumExtensions
 	{
 		/// <summary>
-		/// Взять значение атрибута Description
+		/// Р’Р·СЏС‚СЊ Р·РЅР°С‡РµРЅРёРµ Р°С‚СЂРёР±СѓС‚Р° Description
 		/// </summary>
-		/// <param name="member">элемент перечисления</param>
+		/// <param name="member">СЌР»РµРјРµРЅС‚ РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ</param>
 		/// <returns></returns>
 		[CanBeNull]
 		public static string GetDescription(this Enum member)

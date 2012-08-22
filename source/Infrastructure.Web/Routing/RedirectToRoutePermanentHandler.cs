@@ -1,11 +1,11 @@
-using System;
+п»їusing System;
 using System.Web;
 using System.Web.Routing;
 
 namespace ByndyuSoft.Infrastructure.Web.Routing
 {
 	///<summary>
-	/// Обработчик постоянного перенаправления на заданный маршрут
+	/// РћР±СЂР°Р±РѕС‚С‡РёРє РїРѕСЃС‚РѕСЏРЅРЅРѕРіРѕ РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёСЏ РЅР° Р·Р°РґР°РЅРЅС‹Р№ РјР°СЂС€СЂСѓС‚
 	///</summary>
 	public class RedirectToRoutePermanentHandler : IRouteHandler, IHttpHandler
 	{

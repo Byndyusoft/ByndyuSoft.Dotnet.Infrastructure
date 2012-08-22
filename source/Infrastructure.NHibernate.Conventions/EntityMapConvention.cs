@@ -1,11 +1,11 @@
-using System;
+п»їusing System;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Instances;
 
 namespace ByndyuSoft.Infrastructure.NHibernate.Conventions
 {
 	/// <summary>
-	/// Соглашение по-умолчанию для сущностей.
+	/// РЎРѕРіР»Р°С€РµРЅРёРµ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ РґР»СЏ СЃСѓС‰РЅРѕСЃС‚РµР№.
 	/// </summary>
 	public class EntityMapConvention : IClassConvention, IJoinedSubclassConvention
 	{

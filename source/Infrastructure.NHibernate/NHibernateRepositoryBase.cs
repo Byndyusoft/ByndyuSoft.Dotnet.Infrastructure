@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using ByndyuSoft.Infrastructure.Domain;
 using NHibernate;
 
@@ -45,13 +45,13 @@ namespace ByndyuSoft.Infrastructure.NHibernate
 	}
 
     /// <summary>
-    /// Стандартный репозиторий для NHibernate
+    /// РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ СЂРµРїРѕР·РёС‚РѕСЂРёР№ РґР»СЏ NHibernate
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     public sealed class NHibernateRepository<TEntity> : NHibernateRepositoryBase<TEntity> where TEntity : class, IEntity
     {
         /// <summary>
-        /// Конструктор
+        /// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
         /// </summary>
         /// <param name="sessionProvider"></param>
         public NHibernateRepository(ISessionProvider sessionProvider) : base(sessionProvider)

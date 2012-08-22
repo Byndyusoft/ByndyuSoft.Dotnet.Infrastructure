@@ -1,21 +1,21 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 
 namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
 	///<summary>
-	/// Методы расширения для <see cref="IDictionary{TKey,TValue}"/>
+	/// РњРµС‚РѕРґС‹ СЂР°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ <see cref="IDictionary{TKey,TValue}"/>
 	///</summary>
 	public static class DictionaryExtensions
 	{
 		/// <summary>
-		/// Метод получения значения из словаря
+		/// РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РёР· СЃР»РѕРІР°СЂСЏ
 		/// </summary>
-		/// <typeparam name="TKey">Тип ключа</typeparam>
-		/// <typeparam name="TValue">Тип значения</typeparam>
-		/// <param name="dictionary">словарь</param>
-		/// <param name="key">ключ</param>
-		/// <returns>значение из словаря или значения по умолчанию, если ключ не найден в словаре</returns>
+		/// <typeparam name="TKey">РўРёРї РєР»СЋС‡Р°</typeparam>
+		/// <typeparam name="TValue">РўРёРї Р·РЅР°С‡РµРЅРёСЏ</typeparam>
+		/// <param name="dictionary">СЃР»РѕРІР°СЂСЊ</param>
+		/// <param name="key">РєР»СЋС‡</param>
+		/// <returns>Р·РЅР°С‡РµРЅРёРµ РёР· СЃР»РѕРІР°СЂСЏ РёР»Рё Р·РЅР°С‡РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ, РµСЃР»Рё РєР»СЋС‡ РЅРµ РЅР°Р№РґРµРЅ РІ СЃР»РѕРІР°СЂРµ</returns>
 		public static TValue Get<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
 		{
 			TValue result;
@@ -24,14 +24,14 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 		}
 
 		/// <summary>
-		/// Метод получения значения из словаря
+		/// РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РёР· СЃР»РѕРІР°СЂСЏ
 		/// </summary>
-		/// <typeparam name="TKey">Тип ключа</typeparam>
-		/// <typeparam name="TValue">Тип значения</typeparam>
-		/// <param name="dictionary">словарь</param>
-		/// <param name="key">ключ</param>
-		/// <param name="defaultValue">значение по умолчанию</param>
-		/// <returns>значение из словаря или значения по умолчанию, если ключ не найден в словаре</returns>
+		/// <typeparam name="TKey">РўРёРї РєР»СЋС‡Р°</typeparam>
+		/// <typeparam name="TValue">РўРёРї Р·РЅР°С‡РµРЅРёСЏ</typeparam>
+		/// <param name="dictionary">СЃР»РѕРІР°СЂСЊ</param>
+		/// <param name="key">РєР»СЋС‡</param>
+		/// <param name="defaultValue">Р·РЅР°С‡РµРЅРёРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ</param>
+		/// <returns>Р·РЅР°С‡РµРЅРёРµ РёР· СЃР»РѕРІР°СЂСЏ РёР»Рё Р·РЅР°С‡РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ, РµСЃР»Рё РєР»СЋС‡ РЅРµ РЅР°Р№РґРµРЅ РІ СЃР»РѕРІР°СЂРµ</returns>
 		public static TValue Get<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue)
 		{
 			TValue result;
@@ -39,14 +39,14 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 		}
 
 		/// <summary>
-		/// Метод получения значения из словаря
+		/// РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РёР· СЃР»РѕРІР°СЂСЏ
 		/// </summary>
-		/// <typeparam name="TKey">Тип ключа</typeparam>
-		/// <typeparam name="TValue">Тип значения</typeparam>
-		/// <param name="dictionary">словарь</param>
-		/// <param name="key">ключ</param>
-		/// <param name="defaultValue">Делегат для получения значения по умолчанию</param>
-		/// <returns>значение из словаря или значения по умолчанию, если ключ не найден в словаре</returns>
+		/// <typeparam name="TKey">РўРёРї РєР»СЋС‡Р°</typeparam>
+		/// <typeparam name="TValue">РўРёРї Р·РЅР°С‡РµРЅРёСЏ</typeparam>
+		/// <param name="dictionary">СЃР»РѕРІР°СЂСЊ</param>
+		/// <param name="key">РєР»СЋС‡</param>
+		/// <param name="defaultValue">Р”РµР»РµРіР°С‚ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ</param>
+		/// <returns>Р·РЅР°С‡РµРЅРёРµ РёР· СЃР»РѕРІР°СЂСЏ РёР»Рё Р·РЅР°С‡РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ, РµСЃР»Рё РєР»СЋС‡ РЅРµ РЅР°Р№РґРµРЅ РІ СЃР»РѕРІР°СЂРµ</returns>
 		public static TValue Get<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Func<TValue> defaultValue)
 		{
 			TValue result;

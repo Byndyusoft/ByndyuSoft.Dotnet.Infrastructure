@@ -1,9 +1,9 @@
-using System;
+п»їusing System;
 
 namespace ByndyuSoft.Infrastructure.Domain
 {
 	/// <summary>
-	/// Интерфейс сущности доменной модели
+	/// РРЅС‚РµСЂС„РµР№СЃ СЃСѓС‰РЅРѕСЃС‚Рё РґРѕРјРµРЅРЅРѕР№ РјРѕРґРµР»Рё
 	/// </summary>
 	public interface IEntity
 	{

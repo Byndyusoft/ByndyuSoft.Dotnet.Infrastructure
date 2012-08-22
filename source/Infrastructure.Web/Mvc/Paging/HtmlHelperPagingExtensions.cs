@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -11,11 +11,11 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         #region HtmlHelper extensions
 
         /// <summary>
-        /// Контрол пейджер
+        /// РљРѕРЅС‚СЂРѕР» РїРµР№РґР¶РµСЂ
         /// </summary>
         /// <param name="htmlHelper"><see cref="HtmlHelper"/></param>
         /// <param name="pageInfo"></param>
-        /// <returns>HTML текст с пейджером</returns>
+        /// <returns>HTML С‚РµРєСЃС‚ СЃ РїРµР№РґР¶РµСЂРѕРј</returns>
         public static string Pager(this HtmlHelper htmlHelper, PageInfo pageInfo)
         {
             ViewContext controllerContext = htmlHelper.ViewContext;
@@ -26,12 +26,12 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         }
 
         /// <summary>
-        /// Контрол пейджер
+        /// РљРѕРЅС‚СЂРѕР» РїРµР№РґР¶РµСЂ
         /// </summary>
         /// <param name="htmlHelper"><see cref="HtmlHelper"/></param>
         /// <param name="pageInfo"></param>
-        /// <param name="values">Дополнительные параметры для роутинга</param>
-        /// <returns>HTML текст с пейджером</returns>
+        /// <param name="values">Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ СЂРѕСѓС‚РёРЅРіР°</param>
+        /// <returns>HTML С‚РµРєСЃС‚ СЃ РїРµР№РґР¶РµСЂРѕРј</returns>
         public static string Pager(this HtmlHelper htmlHelper, PageInfo pageInfo, object values)
         {
             ViewContext controllerContext = htmlHelper.ViewContext;
@@ -42,13 +42,13 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         }
 
         /// <summary>
-        /// Контрол пейджер
+        /// РљРѕРЅС‚СЂРѕР» РїРµР№РґР¶РµСЂ
         /// </summary>
         /// <param name="htmlHelper"><see cref="HtmlHelper"/></param>
         /// <param name="pageInfo"></param>
-        /// <param name="actionName">Имя действия, которое осуществит переход на конкретную страницу</param>
-        /// <param name="values">Дополнительные параметры для роутинга</param>
-        /// <returns>HTML текст с пейджером</returns>
+        /// <param name="actionName">РРјСЏ РґРµР№СЃС‚РІРёСЏ, РєРѕС‚РѕСЂРѕРµ РѕСЃСѓС‰РµСЃС‚РІРёС‚ РїРµСЂРµС…РѕРґ РЅР° РєРѕРЅРєСЂРµС‚РЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ</param>
+        /// <param name="values">Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ СЂРѕСѓС‚РёРЅРіР°</param>
+        /// <returns>HTML С‚РµРєСЃС‚ СЃ РїРµР№РґР¶РµСЂРѕРј</returns>
         public static string Pager(this HtmlHelper htmlHelper, PageInfo pageInfo, string actionName, object values)
         {
             var valuesDictionary = new RouteValueDictionary(values);
@@ -66,14 +66,14 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         }
 
         /// <summary>
-        /// Контрол пейджер
+        /// РљРѕРЅС‚СЂРѕР» РїРµР№РґР¶РµСЂ
         /// </summary>
         /// <param name="htmlHelper"><see cref="HtmlHelper"/></param>
         /// <param name="pageInfo"></param>
-        /// <param name="actionName">Имя действия, которое осуществит переход на конкретную страницу</param>
-        /// <param name="controllerName">Имя контроллера</param>
-        /// <param name="values">Дополнительные параметры для роутинга</param>
-        /// <returns>HTML текст с пейджером</returns>
+        /// <param name="actionName">РРјСЏ РґРµР№СЃС‚РІРёСЏ, РєРѕС‚РѕСЂРѕРµ РѕСЃСѓС‰РµСЃС‚РІРёС‚ РїРµСЂРµС…РѕРґ РЅР° РєРѕРЅРєСЂРµС‚РЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ</param>
+        /// <param name="controllerName">РРјСЏ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°</param>
+        /// <param name="values">Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ СЂРѕСѓС‚РёРЅРіР°</param>
+        /// <returns>HTML С‚РµРєСЃС‚ СЃ РїРµР№РґР¶РµСЂРѕРј</returns>
         public static string Pager(this HtmlHelper htmlHelper, PageInfo pageInfo, string actionName, string controllerName, object values)
         {
             var valuesDictionary = new RouteValueDictionary(values);

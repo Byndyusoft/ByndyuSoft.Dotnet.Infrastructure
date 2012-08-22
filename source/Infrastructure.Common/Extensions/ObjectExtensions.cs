@@ -1,20 +1,20 @@
-using System;
+п»їusing System;
 using System.ComponentModel;
 
 namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
 	/// <summary>
-	/// Расширения для конвертации типов
+	/// Р Р°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё С‚РёРїРѕРІ
 	/// </summary>
 	public static class ObjectExtensions
 	{
 		/// <summary>
-		/// Пытается конвертировать объект в тип объекта <paramref name="converted"/>
+		/// РџС‹С‚Р°РµС‚СЃСЏ РєРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ РѕР±СЉРµРєС‚ РІ С‚РёРї РѕР±СЉРµРєС‚Р° <paramref name="converted"/>
 		/// </summary>
-		/// <typeparam name="T">Любой тип</typeparam>
-		/// <param name="toConvert">Объект, который будет сконвертирован</param>
-		/// <param name="converted">Объект, в который будет происходить конвертация</param>
-		/// <returns>True, если конвертация прошла успешно, иначе false</returns>
+		/// <typeparam name="T">Р›СЋР±РѕР№ С‚РёРї</typeparam>
+		/// <param name="toConvert">РћР±СЉРµРєС‚, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅ</param>
+		/// <param name="converted">РћР±СЉРµРєС‚, РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ РїСЂРѕРёСЃС…РѕРґРёС‚СЊ РєРѕРЅРІРµСЂС‚Р°С†РёСЏ</param>
+		/// <returns>True, РµСЃР»Рё РєРѕРЅРІРµСЂС‚Р°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ, РёРЅР°С‡Рµ false</returns>
 		public static bool TryConvertInto<T>(this object toConvert, out T converted)
 		{
 			converted = default(T);
@@ -38,11 +38,11 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 		}
 
 		/// <summary>
-		/// Пытается конвертировать объект в тип объекта <paramref name="{T}"/>
+		/// РџС‹С‚Р°РµС‚СЃСЏ РєРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ РѕР±СЉРµРєС‚ РІ С‚РёРї РѕР±СЉРµРєС‚Р° <paramref name="{T}"/>
 		/// </summary>
-		/// <typeparam name="T">Любой тип</typeparam>
-		/// <param name="toConvert">Объект, который будет сконвертирован</param>
-		/// <returns>True, если конвертация прошла успешно, иначе false</returns>
+		/// <typeparam name="T">Р›СЋР±РѕР№ С‚РёРї</typeparam>
+		/// <param name="toConvert">РћР±СЉРµРєС‚, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅ</param>
+		/// <returns>True, РµСЃР»Рё РєРѕРЅРІРµСЂС‚Р°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ, РёРЅР°С‡Рµ false</returns>
 		public static T Value<T>(this object toConvert)
 		{
 			T result;
@@ -58,8 +58,8 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 		/// <summary>
 		/// Check is value empty or not
 		/// </summary>
-		/// <param name="toCheck">Список строк</param>
-		/// <returns>True, если список равен null или не содержит элементов, иначе false</returns>
+		/// <param name="toCheck">РЎРїРёСЃРѕРє СЃС‚СЂРѕРє</param>
+		/// <returns>True, РµСЃР»Рё СЃРїРёСЃРѕРє СЂР°РІРµРЅ null РёР»Рё РЅРµ СЃРѕРґРµСЂР¶РёС‚ СЌР»РµРјРµРЅС‚РѕРІ, РёРЅР°С‡Рµ false</returns>
 		public static bool IsEmptyObject(this object toCheck)
 		{
 			return toCheck == null || string.IsNullOrEmpty(toCheck.ToString());

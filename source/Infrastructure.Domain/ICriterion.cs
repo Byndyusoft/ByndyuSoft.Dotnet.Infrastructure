@@ -1,9 +1,9 @@
-using System;
+п»їusing System;
 
 namespace ByndyuSoft.Infrastructure.Domain
 {
     /// <summary>
-    /// Критерии запроса
+    /// РљСЂРёС‚РµСЂРёРё Р·Р°РїСЂРѕСЃР°
     /// </summary>
     public interface ICriterion
     {

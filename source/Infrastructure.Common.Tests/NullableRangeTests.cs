@@ -1,4 +1,4 @@
-using ByndyuSoft.Infrastructure.Common;
+﻿using ByndyuSoft.Infrastructure.Common;
 using Xunit;
 
 namespace ByndyuSoft.Infrastructure.Common.Tests

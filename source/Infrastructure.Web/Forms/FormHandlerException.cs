@@ -1,4 +1,4 @@
-namespace ByndyuSoft.Infrastructure.Web.Forms
+﻿namespace ByndyuSoft.Infrastructure.Web.Forms
 {
     using System;
     using System.Runtime.Serialization;

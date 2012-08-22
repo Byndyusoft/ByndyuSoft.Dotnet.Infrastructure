@@ -1,14 +1,14 @@
-using System;
+п»їusing System;
 
 namespace ByndyuSoft.Infrastructure.Domain
 {
     /// <summary>
-    /// Интерфейс для построителя запросов
+    /// РРЅС‚РµСЂС„РµР№СЃ РґР»СЏ РїРѕСЃС‚СЂРѕРёС‚РµР»СЏ Р·Р°РїСЂРѕСЃРѕРІ
     /// </summary>
     public interface IQueryBuilder
     {
         /// <summary>
-        /// Начать строить запрос для результата
+        /// РќР°С‡Р°С‚СЊ СЃС‚СЂРѕРёС‚СЊ Р·Р°РїСЂРѕСЃ РґР»СЏ СЂРµР·СѓР»СЊС‚Р°С‚Р°
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
         /// <returns></returns>

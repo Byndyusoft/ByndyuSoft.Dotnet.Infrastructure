@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Data;
 using ByndyuSoft.Infrastructure.Domain;
 using NHibernate;

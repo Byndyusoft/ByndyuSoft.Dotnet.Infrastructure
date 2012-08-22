@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -6,12 +6,12 @@ using System.Linq;
 namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
 	///<summary>
-	/// Класс свойств расширений для коллекций строк
+	/// РљР»Р°СЃСЃ СЃРІРѕР№СЃС‚РІ СЂР°СЃС€РёСЂРµРЅРёР№ РґР»СЏ РєРѕР»Р»РµРєС†РёР№ СЃС‚СЂРѕРє
 	///</summary>
 	public static class StringExtensions
 	{
 		///<summary>
-		/// Объединяет коллекцию строк в одну строку использую разделитель
+		/// РћР±СЉРµРґРёРЅСЏРµС‚ РєРѕР»Р»РµРєС†РёСЋ СЃС‚СЂРѕРє РІ РѕРґРЅСѓ СЃС‚СЂРѕРєСѓ РёСЃРїРѕР»СЊР·СѓСЋ СЂР°Р·РґРµР»РёС‚РµР»СЊ
 		///</summary>
 		///<param name="source"></param>
 		///<param name="separator"></param>
@@ -22,7 +22,7 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 		}
 
 		///<summary>
-		/// Объединяет коллекцию строк в одну строку использую разделитель
+		/// РћР±СЉРµРґРёРЅСЏРµС‚ РєРѕР»Р»РµРєС†РёСЋ СЃС‚СЂРѕРє РІ РѕРґРЅСѓ СЃС‚СЂРѕРєСѓ РёСЃРїРѕР»СЊР·СѓСЋ СЂР°Р·РґРµР»РёС‚РµР»СЊ
 		///</summary>
 		///<param name="source"></param>
 		///<param name="separator"></param>

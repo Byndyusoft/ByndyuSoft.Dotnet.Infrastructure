@@ -1,18 +1,18 @@
-using System;
+п»їusing System;
 using System.Web.Routing;
 
 namespace ByndyuSoft.Infrastructure.Web.Routing
 {
 	///<summary>
-	/// Методы расширения для коллекции маршрутов
+	/// РњРµС‚РѕРґС‹ СЂР°СЃС€РёСЂРµРЅРёСЏ РґР»СЏ РєРѕР»Р»РµРєС†РёРё РјР°СЂС€СЂСѓС‚РѕРІ
 	///</summary>
 	public static class RouteCollectionExtensions
 	{
 		/// <summary>
-		/// Добавить маршрут, который будет отсылать постоянное перенаправления на заданный маршрут
+		/// Р”РѕР±Р°РІРёС‚СЊ РјР°СЂС€СЂСѓС‚, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ РѕС‚СЃС‹Р»Р°С‚СЊ РїРѕСЃС‚РѕСЏРЅРЅРѕРµ РїРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёСЏ РЅР° Р·Р°РґР°РЅРЅС‹Р№ РјР°СЂС€СЂСѓС‚
 		/// </summary>
-		/// <param name="routes">Коллекция маршрутов для ASP.NET</param>
-		/// <param name="url">Шаблон URL для заданного маршрута</param>
+		/// <param name="routes">РљРѕР»Р»РµРєС†РёСЏ РјР°СЂС€СЂСѓС‚РѕРІ РґР»СЏ ASP.NET</param>
+		/// <param name="url">РЁР°Р±Р»РѕРЅ URL РґР»СЏ Р·Р°РґР°РЅРЅРѕРіРѕ РјР°СЂС€СЂСѓС‚Р°</param>
 		/// <param name="values"></param>
 		public static void MapRedirectToRoutePermanent(this RouteCollection routes, string url, object values)
 		{

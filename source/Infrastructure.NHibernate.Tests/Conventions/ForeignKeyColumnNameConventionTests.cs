@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using FluentNHibernate.Conventions.Instances;
 using FluentNHibernate.MappingModel;
 using ByndyuSoft.Infrastructure.NHibernate.Conventions;

@@ -1,14 +1,14 @@
-using System;
+п»їusing System;
 
 namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
 {
     /// <summary>
-    /// Информаия о странице
+    /// РРЅС„РѕСЂРјР°РёСЏ Рѕ СЃС‚СЂР°РЅРёС†Рµ
     /// </summary>
     public class PageInfo
     {
         /// <summary>
-        /// Возвращает информацию о пустой странице
+        /// Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїСѓСЃС‚РѕР№ СЃС‚СЂР°РЅРёС†Рµ
         /// </summary>
         public static PageInfo Empty
         {
@@ -18,9 +18,9 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         /// <summary>
         /// ctor
         /// </summary>
-        /// <param name="index">Индекс страницы</param>
-        /// <param name="pageSize">Размер страницы</param>
-        /// <param name="totalItemsCount">Количество элементов</param>
+        /// <param name="index">РРЅРґРµРєСЃ СЃС‚СЂР°РЅРёС†С‹</param>
+        /// <param name="pageSize">Р Р°Р·РјРµСЂ СЃС‚СЂР°РЅРёС†С‹</param>
+        /// <param name="totalItemsCount">РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ</param>
         public PageInfo(int index, int pageSize, int totalItemsCount)
         {
             if (index < 0)
@@ -35,7 +35,7 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         }
 
         /// <summary>
-        /// Количество страниц
+        /// РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂР°РЅРёС†
         /// </summary>
         public int PagesCount
         {
@@ -43,17 +43,17 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         }
 
         /// <summary>
-        /// Всего элементов
+        /// Р’СЃРµРіРѕ СЌР»РµРјРµРЅС‚РѕРІ
         /// </summary>
         public int TotalItemsCount { get; private set; }
 
         /// <summary>
-        /// Индекс страницы
+        /// РРЅРґРµРєСЃ СЃС‚СЂР°РЅРёС†С‹
         /// </summary>
         public int Index { get; private set; }
 
         /// <summary>
-        /// Номер страницы <see cref="Index"/>+1
+        /// РќРѕРјРµСЂ СЃС‚СЂР°РЅРёС†С‹ <see cref="Index"/>+1
         /// </summary>
         public int Number
         {
@@ -61,7 +61,7 @@ namespace ByndyuSoft.Infrastructure.Web.Mvc.Paging
         }
 
         /// <summary>
-        /// Размер страницы
+        /// Р Р°Р·РјРµСЂ СЃС‚СЂР°РЅРёС†С‹
         /// </summary>
         public int PageSize { get; private set; }
     }

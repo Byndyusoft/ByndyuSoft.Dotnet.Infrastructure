@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Linq;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Inspections;
@@ -8,7 +8,7 @@ using JetBrains.Annotations;
 namespace ByndyuSoft.Infrastructure.NHibernate.Conventions
 {
     ///<summary>
-	/// Соглашение о том, что если поле помечено как NotNull, то в базе оно так же должно быть not null
+	/// РЎРѕРіР»Р°С€РµРЅРёРµ Рѕ С‚РѕРј, С‡С‚Рѕ РµСЃР»Рё РїРѕР»Рµ РїРѕРјРµС‡РµРЅРѕ РєР°Рє NotNull, С‚Рѕ РІ Р±Р°Р·Рµ РѕРЅРѕ С‚Р°Рє Р¶Рµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ not null
 	///</summary>
 	public class NotNullPropertyConvention : IPropertyConvention, IReferenceConvention
 	{
