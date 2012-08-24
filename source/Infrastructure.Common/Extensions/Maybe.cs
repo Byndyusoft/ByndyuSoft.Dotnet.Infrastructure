@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace ByndyuSoft.Infrastructure.Common.Extensions
+﻿namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+	using System;
+
 	public static class Maybe
 	{
 		public static TResult With<T, TResult>(this T @this, Func<T, TResult> func) where T : class

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-
-namespace ByndyuSoft.Infrastructure.Common.StaticReflection
+﻿namespace ByndyuSoft.Infrastructure.Common.StaticReflection
 {
+	using System;
+	using System.Linq;
+	using System.Linq.Expressions;
+	using System.Reflection;
+
 	internal class Accessor<TObject, TProperty> : IAccessor<TObject, TProperty>
 	{
 		private readonly Func<TObject, TProperty> getter;
@@ -28,12 +28,12 @@ namespace ByndyuSoft.Infrastructure.Common.StaticReflection
 
 		public void Set(object @object, object value)
 		{
-			setter((TObject)@object, (TProperty)value);
+			setter((TObject) @object, (TProperty) value);
 		}
 
 		public object Get(object @object)
 		{
-			return getter((TObject)@object);
+			return getter((TObject) @object);
 		}
 	}
 
@@ -43,8 +43,6 @@ namespace ByndyuSoft.Infrastructure.Common.StaticReflection
 		{
 			return new AccessorBuilder<TObject>();
 		}
-
-		#region Nested type: AccessorBuilder
 
 		public class AccessorBuilder<TObject>
 		{
@@ -108,7 +106,5 @@ namespace ByndyuSoft.Infrastructure.Common.StaticReflection
 				return expression.Compile();
 			}
 		}
-
-		#endregion
 	}
 }

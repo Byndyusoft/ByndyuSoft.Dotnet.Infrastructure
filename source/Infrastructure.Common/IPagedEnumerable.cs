@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ByndyuSoft.Infrastructure.Common
+﻿namespace ByndyuSoft.Infrastructure.Common
 {
-    public interface IPagedEnumerable<out T> : IEnumerable<T>
-    {
-        int TotalCount { get; }
-    }
+	using System.Collections.Generic;
+
+	public interface IPagedEnumerable<out T> : IEnumerable<T>
+	{
+		int TotalCount { get; }
+	}
 }

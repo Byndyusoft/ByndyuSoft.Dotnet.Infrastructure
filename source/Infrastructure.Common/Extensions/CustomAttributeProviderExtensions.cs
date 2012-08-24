@@ -1,8 +1,8 @@
-﻿using System;
-using System.Reflection;
-
-namespace ByndyuSoft.Infrastructure.Common.Extensions
+﻿namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+	using System;
+	using System.Reflection;
+
 	/// <summary>
 	/// Методы расширения для <see cref="ICustomAttributeProvider"/>
 	/// </summary>
@@ -17,7 +17,7 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 		///<returns></returns>
 		public static T[] GetCustomAttributes<T>(this ICustomAttributeProvider attributeProvider, bool inherit) where T : Attribute
 		{
-			return (T[])attributeProvider.GetCustomAttributes(typeof(T), inherit);
+			return (T[]) attributeProvider.GetCustomAttributes(typeof (T), inherit);
 		}
 	}
 }

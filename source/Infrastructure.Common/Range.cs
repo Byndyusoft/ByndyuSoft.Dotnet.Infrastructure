@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace ByndyuSoft.Infrastructure.Common
+﻿namespace ByndyuSoft.Infrastructure.Common
 {
+	using System;
+
 	public class Range<T> : IEquatable<Range<T>>
 		where T : IComparable<T>
 	{
@@ -23,16 +23,12 @@ namespace ByndyuSoft.Infrastructure.Common
 			get { return Min.CompareTo(Max) <= 0; }
 		}
 
-		#region IEquatable<Range<T>> Members
-
 		public bool Equals(Range<T> other)
 		{
 			if (ReferenceEquals(null, other)) return false;
 			if (ReferenceEquals(this, other)) return true;
 			return Equals(other.Min, Min) && Equals(other.Max, Max);
 		}
-
-		#endregion
 
 		public bool In(T value)
 		{
@@ -48,7 +44,7 @@ namespace ByndyuSoft.Infrastructure.Common
 		{
 			unchecked
 			{
-				return (Min.GetHashCode() * 397) ^ Max.GetHashCode();
+				return (Min.GetHashCode()*397) ^ Max.GetHashCode();
 			}
 		}
 	}

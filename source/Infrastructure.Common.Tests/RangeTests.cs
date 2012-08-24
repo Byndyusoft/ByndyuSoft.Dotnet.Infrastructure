@@ -1,8 +1,8 @@
-﻿using ByndyuSoft.Infrastructure.Common;
-using Xunit;
-
-namespace ByndyuSoft.Infrastructure.Common.Tests
+﻿namespace Infrastructure.Common.Tests
 {
+	using ByndyuSoft.Infrastructure.Common;
+	using Xunit;
+
 	public class RangeTests
 	{
 		[Fact]

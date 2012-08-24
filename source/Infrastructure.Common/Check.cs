@@ -1,9 +1,9 @@
-﻿using System;
-using System.Globalization;
-using JetBrains.Annotations;
-
-namespace ByndyuSoft.Infrastructure.Common
+﻿namespace ByndyuSoft.Infrastructure.Common
 {
+	using System;
+	using System.Globalization;
+	using JetBrains.Annotations;
+
 	/// <summary>
 	/// Check object invariants
 	/// </summary>

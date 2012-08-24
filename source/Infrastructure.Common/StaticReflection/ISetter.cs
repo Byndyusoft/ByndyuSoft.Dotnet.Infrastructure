@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ByndyuSoft.Infrastructure.Common.StaticReflection
+﻿namespace ByndyuSoft.Infrastructure.Common.StaticReflection
 {
 	public interface ISetter<in TObject, in TProperty>
 	{

@@ -1,10 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Reflection;
-using JetBrains.Annotations;
-
-namespace ByndyuSoft.Infrastructure.Common.Extensions
+﻿namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+	using System;
+	using System.ComponentModel;
+	using System.Reflection;
+	using JetBrains.Annotations;
+
 	///<summary>
 	/// Методы расширения для перечислений
 	///</summary>
@@ -26,7 +26,7 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 			if (fieldInfo == null)
 				return null;
 
-			var attributes = fieldInfo.GetCustomAttributes<DescriptionAttribute>(false);
+			DescriptionAttribute[] attributes = fieldInfo.GetCustomAttributes<DescriptionAttribute>(false);
 
 			if (attributes.Length > 0)
 				return attributes[0].Description;

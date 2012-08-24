@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace ByndyuSoft.Infrastructure.Common
+﻿namespace ByndyuSoft.Infrastructure.Common
 {
+	using System;
+
 	public class NullableRange<T> : IEquatable<NullableRange<T>> where T : struct, IComparable<T>
 	{
 		public NullableRange(T? min, T? max) : this()
@@ -27,16 +27,12 @@ namespace ByndyuSoft.Infrastructure.Common
 			}
 		}
 
-		#region IEquatable<NullableRange<T>> Members
-
 		public bool Equals(NullableRange<T> other)
 		{
 			if (ReferenceEquals(null, other)) return false;
 			if (ReferenceEquals(this, other)) return true;
 			return other.Min.Equals(Min) && other.Max.Equals(Max);
 		}
-
-		#endregion
 
 		public bool In(T? value)
 		{
@@ -54,7 +50,7 @@ namespace ByndyuSoft.Infrastructure.Common
 		{
 			unchecked
 			{
-				return ((Min.HasValue ? Min.Value.GetHashCode() : 0) * 397) ^ (Max.HasValue ? Max.Value.GetHashCode() : 0);
+				return ((Min.HasValue ? Min.Value.GetHashCode() : 0)*397) ^ (Max.HasValue ? Max.Value.GetHashCode() : 0);
 			}
 		}
 	}

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Globalization;
-using System.Xml.Linq;
-using ByndyuSoft.Infrastructure.Common.Extensions;
-using Xunit;
-
-namespace ByndyuSoft.Infrastructure.Common.Tests
+﻿namespace Infrastructure.Common.Tests
 {
+	using System;
+	using System.Globalization;
+	using System.Xml.Linq;
+	using ByndyuSoft.Infrastructure.Common.Extensions;
+	using Xunit;
+
 	public class XDocumentExtensionsFacts
 	{
 		[Fact]

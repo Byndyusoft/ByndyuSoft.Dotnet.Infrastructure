@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ByndyuSoft.Infrastructure.Common.Extensions
+﻿namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+	using System;
+	using System.Collections.Generic;
+
 	///<summary>
 	/// Методы расширения для <see cref="IDictionary{TKey,TValue}"/>
 	///</summary>
@@ -19,8 +19,8 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 		public static TValue Get<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
 		{
 			TValue result;
-		    dictionary.TryGetValue(key, out result);
-		    return result;
+			dictionary.TryGetValue(key, out result);
+			return result;
 		}
 
 		/// <summary>

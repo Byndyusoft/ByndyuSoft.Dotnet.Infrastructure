@@ -1,8 +1,8 @@
-namespace ByndyuSoft.Infrastructure.Common.Tests.Extensions
+namespace Infrastructure.Common.Tests.Extensions
 {
 	using System;
 	using System.ComponentModel;
-	using Common.Extensions;
+	using ByndyuSoft.Infrastructure.Common.Extensions;
 	using Xunit;
 
 	public class EnumExtensionsTests

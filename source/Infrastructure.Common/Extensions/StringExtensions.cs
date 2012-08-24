@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-
-namespace ByndyuSoft.Infrastructure.Common.Extensions
+﻿namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+	using System.Collections.Generic;
+	using System.Collections.Specialized;
+	using System.Linq;
+
 	///<summary>
 	/// Класс свойств расширений для коллекций строк
 	///</summary>

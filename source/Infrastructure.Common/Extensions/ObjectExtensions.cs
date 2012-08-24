@@ -1,8 +1,7 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace ByndyuSoft.Infrastructure.Common.Extensions
+﻿namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+	using System.ComponentModel;
+
 	/// <summary>
 	/// Расширения для конвертации типов
 	/// </summary>

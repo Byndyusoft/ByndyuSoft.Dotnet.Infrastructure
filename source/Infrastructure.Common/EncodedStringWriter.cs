@@ -1,9 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Text;
-
-namespace ByndyuSoft.Infrastructure.Common
+﻿namespace ByndyuSoft.Infrastructure.Common
 {
+	using System.IO;
+	using System.Text;
+
 	/// <summary>
 	/// <see cref="StringWriter"/>
 	/// </summary>

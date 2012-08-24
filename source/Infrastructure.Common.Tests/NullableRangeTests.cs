@@ -1,8 +1,8 @@
-﻿using ByndyuSoft.Infrastructure.Common;
-using Xunit;
-
-namespace ByndyuSoft.Infrastructure.Common.Tests
+﻿namespace Infrastructure.Common.Tests
 {
+	using ByndyuSoft.Infrastructure.Common;
+	using Xunit;
+
 	public class NullableRangeTests
 	{
 		[Fact]
@@ -114,7 +114,7 @@ namespace ByndyuSoft.Infrastructure.Common.Tests
 		public void ZeroLengthRangeIsValid()
 		{
 			var range = new NullableRange<int>(0, 0);
-		    Assert.True(range.IsValid);
+			Assert.True(range.IsValid);
 		}
 	}
 }

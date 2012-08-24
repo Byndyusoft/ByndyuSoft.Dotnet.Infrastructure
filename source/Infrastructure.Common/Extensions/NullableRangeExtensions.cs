@@ -1,14 +1,14 @@
-﻿using System;
-
-namespace ByndyuSoft.Infrastructure.Common.Extensions
+﻿namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+	using System;
+
 	public static class NullableRangeExtensions
 	{
 		public static bool In(this NullableRange<decimal> @this, decimal? value, decimal dispersion)
 		{
 			return new NullableRange<decimal>(
-				@this.Min.HasValue ? (long) Math.Round(@this.Min.Value * (1 - dispersion)) : (decimal?) null,
-				@this.Max.HasValue ? (long) Math.Round(@this.Max.Value * (1 + dispersion)) : (decimal?) null)
+				@this.Min.HasValue ? (long) Math.Round(@this.Min.Value*(1 - dispersion)) : (decimal?) null,
+				@this.Max.HasValue ? (long) Math.Round(@this.Max.Value*(1 + dispersion)) : (decimal?) null)
 				.In(value);
 		}
 
