@@ -4,6 +4,7 @@ obj
 *.suo
 *.user
 build
+packages
 
 # mstest test results
 TestResults
