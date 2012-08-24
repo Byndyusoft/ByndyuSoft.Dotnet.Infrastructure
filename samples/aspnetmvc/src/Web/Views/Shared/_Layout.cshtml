@@ -1,0 +1,23 @@
+﻿@using MvcSample.Web.Application.Account
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>@ViewBag.Title</title>
+		
+		<link href="@Url.Content("~/Content/css/core.css")" rel="stylesheet" type="text/css" />
+		
+		<script src="@Url.Content("~/Scripts/jquery-1.8.0.min.js")" language="javascript" type="text/javascript"></script>
+		<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" language="javascript" type="text/javascript"></script>
+		<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" language="javascript" type="text/javascript"></script>
+		<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" language="javascript" type="text/javascript"></script>
+		<script src="@Url.Content("~/Scripts/jquery-ui-1.8.23.min.js")" language="javascript" type="text/javascript"></script>
+	</head>
+
+	<body>
+		@if(Request.IsAuthenticated)
+		{
+			<a href="@(Url.Action<AccountController>(x => x.SignOut(null)))">Выход</a>
+		}
+		@RenderBody()
+	</body>
+</html>

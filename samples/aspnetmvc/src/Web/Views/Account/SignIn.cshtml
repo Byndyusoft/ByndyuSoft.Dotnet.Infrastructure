@@ -1,0 +1,22 @@
+﻿@model MvcSample.Web.Application.Account.Forms.SignIn
+           
+@{
+    ViewBag.Title = "Вход в систему";
+}
+
+<h2>Вход</h2>
+<p>
+    Пожалуйста, введите ваше имя пользователя и пароль.
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true, "Попытка входа неудачна.")
+    <div>
+        <fieldset>
+                @Html.EditorForModel()
+            <p>
+                <input type="submit" value="Войти" />
+            </p>
+        </fieldset>
+    </div>
+}
