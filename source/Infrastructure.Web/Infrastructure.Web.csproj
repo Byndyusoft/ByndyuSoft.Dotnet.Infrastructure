@@ -78,6 +78,7 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ControllerBase.cs" />
+    <Compile Include="Extensions\HttpContextExtensions.cs" />
     <Compile Include="Forms\FormControllerBase.cs" />
     <Compile Include="Forms\FormHandlerException.cs" />
     <Compile Include="Forms\IForm.cs" />
