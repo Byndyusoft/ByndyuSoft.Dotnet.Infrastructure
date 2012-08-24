@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\EnumExtensionsTests.cs" />
+    <Compile Include="Extensions\RussianLanguageExtensionsTests.cs" />
     <Compile Include="NullableRangeTests.cs" />
     <Compile Include="RangeTests.cs" />
     <Compile Include="EncodedStringWriterTests.cs" />
