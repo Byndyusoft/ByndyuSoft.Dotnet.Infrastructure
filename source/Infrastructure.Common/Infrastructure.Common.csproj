@@ -84,6 +84,7 @@
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\Maybe.cs" />
     <Compile Include="Extensions\RussianLanguageExtensions.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\XDocumentExtensions.cs" />
     <Compile Include="IPagedEnumerable.cs" />
