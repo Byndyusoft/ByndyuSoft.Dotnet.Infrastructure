@@ -5,6 +5,8 @@ obj
 *.user
 build
 packages
+!samples/*/build
+_ReSharper*
 
 # mstest test results
 TestResults
