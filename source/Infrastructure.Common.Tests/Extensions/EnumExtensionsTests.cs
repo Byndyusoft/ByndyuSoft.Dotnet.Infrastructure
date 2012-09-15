@@ -1,7 +1,9 @@
 namespace Infrastructure.Common.Tests.Extensions
 {
 	using System;
+	using System.Collections.Generic;
 	using System.ComponentModel;
+	using System.Linq;
 	using ByndyuSoft.Infrastructure.Common.Extensions;
 	using Xunit;
 
@@ -9,7 +11,9 @@ namespace Infrastructure.Common.Tests.Extensions
 	{
 		public enum TestEnum
 		{
-			[Description("Desc")] First = 1
+			[Description("Desc1")] First = 1,
+			[Description("Desc2")] Second = 2,
+			[Description("Desc3")] Third = 3
 		}
 
 		[Fact]
@@ -17,7 +21,7 @@ namespace Infrastructure.Common.Tests.Extensions
 		{
 			string description = TestEnum.First.GetDescription();
 
-			Assert.Equal("Desc", description);
+			Assert.Equal("Desc1", description);
 		}
 
 		[Fact]
@@ -27,6 +31,20 @@ namespace Infrastructure.Common.Tests.Extensions
 			string description = ((Enum) o).GetDescription();
 
 			Assert.Null(description);
+		}
+
+		[Fact]
+		public void CreateListFromEnum()
+		{
+			IEnumerable<KeyValuePair<int, string>> result = EnumExtensions.ToKeyValuePairs<TestEnum>();
+
+			Assert.Equal(3, result.Count());
+			Assert.Equal(1, result.ElementAt(0).Key);
+			Assert.Equal("Desc1", result.ElementAt(0).Value);
+			Assert.Equal(2, result.ElementAt(1).Key);
+			Assert.Equal("Desc2", result.ElementAt(1).Value);
+			Assert.Equal(3, result.ElementAt(2).Key);
+			Assert.Equal("Desc3", result.ElementAt(2).Value);
 		}
 	}
 }
