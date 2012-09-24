@@ -3,26 +3,28 @@ namespace ByndyuSoft.Infrastructure.Common.Extensions
 	public static class RussianLanguageExtensions
 	{
 		/// <summary>
-		/// Возвращает форму слова, которая идет после числа. Например, 41 библиотекА, 42 библиотекИ, 11 библиотеК
+		/// Возвращает форму слова для указанного количества. Например, 41 библиотекА, 42 библиотекИ, 45 библиотеК.
 		/// </summary>
-		/// <param name="value">Число, к которому относится существительное</param>
-		/// <param name="oneForm">Единственное число. Например, 41 или 101</param>
-		/// <param name="twoForm">Число оканчивается на 2, 3 или 4</param>
-		/// <param name="threeForm">Остальные случаи</param>
-		/// <returns>Число + правильная форма существительного</returns>
-		public static string ToString(this int value, string oneForm, string twoForm, string threeForm)
+		/// <param name="value">Число, к которому относится существительное.</param>
+		/// <param name="oneForm">Форма слова для единственного числа.</param>
+		/// <param name="twoForm">Форма слова для пары.</param>
+        /// <param name="fiveForm">Форма слова для пяти.</param>
+		/// <returns>Число и через пробел правильная форма существительного.</returns>
+		public static string ToString(this int value, string oneForm, string twoForm, string fiveForm)
 		{
-			if (value >= 11 && value <= 14)
-				return string.Format("{0} {1}", value, threeForm);
+            var significantValue = value % 100;
 
-			int lastDigit = value%10;
-			if (lastDigit == 1)
-				return string.Format("{0} {1}", value, oneForm);
+            if (significantValue >= 10 && significantValue <= 20)
+                return string.Format("{0} {1}", value, fiveForm);
 
-			if (lastDigit == 2 || lastDigit == 3 || lastDigit == 4)
-				return string.Format("{0} {1}", value, twoForm);
+            var lastDigit = value % 10;
+            if (lastDigit == 1)
+                return string.Format("{0} {1}", value, oneForm);
 
-			return string.Format("{0} {1}", value, threeForm);
+            if (lastDigit == 2 || lastDigit == 3 || lastDigit == 4)
+                return string.Format("{0} {1}", value, twoForm);
+
+            return string.Format("{0} {1}", value, fiveForm);		    
 		}
 	}
 }
