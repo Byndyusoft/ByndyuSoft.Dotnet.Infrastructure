@@ -34,5 +34,16 @@
 
 			Assert.Equal("47 библиотек", result);
 		}
+
+        [Fact]
+        public void FormFor112()
+        {
+            const int value = 112;
+
+            string result = value.ToString("библиотека", "библиотеки", "библиотек");
+
+            Assert.Equal("112 библиотек", result);
+        }
+
 	}
 }
