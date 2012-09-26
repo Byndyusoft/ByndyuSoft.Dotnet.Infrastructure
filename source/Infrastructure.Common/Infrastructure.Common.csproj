@@ -59,9 +59,9 @@
     <DocumentationFile>..\..\build\Release\ByndyuSoft.Infrastructure.Common.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JetBrains.Annotations, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="JetBrains.Annotations, Version=6.1.0.0, Culture=neutral, PublicKeyToken=3f033448d4bb5376, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\JetBrains.Annotations.6.1\lib\JetBrains.Annotations.dll</HintPath>
+      <HintPath>..\..\packages\JetBrains.Annotations.7.0\lib\net40\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
