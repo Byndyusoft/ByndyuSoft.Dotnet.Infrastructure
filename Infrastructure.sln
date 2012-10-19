@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Common", "Source\Infrastructure.Common\Infrastructure.Common.csproj", "{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Common", "source\Infrastructure.Common\Infrastructure.Common.csproj", "{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Domain", "Source\Infrastructure.Domain\Infrastructure.Domain.csproj", "{3F945C22-DAFE-4E48-A790-51FC090901AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Domain", "source\Infrastructure.Domain\Infrastructure.Domain.csproj", "{3F945C22-DAFE-4E48-A790-51FC090901AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate", "Source\Infrastructure.NHibernate\Infrastructure.NHibernate.csproj", "{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate", "source\Infrastructure.NHibernate\Infrastructure.NHibernate.csproj", "{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate.Tests", "Source\Infrastructure.NHibernate.Tests\Infrastructure.NHibernate.Tests.csproj", "{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate.Tests", "source\Infrastructure.NHibernate.Tests\Infrastructure.NHibernate.Tests.csproj", "{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Common.Tests", "Source\Infrastructure.Common.Tests\Infrastructure.Common.Tests.csproj", "{F1FE00D6-86B0-4D01-B3A1-13E7414475D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Common.Tests", "source\Infrastructure.Common.Tests\Infrastructure.Common.Tests.csproj", "{F1FE00D6-86B0-4D01-B3A1-13E7414475D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Web", "Source\Infrastructure.Web\Infrastructure.Web.csproj", "{FDFF70B4-9626-48C9-9003-1785B0B809CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Web", "source\Infrastructure.Web\Infrastructure.Web.csproj", "{FDFF70B4-9626-48C9-9003-1785B0B809CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate.Conventions", "Source\Infrastructure.NHibernate.Conventions\Infrastructure.NHibernate.Conventions.csproj", "{055EBF24-DF76-491B-9941-549428BFCB1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate.Conventions", "source\Infrastructure.NHibernate.Conventions\Infrastructure.NHibernate.Conventions.csproj", "{055EBF24-DF76-491B-9941-549428BFCB1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B8A73791-1311-443E-9E5C-4AFC7DA4FABC}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B8A737
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Web.Tests", "source\Infrastructure.Web.Tests\Infrastructure.Web.Tests.csproj", "{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{055EBF24-DF76-491B-9941-549428BFCB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{055EBF24-DF76-491B-9941-549428BFCB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{055EBF24-DF76-491B-9941-549428BFCB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
