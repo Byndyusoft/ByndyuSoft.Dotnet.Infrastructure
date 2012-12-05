@@ -13,6 +13,6 @@ namespace ByndyuSoft.Infrastructure.Domain
         /// <typeparam name="TEntity"> <see cref="IEntity" /> </typeparam>
         /// <returns> <see cref="IQueryable{TEntity}" /> object for type of TEntity </returns>
         IQueryable<TEntity> Query<TEntity>()
-            where TEntity : class, IEntity;
+            where TEntity : class, IEntity, new();
     }
 }

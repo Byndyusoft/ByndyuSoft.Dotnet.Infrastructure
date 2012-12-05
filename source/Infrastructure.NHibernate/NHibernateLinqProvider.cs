@@ -25,7 +25,7 @@ namespace ByndyuSoft.Infrastructure.NHibernate
         #region ILinqProvider Members
 
         public IQueryable<TEntity> Query<TEntity>()
-            where TEntity : class, IEntity
+            where TEntity : class, IEntity, new()
         {
             return _sessionProvider.CurrentSession.Query<TEntity>();
         }

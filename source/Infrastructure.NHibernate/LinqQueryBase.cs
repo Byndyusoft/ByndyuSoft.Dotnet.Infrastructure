@@ -13,7 +13,7 @@
     [PublicAPI]
     public abstract class LinqQueryBase<TEntity, TCriterion, TResult> : IQuery<TCriterion, TResult>
         where TCriterion : ICriterion
-        where TEntity : class, IEntity
+        where TEntity : class, IEntity, new()
     {
         private readonly ILinqProvider _linq;
 

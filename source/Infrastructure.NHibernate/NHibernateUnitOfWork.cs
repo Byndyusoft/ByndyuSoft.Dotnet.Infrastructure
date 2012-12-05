@@ -41,13 +41,13 @@
         }
 
         public void Save<TEntity>(TEntity entity)
-            where TEntity : class, IEntity
+            where TEntity : class, IEntity, new()
         {
             _session.Save(entity);
         }
 
         public void Delete<TEntity>(TEntity entity)
-            where TEntity : class, IEntity
+            where TEntity : class, IEntity, new()
         {
             _session.Delete(entity);
         }

@@ -16,12 +16,12 @@
         ///   Пометить сущность для сохранения в базу
         /// </summary>
         void Save<TEntity>(TEntity entity)
-            where TEntity : class, IEntity;
+            where TEntity : class, IEntity, new();
 
         /// <summary>
         ///   Пометить сущность для удаления из базы
         /// </summary>
         void Delete<TEntity>(TEntity entity)
-            where TEntity : class, IEntity;
+            where TEntity : class, IEntity, new();
     }
 }
