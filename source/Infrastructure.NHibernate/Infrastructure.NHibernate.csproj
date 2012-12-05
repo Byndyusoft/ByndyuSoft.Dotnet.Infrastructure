@@ -86,6 +86,7 @@
     <Compile Include="Mappings\BaseMap.cs" />
     <Compile Include="NHibernateLinqProvider.cs" />
     <Compile Include="Mappings\TreeNodeMap.cs" />
+    <Compile Include="NHibernateRepository.cs" />
     <Compile Include="PerRequestSessionProvider.cs" />
     <Compile Include="NHibernateRepositoryBase.cs" />
     <Compile Include="SessionProvider.cs" />
