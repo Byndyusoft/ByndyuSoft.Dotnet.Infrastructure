@@ -1,33 +1,39 @@
-﻿using System;
-using System.Data;
-using ByndyuSoft.Infrastructure.Domain;
-using NHibernate;
-
-namespace ByndyuSoft.Infrastructure.NHibernate
+﻿namespace ByndyuSoft.Infrastructure.NHibernate
 {
-	///<summary>
-	///</summary>
-	public class NHibernateUnitOfWorkFactory : IUnitOfWorkFactory
-	{
-		private readonly ISessionFactory sessionSessionFactory;
+    using System.Data;
+    using Domain;
+    using JetBrains.Annotations;
+    using global::NHibernate;
 
-		///<summary>
-		/// ctor
-		///</summary>
-		///<param name="sessionFactory"></param>
-		public NHibernateUnitOfWorkFactory(ISessionFactory sessionFactory)
-		{
-			sessionSessionFactory = sessionFactory;
-		}
+    ///<summary>
+    /// 
+    ///</summary>
+    [PublicAPI]
+    public class NHibernateUnitOfWorkFactory : IUnitOfWorkFactory
+    {
+        private readonly ISessionFactory _sessionSessionFactory;
 
-	    public IUnitOfWork Create(IsolationLevel isolationLevel)
-	    {
-	        return new NHibernateUnitOfWork(sessionSessionFactory.OpenSession(), isolationLevel);
-	    }
+        ///<summary>
+        ///  ctor
+        ///</summary>
+        ///<param name="sessionFactory"> </param>
+        public NHibernateUnitOfWorkFactory(ISessionFactory sessionFactory)
+        {
+            _sessionSessionFactory = sessionFactory;
+        }
 
-		public IUnitOfWork Create()
-		{
-			return Create(IsolationLevel.ReadCommitted);
-		}
-	}
+        #region IUnitOfWorkFactory Members
+
+        public IUnitOfWork Create(IsolationLevel isolationLevel)
+        {
+            return new NHibernateUnitOfWork(_sessionSessionFactory.OpenSession(), isolationLevel);
+        }
+
+        public IUnitOfWork Create()
+        {
+            return Create(IsolationLevel.ReadCommitted);
+        }
+
+        #endregion
+    }
 }

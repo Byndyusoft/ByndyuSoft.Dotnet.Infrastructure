@@ -1,51 +1,57 @@
-﻿using System;
-using System.Data;
-using ByndyuSoft.Infrastructure.Domain;
-using NHibernate;
-using NHibernate.Context;
-
-namespace ByndyuSoft.Infrastructure.NHibernate
+﻿namespace ByndyuSoft.Infrastructure.NHibernate
 {
-	internal class NHibernateUnitOfWork : IUnitOfWork
-	{
-		private readonly ISession session;
-	    private ITransaction transaction;
+    using System;
+    using System.Data;
+    using Domain;
+    using global::NHibernate;
+    using global::NHibernate.Context;
 
-	    public void Dispose()
-		{
-		    if (!transaction.WasCommitted && !transaction.WasRolledBack)
-		        transaction.Rollback();
-		    transaction.Dispose();
-			transaction = null;
+    internal class NHibernateUnitOfWork : IUnitOfWork
+    {
+        private readonly ISession _session;
+        private ITransaction _transaction;
 
-			CurrentSessionContext.Unbind(session.SessionFactory);
-			session.Dispose();
-		}
-
-		public void Commit()
-		{
-			transaction.Commit();
-		}
-
-		public void Save<TEntity>(TEntity entity) where TEntity : IEntity
-		{
-			session.Save(entity);
-		}
-
-		public void Delete<TEntity>(TEntity entity) where TEntity : IEntity
-		{
-			session.Delete(entity);
-		}
-
-	    public NHibernateUnitOfWork(ISession session, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted) 
-	    {
+        public NHibernateUnitOfWork(ISession session, IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+        {
             if (session == null)
                 throw new ArgumentNullException("session");
 
             CurrentSessionContext.Bind(session);
 
-            this.session = session;
-            transaction = session.BeginTransaction(isolationLevel);
-	    }
-	}
+            _session = session;
+            _transaction = session.BeginTransaction(isolationLevel);
+        }
+
+        #region IUnitOfWork Members
+
+        public void Dispose()
+        {
+            if (!_transaction.WasCommitted && !_transaction.WasRolledBack)
+                _transaction.Rollback();
+            _transaction.Dispose();
+            _transaction = null;
+
+            CurrentSessionContext.Unbind(_session.SessionFactory);
+            _session.Dispose();
+        }
+
+        public void Commit()
+        {
+            _transaction.Commit();
+        }
+
+        public void Save<TEntity>(TEntity entity)
+            where TEntity : class, IEntity
+        {
+            _session.Save(entity);
+        }
+
+        public void Delete<TEntity>(TEntity entity)
+            where TEntity : class, IEntity
+        {
+            _session.Delete(entity);
+        }
+
+        #endregion
+    }
 }
