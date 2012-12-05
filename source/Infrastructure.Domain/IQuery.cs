@@ -1,20 +1,20 @@
-﻿using JetBrains.Annotations;
-
-namespace ByndyuSoft.Infrastructure.Domain
+﻿namespace ByndyuSoft.Infrastructure.Domain
 {
+    using JetBrains.Annotations;
+
     /// <summary>
-    /// Интерфейс для объектов запросов к базе
+    ///   Интерфейс для объектов запросов к базе
     /// </summary>
-    /// <typeparam name="TCriterion"></typeparam>
-    /// <typeparam name="TResult"></typeparam>
+    /// <typeparam name="TCriterion"> </typeparam>
+    /// <typeparam name="TResult"> </typeparam>
     public interface IQuery<in TCriterion, out TResult>
         where TCriterion : ICriterion
     {
         /// <summary>
-        /// Получить результат из базы
+        ///   Получить результат из базы
         /// </summary>
-        /// <param name="criterion"></param>
-        /// <returns></returns>
+        /// <param name="criterion"> </param>
+        /// <returns> </returns>
         [CanBeNull]
         TResult Ask(TCriterion criterion);
     }

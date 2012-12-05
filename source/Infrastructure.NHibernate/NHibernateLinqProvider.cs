@@ -1,22 +1,35 @@
-using System;
-using System.Linq;
-using ByndyuSoft.Infrastructure.Domain;
-using NHibernate.Linq;
-
 namespace ByndyuSoft.Infrastructure.NHibernate
 {
-	public class NHibernateLinqProvider : ILinqProvider
-	{
-		private readonly ISessionProvider sessionProvider;
+    using System.Linq;
+    using Domain;
+    using JetBrains.Annotations;
+    using global::NHibernate.Linq;
 
-		public NHibernateLinqProvider(ISessionProvider sessionProvider)
-		{
-			this.sessionProvider = sessionProvider;
-		}
+    /// <summary>
+    /// 
+    /// </summary>
+    [PublicAPI]
+    public class NHibernateLinqProvider : ILinqProvider
+    {
+        private readonly ISessionProvider _sessionProvider;
 
-		public IQueryable<T> Query<T>()
-		{
-			return sessionProvider.CurrentSession.Query<T>();
-		}
-	}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sessionProvider"></param>
+        public NHibernateLinqProvider(ISessionProvider sessionProvider)
+        {
+            _sessionProvider = sessionProvider;
+        }
+
+        #region ILinqProvider Members
+
+        public IQueryable<TEntity> Query<TEntity>()
+            where TEntity : class, IEntity
+        {
+            return _sessionProvider.CurrentSession.Query<TEntity>();
+        }
+
+        #endregion
+    }
 }
