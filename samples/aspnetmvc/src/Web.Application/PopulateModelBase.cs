@@ -1,21 +1,21 @@
 ﻿namespace MvcSample.Web.Application
 {
-	using System.Web.Mvc;
+    using System.Web.Mvc;
 
-	public abstract class PopulateModelBase : ActionFilterAttribute
-	{
-		private readonly string viewDataKey;
+    public abstract class PopulateModelBase : ActionFilterAttribute
+    {
+        private readonly string viewDataKey;
 
-		protected PopulateModelBase(string dataKey)
-		{
-			viewDataKey = dataKey;
-		}
+        protected PopulateModelBase(string dataKey)
+        {
+            viewDataKey = dataKey;
+        }
 
-		public override void OnActionExecuted(ActionExecutedContext filterContext)
-		{
-			filterContext.Controller.ViewData[viewDataKey] = GetSelectList(filterContext);
-		}
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            filterContext.Controller.ViewData[viewDataKey] = GetSelectList(filterContext);
+        }
 
-		protected abstract SelectList GetSelectList(ActionExecutedContext filterContext);
-	}
+        protected abstract SelectList GetSelectList(ActionExecutedContext filterContext);
+    }
 }
