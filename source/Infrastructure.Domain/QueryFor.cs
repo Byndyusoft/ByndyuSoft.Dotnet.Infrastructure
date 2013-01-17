@@ -24,6 +24,11 @@
 			return factory.Create<TCriterion, TResult>().Ask(criterion);
 		}
 
+		public TResult All()
+		{
+			return factory.Create<AllEntities, TResult>().Ask(new AllEntities());
+		}
+
 		public TResult ById(int id)
 		{
 			return factory.Create<FindById, TResult>().Ask(new FindById(id));

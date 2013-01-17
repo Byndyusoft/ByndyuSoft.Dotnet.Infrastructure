@@ -100,6 +100,7 @@
     <Compile Include="Conventions\ForeignKeyColumnNameConventionTests.cs" />
     <Compile Include="Conventions\NameConventionsTests.cs" />
     <Compile Include="Map\MappingTests.cs" />
+    <Compile Include="Query\QueryTests.cs" />
     <Compile Include="TestingServices\InMemorySQLiteInitializer.cs" />
     <Compile Include="TestingServices\InMemoryTestFixtureBase.cs" />
     <Compile Include="Model.cs" />
