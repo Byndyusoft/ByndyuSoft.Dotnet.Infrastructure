@@ -1,13 +1,12 @@
-﻿using System;
-using FluentNHibernate.Conventions.Instances;
-using FluentNHibernate.MappingModel;
-using ByndyuSoft.Infrastructure.NHibernate.Conventions;
-using Moq;
-using Xunit;
-
-namespace ByndyuSoft.Infrastructure.NHibernate.Tests.Conventions
+﻿namespace Infrastructure.NHibernate.Tests.Conventions
 {
-	public class ForeignKeyColumnNameConventionTests
+    using FluentNHibernate.Conventions.Instances;
+    using FluentNHibernate.MappingModel;
+    using ByndyuSoft.Infrastructure.NHibernate.Conventions;
+    using Moq;
+    using Xunit;
+
+    public class ForeignKeyColumnNameConventionTests
 	{
 		[Fact]
 		public void UpperCase()

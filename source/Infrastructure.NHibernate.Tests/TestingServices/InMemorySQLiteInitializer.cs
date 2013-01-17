@@ -1,14 +1,15 @@
-﻿using System;
-using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
-using NHibernate;
-using NHibernate.Bytecode;
-using NHibernate.Cfg;
-using NHibernate.Dialect;
-using NHibernate.Dialect.Function;
-
-namespace ByndyuSoft.Infrastructure.NHibernate.Tests.TestingServices
+﻿namespace Infrastructure.NHibernate.Tests.TestingServices
 {
+    using System;
+    using ByndyuSoft.Infrastructure.NHibernate;
+    using FluentNHibernate.Cfg;
+    using FluentNHibernate.Cfg.Db;
+    using global::NHibernate;
+    using global::NHibernate.Bytecode;
+    using global::NHibernate.Cfg;
+    using global::NHibernate.Dialect;
+    using global::NHibernate.Dialect.Function;
+
     public class InMemorySQLiteInitializer : INHibernateInitializer
     {
         private readonly Action<MappingConfiguration> mappings;

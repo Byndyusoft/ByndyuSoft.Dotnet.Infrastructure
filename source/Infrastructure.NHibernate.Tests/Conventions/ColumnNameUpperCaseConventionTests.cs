@@ -1,33 +1,32 @@
-﻿using System;
-using FluentNHibernate.Conventions.Instances;
-using ByndyuSoft.Infrastructure.NHibernate.Conventions;
-using Moq;
-using Xunit;
-
-namespace ByndyuSoft.Infrastructure.NHibernate.Tests.Conventions
+﻿namespace Infrastructure.NHibernate.Tests.Conventions
 {
-	public class ColumnNameUpperCaseConventionTests
-	{
-		[Fact]
-		public void UpperCase()
-		{
-			var mockPropertyInstance = new Mock<IPropertyInstance>();
-			mockPropertyInstance.Setup(instance => instance.Name).Returns("Test");
+    using ByndyuSoft.Infrastructure.NHibernate.Conventions;
+    using FluentNHibernate.Conventions.Instances;
+    using Moq;
+    using Xunit;
 
-			new ColumnNameUpperCaseConvention().Apply(mockPropertyInstance.Object);
+    public class ColumnNameUpperCaseConventionTests
+    {
+        [Fact]
+        public void UpperCase()
+        {
+            var mockPropertyInstance = new Mock<IPropertyInstance>();
+            mockPropertyInstance.Setup(instance => instance.Name).Returns("Test");
 
-			mockPropertyInstance.Verify(instance => instance.Column("TEST"));
-		}
+            new ColumnNameUpperCaseConvention().Apply(mockPropertyInstance.Object);
 
-		[Fact]
-		public void CamelCaseReplacedByUnderscore()
-		{
-			var mockPropertyInstance = new Mock<IPropertyInstance>();
-			mockPropertyInstance.Setup(instance => instance.Name).Returns("CamelCase");
+            mockPropertyInstance.Verify(instance => instance.Column("TEST"));
+        }
 
-			new ColumnNameUpperCaseConvention().Apply(mockPropertyInstance.Object);
+        [Fact]
+        public void CamelCaseReplacedByUnderscore()
+        {
+            var mockPropertyInstance = new Mock<IPropertyInstance>();
+            mockPropertyInstance.Setup(instance => instance.Name).Returns("CamelCase");
 
-			mockPropertyInstance.Verify(instance => instance.Column("CAMEL_CASE"));
-		}
-	}
+            new ColumnNameUpperCaseConvention().Apply(mockPropertyInstance.Object);
+
+            mockPropertyInstance.Verify(instance => instance.Column("CAMEL_CASE"));
+        }
+    }
 }

@@ -1,14 +1,14 @@
-﻿using System;
-using FluentNHibernate;
-using FluentNHibernate.Cfg;
-//using HibernatingRhinos.Profiler.Appender.NHibernate;
-using NHibernate;
-using NHibernate.Cfg;
-using NHibernate.Tool.hbm2ddl;
-
-namespace ByndyuSoft.Infrastructure.NHibernate.Tests.TestingServices
+﻿namespace Infrastructure.NHibernate.Tests.TestingServices
 {
-	public abstract class InMemoryTestFixtureBase<TMapping, TConvention>
+    using System;
+    using System.IO;
+    using FluentNHibernate;
+    using FluentNHibernate.Cfg;
+    using global::NHibernate;
+    using global::NHibernate.Cfg;
+    using global::NHibernate.Tool.hbm2ddl;
+
+    public abstract class InMemoryTestFixtureBase<TMapping, TConvention>
 		where TMapping : class, IMappingProvider
 		where TConvention : class
 	{
@@ -16,8 +16,6 @@ namespace ByndyuSoft.Infrastructure.NHibernate.Tests.TestingServices
 
 		protected InMemoryTestFixtureBase()
 		{
-			//NHibernateProfiler.Initialize();
-
 			TestFixtureSetup();
 		}
 
@@ -26,7 +24,7 @@ namespace ByndyuSoft.Infrastructure.NHibernate.Tests.TestingServices
 			Action<MappingConfiguration> mappings = (m => m.FluentMappings
 															.AddFromAssemblyOf<TMapping>()
 															.Conventions.AddFromAssemblyOf<TConvention>()
-															.ExportTo(@"d:\"));
+															.ExportTo(Path.GetTempPath()));
 
 			Configuration configuration = new InMemorySQLiteInitializer(mappings)
 				.GetConfiguration();

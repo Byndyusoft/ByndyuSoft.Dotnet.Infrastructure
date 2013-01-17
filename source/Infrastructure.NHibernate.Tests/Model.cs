@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ByndyuSoft.Infrastructure.NHibernate.Tests
+﻿namespace Infrastructure.NHibernate.Tests
 {
-	public class CustomerCategory
+    using System.Collections.Generic;
+
+    public class CustomerCategory
 	{
 	}
 

@@ -1,10 +1,9 @@
-﻿using System;
-using ByndyuSoft.Infrastructure.NHibernate.Conventions;
-using Xunit;
-
-namespace ByndyuSoft.Infrastructure.NHibernate.Tests.Conventions
+﻿namespace Infrastructure.NHibernate.Tests.Conventions
 {
-	public class NameConventionsTests
+    using ByndyuSoft.Infrastructure.NHibernate.Conventions;
+    using Xunit;
+
+    public class NameConventionsTests
 	{
 		[Fact]
 		public void TableNameTest()
