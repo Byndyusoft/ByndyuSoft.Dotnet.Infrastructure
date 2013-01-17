@@ -3,11 +3,11 @@
     using ByndyuSoft.Infrastructure.NHibernate.Conventions;
     using FluentNHibernate.Conventions.Instances;
     using Moq;
-    using Xunit;
+    using NUnit.Framework;
 
     public class ColumnNameUpperCaseConventionTests
     {
-        [Fact]
+        [Test]
         public void UpperCase()
         {
             var mockPropertyInstance = new Mock<IPropertyInstance>();
@@ -18,7 +18,7 @@
             mockPropertyInstance.Verify(instance => instance.Column("TEST"));
         }
 
-        [Fact]
+        [Test]
         public void CamelCaseReplacedByUnderscore()
         {
             var mockPropertyInstance = new Mock<IPropertyInstance>();

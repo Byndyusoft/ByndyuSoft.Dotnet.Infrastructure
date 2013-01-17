@@ -5,13 +5,13 @@
     using ByndyuSoft.Infrastructure.Domain;
     using ByndyuSoft.Infrastructure.NHibernate.Conventions;
     using ByndyuSoft.Infrastructure.NHibernate.Mappings;
+    using NUnit.Framework;
     using TestingServices;
-    using Xunit;
     using global::NHibernate;
 
     public class MappingTests : InMemoryTestFixtureBase<TestTreeClassMap, PrimaryKeyConvention>
     {
-        [Fact]
+        [Test]
         public void HistoryEntryMustBeCreated()
         {
             var testTreeParent = new TestTreeClass();
@@ -33,15 +33,15 @@
                 parent = Session.Get<TestTreeClass>(testTreeParent.Id);
                 tx.Rollback();
             }
-            Assert.NotSame(testTreeParent, parent);
-            Assert.NotSame(testTreeChild, child);
-            Assert.Equal(1, parent.Children.Count());
-            Assert.Equal(child, parent.Children.First());
-            Assert.NotEmpty(parent.Descendants.ToList());
-            Assert.NotEmpty(child.Ancestors.ToList());
+            Assert.AreNotSame(testTreeParent, parent);
+            Assert.AreNotSame(testTreeChild, child);
+            Assert.AreEqual(1, parent.Children.Count());
+            Assert.AreEqual(child, parent.Children.First());
+            Assert.IsNotEmpty(parent.Descendants.ToList());
+            Assert.IsNotEmpty(child.Ancestors.ToList());
         }
 
-        [Fact]
+        [Test]
         public void ClearDescendantsAndAncestorsThenClearParrent()
         {
             var testTreeParent = new TestTreeClass();
@@ -74,10 +74,10 @@
                 tx.Rollback();
             }
 
-            Assert.Equal(0, parent.Children.Count());
-            Assert.Equal(0, parent.Descendants.Count());
+            Assert.AreEqual(0, parent.Children.Count());
+            Assert.AreEqual(0, parent.Descendants.Count());
             Assert.Null(child.Parent);
-            Assert.Equal(0, parent.Ancestors.Count());
+            Assert.AreEqual(0, parent.Ancestors.Count());
         }
     }
 

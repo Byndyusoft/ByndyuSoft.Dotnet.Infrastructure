@@ -1,49 +1,48 @@
 ﻿namespace Infrastructure.Common.Tests.Extensions
 {
-	using ByndyuSoft.Infrastructure.Common.Extensions;
-	using Xunit;
+    using ByndyuSoft.Infrastructure.Common.Extensions;
+    using NUnit.Framework;
 
-	public class RussianLanguageExtensionsTests
-	{
-		[Fact]
-		public void OneForm()
-		{
-			const int value = 41;
+    public class RussianLanguageExtensionsTests
+    {
+        [Test]
+        public void OneForm()
+        {
+            const int value = 41;
 
-			string result = value.ToString("библиотека", "библиотеки", "библиотек");
+            string result = value.ToString("библиотека", "библиотеки", "библиотек");
 
-			Assert.Equal("41 библиотека", result);
-		}
+            Assert.AreEqual("41 библиотека", result);
+        }
 
-		[Fact]
-		public void TwoForm()
-		{
-			const int value = 42;
+        [Test]
+        public void TwoForm()
+        {
+            const int value = 42;
 
-			string result = value.ToString("библиотека", "библиотеки", "библиотек");
+            string result = value.ToString("библиотека", "библиотеки", "библиотек");
 
-			Assert.Equal("42 библиотеки", result);
-		}
+            Assert.AreEqual("42 библиотеки", result);
+        }
 
-		[Fact]
-		public void TreeForm()
-		{
-			const int value = 47;
+        [Test]
+        public void TreeForm()
+        {
+            const int value = 47;
 
-			string result = value.ToString("библиотека", "библиотеки", "библиотек");
+            string result = value.ToString("библиотека", "библиотеки", "библиотек");
 
-			Assert.Equal("47 библиотек", result);
-		}
+            Assert.AreEqual("47 библиотек", result);
+        }
 
-        [Fact]
+        [Test]
         public void FormFor112()
         {
             const int value = 112;
 
             string result = value.ToString("библиотека", "библиотеки", "библиотек");
 
-            Assert.Equal("112 библиотек", result);
+            Assert.AreEqual("112 библиотек", result);
         }
-
-	}
+    }
 }

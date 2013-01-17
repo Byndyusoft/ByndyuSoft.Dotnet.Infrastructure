@@ -1,20 +1,18 @@
 ﻿namespace Infrastructure.Common.Tests
 {
-	using System;
-	using System.Globalization;
-	using System.Xml.Linq;
-	using ByndyuSoft.Infrastructure.Common.Extensions;
-	using Xunit;
+    using System.Xml.Linq;
+    using ByndyuSoft.Infrastructure.Common.Extensions;
+    using NUnit.Framework;
 
-	public class XDocumentExtensionsFacts
-	{
-		[Fact]
-		public void ToXml()
-		{
-			const string expected = @"<?xml version=""1.0"" encoding=""UTF-8""?><root />";
-			var xdoc = new XDocument(new XElement("root"));
-			string actual = xdoc.ToXml();
-			Assert.Equal(expected, actual, StringComparer.Create(CultureInfo.CurrentCulture, true));
-		}
-	}
+    public class XDocumentExtensionsFacts
+    {
+        [Test]
+        public void ToXml()
+        {
+            const string expected = @"<?xml version=""1.0"" encoding=""UTF-8""?><root />";
+            var xdoc = new XDocument(new XElement("root"));
+            string actual = xdoc.ToXml();
+            StringAssert.AreEqualIgnoringCase(expected, actual);
+        }
+    }
 }

@@ -1,23 +1,23 @@
 ﻿namespace Infrastructure.NHibernate.Tests.Conventions
 {
+    using ByndyuSoft.Infrastructure.NHibernate.Conventions;
     using FluentNHibernate.Conventions.Instances;
     using FluentNHibernate.MappingModel;
-    using ByndyuSoft.Infrastructure.NHibernate.Conventions;
     using Moq;
-    using Xunit;
+    using NUnit.Framework;
 
     public class ForeignKeyColumnNameConventionTests
-	{
-		[Fact]
-		public void UpperCase()
-		{
-			var mockPropertyInstance = new Mock<IManyToOneInstance>();
+    {
+        [Test]
+        public void UpperCase()
+        {
+            var mockPropertyInstance = new Mock<IManyToOneInstance>();
 
-			mockPropertyInstance.Setup(instance => instance.Class).Returns(new TypeReference(GetType()));
+            mockPropertyInstance.Setup(instance => instance.Class).Returns(new TypeReference(GetType()));
 
-			new ForeignKeyColumnNameConvention().Apply(mockPropertyInstance.Object);
+            new ForeignKeyColumnNameConvention().Apply(mockPropertyInstance.Object);
 
-			mockPropertyInstance.Verify(instance => instance.Column("FOREIGN_KEY_COLUMN_NAME_CONVENTION_TESTS_ID"));
-		}
-	}
+            mockPropertyInstance.Verify(instance => instance.Column("FOREIGN_KEY_COLUMN_NAME_CONVENTION_TESTS_ID"));
+        }
+    }
 }
