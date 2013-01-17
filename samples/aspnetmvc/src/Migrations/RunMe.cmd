@@ -1,3 +1,3 @@
 @echo off
-Migrate --assembly=MvcSample.Migrations.dll --provider=sqlserver --connectionString=Main --verbose=true
+Migrate --assembly=MvcSamples.Migrations.dll --provider=sqlserver --connectionString=Main --verbose=true
 pause

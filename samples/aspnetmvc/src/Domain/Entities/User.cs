@@ -32,20 +32,13 @@ namespace MvcSample.Domain.Entities
 		public virtual string Email { get; protected set; }
 
 		[NotNull]
-		public virtual string Password { get; protected set; }
+        public virtual Password Password { get; protected set; }
 
 		public virtual int Id { get; set; }
 
 		public virtual void SetPassword([NotNull] string password)
 		{
-			if (string.IsNullOrEmpty(password)) throw new ArgumentNullException("password");
-
-			Password = password;
-		}
-
-		public virtual bool CheckPassword(string password)
-		{
-			return Password.Equals(password, StringComparison.InvariantCulture);
+            Password = new Password(password);
 		}
 	}
 }

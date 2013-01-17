@@ -1,5 +1,3 @@
-Framework '4.0'
-
 properties {
 	$solutionName = 'MvcSample'
 	$configuration = 'Debug'
@@ -50,6 +48,11 @@ task Build {
 }
 
 task Migrate -depends Build {
+	echo "start migrations..."
+	echo $migrator
+	echo $migrationsPath
+	echo $migrationsDllName
+	echo $migrator --provider=sqlserver --connectionString=Main --target=$migrationsPath/$migrationsDllName.dll
 	Invoke-Expression "$migrator --provider=sqlserver --connectionString=Main --target=$migrationsPath/$migrationsDllName.dll"
 }
 

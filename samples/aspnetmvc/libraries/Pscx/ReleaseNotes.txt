@@ -1,19 +1,20 @@
-PowerShell Community Extensions 2.0 Release Notes
-April 10, 2010
+PowerShell Community Extensions 2.1 Release Notes
+Oct 16, 2012
 
-The primary purpose of the Pscx 2.0 release is to convert from the previous 
+The primary purpose of the Pscx 2.1 release is to convert from the previous 
 approach of using a PSSnapin and scripts over to a completely module-based 
-approach.  As a consequence, Pscx 2.0 only works with Windows PowerShell 2.0. 
+approach as well as provide support for Windows PowerShell 3.0.  As a 
+consequence, Pscx 2.1 does not work in PowerShell 1.0. 
+
 If you need support for Windows PowerShell 1.0, you can still download the 
 Pscx 1.2 release.  The other major change is that Pscx no longer uses an MSI 
 installer.  In fact, the "install" is merely an xcopy deployment of the Pscx 
 module into your modules folder (~\Documents\WindowsPowerShell\Modules).  
 
-
 NOTES ABOUT XCOPY DEPLOYMENT
 
 Files downloaded from the web are usually blocked on Windows including the 
-Pscx-2.0.zip file.  If you do not unblock the ZIP file first then each of the 
+Pscx-2.1.0.zip file.  If you do not unblock the ZIP file first then each of the 
 files extracted from the ZIP will also be blocked.  This will cause numerous 
 errors when you import Pscx like this:
 
@@ -29,32 +30,28 @@ Please see "get-help about_signing" for more details...
 
 To avoid these errors follow the unblocking directions below.
 
+UNBLOCKING THE PSCX-2.1.0.zip FILE:
 
-UNBLOCKING THE PSCX-2.0.ZIP FILE:
-
-1. Locate the Pscx-2.0.zip file in Windows Explorer.
+1. Locate the Pscx-2.1.0.zip file in Windows Explorer.
 2. Right-click on the file and select "Properties".
 3. On the General tab of the Properties dialog, locate the "Unblock" button in
    the lower right-hand corner and press.
 
-
 COPYING THE PSCX MODULE INTO YOUR MODULE DIR
 
-Once you have unblocked the Pscx-2.0.zip, extract the contents of the ZIP file
+Once you have unblocked the Pscx-2.1.0.zip, extract the contents of the ZIP file
 to your $env:Home\Documents\WindowsPowerShell\Modules folder.  If this folder 
 doesn't exist then you will need to create it.  If you want Pscx to be avaible
 to all users on a computer, then extract the files to $PSHome\Modules instead.
 
-
 UPGRADING FROM EARLIER VERSIONS OF PSCX
 
-Pscx 2.0 does not automatically upgrade Pscx 1.2.  You should consider 
+Pscx 2.1 does not automatically upgrade Pscx 1.2.  You should consider 
 uninstalling earlier versions of Pscx although they can technically be
-installed on same machine with Pscx 2.0.  The major cleanup required in moving
-from earlier versions to Pscx 2.0 is removing all of the Pscx related script
+installed on same machine with Pscx 2.1.  The major cleanup required in moving
+from earlier versions to Pscx 2.1 is removing all of the Pscx related script
 from your profile.  You will only need the command to import Pscx in your
 profile as discussed below.
-
 
 IMPORTING THE PSCX MODULE
 
@@ -75,13 +72,11 @@ C:\PS> Import-Module Pscx -arg ~\Pscx.UserPreferences.ps1
 
 Pscx will now be imported with your preferences.
 
-
 WINDOWS EXPLORER CONTEXT MENU ITEM - "Open PowerShell Here"
 
 Since Pscx no longer uses an installer, if you want to enable the Windows 
 Explorer context menu item that opens a PowerShell prompt on any drive or 
 folder you will need to execute the Enable-OpenPowerShellHere command.
-
 
 NEW CMDLETS
     ConvertTo-Metric
@@ -102,13 +97,17 @@ NEW FUNCTIONS
     Dismount-VHD
     Mount-VHD
     Enable-OpenPowerShellHere
+    Get-ExecutionTime
+    Get-Parameter
     Invoke-BatchFile
     Invoke-Elevated (su)
     Invoke-GC
     Invoke-Method (call)
+    Import-VisualStudioVars
     Resolve-ErrorRecord (rver)   - renamed from Resolve-Error
     Resolve-HResult (rvhr)       - renamed from Get-ExceptionForHR
     Resolve-WindowsError (rvwer) - renamed from Get-ExceptionForWin32
+    Start-PowerShell
     Show-Tree
 
 UPDATED AND SHORTENED LIST OF ALIASES
@@ -122,8 +121,10 @@ UPDATED AND SHORTENED LIST OF ALIASES
     fhex          Format-Hex
     fxml          Format-Xml
     gcb           Get-Clipboard
+    gpar          Get-Parameter
     gpv           Get-PropertyValue
     gtn           Get-TypeName
+    igc           Invoke-GC
     ln            New-HardLink
     lorem         Get-LoremIpsum
     nho           New-HashObject
@@ -137,7 +138,6 @@ UPDATED AND SHORTENED LIST OF ALIASES
     skip          Skip-Object
     sls           Select-String
     sro           Set-ReadOnly
-    srts          Search-Transcript
     su            Invoke-Elevated
     swr           Set-Writable
     tail          Get-FileTail
@@ -148,21 +148,13 @@ REMOVED:
         These cmdlets have been moved to the Pscx.Deprecated module.  
         If you require the Pscx versions instead of the ones now built-in 
         PowerShell, import the Pscx.Deprecated module.
-        
-    Import-VisualStudioVars.ps1
-        This file has been replaced by the more generic Invoke-BatchFile which
-        migrates environment variable changes made by the batch file to the 
-        PowerShell session e.g.:
-    
-        $vcargs = ?: {$Pscx:Is64BitProcess} {'amd64'} {'x86'}
-        $VS90VCVarsBatchFile = "${env:VS90COMNTOOLS}..\..\VC\vcvarsall.bat"
-        Invoke-BatchFile $VS90VCVarsBatchFile $vcargs
-        
+                
     Get-HelpMatch     - Get-Help now searches within topic content.
     Get-Url           - Use Get-HttpResource.
     Get-WebService    - Use New-WebServiceProxy.
     Import-Assembly   - Use Add-Type.    
-    New-GenericObject - Use New-Object which handles generics better in 2.0.
+    New-GenericObject - Use New-Object which handles generics better in 
+                        PowerShell 2.0.
 
     Connect-VirtualServer
     Get-Manager
@@ -173,24 +165,24 @@ REMOVED:
     Scroll-Text
     Test-Scroll
 
-	Obsoleted Aliases
-	    egp, eghp, ephy, galpscx, gcmpscx, gdrpscx, gvs, help, hrexc, iphy, 
-	    mail, man, pager, ping, ra, rehash, rnd, saps, start, up and winexc.
+    Obsoleted Aliases
+        egp, eghp, ephy, galpscx, gcmpscx, gdrpscx, gvs, help, hrexc, iphy, 
+        mail, man, pager, ping, ra, rehash, rnd, saps, srts, start, up and winexc.
         
 MISC UPDATES:
     cd
-		Supports unquoted paths with spaces unless special PowerShell 
-		characters are in path e.g.:
+        Supports unquoted paths with spaces unless special PowerShell 
+        characters are in path e.g.:
 
-		C:\PS> cd c:\program files
+        C:\PS> cd c:\program files
 
-		is valid while:
-		 
-		C:\PS> cd c:\program files(x86) 
+        is valid while:
+         
+        C:\PS> cd c:\program files(x86) 
 
-		is not because PowerShell tries to evaluate the contents of 
-		the parens '(x86)' and fails.
-		
+        is not because PowerShell tries to evaluate the contents of 
+        the parens '(x86)' and fails.
+        
     Test-Xml
         Added EnableDtd paremeter to allow testing of XML files using doc 
         type definitions.
@@ -221,16 +213,16 @@ MISC UPDATES:
         
         C:\PS> [accelerators]::get
 
-		Key                    Value
-		---                    -----
-		int                    System.Int32
-		long                   System.Int64
-		string                 System.String
-		char                   System.Char
-		bool                   System.Boolean
-		byte                   System.Byte
-		double                 System.Double
-		...
-		wmidatetime            Pscx.TypeAccelerators.WmiDateTime
-		wmitimespan            Pscx.TypeAccelerators.WmiTimeSpan
-			
+        Key                    Value
+        ---                    -----
+        int                    System.Int32
+        long                   System.Int64
+        string                 System.String
+        char                   System.Char
+        bool                   System.Boolean
+        byte                   System.Byte
+        double                 System.Double
+        ...
+        wmidatetime            Pscx.TypeAccelerators.WmiDateTime
+        wmitimespan            Pscx.TypeAccelerators.WmiTimeSpan
+            

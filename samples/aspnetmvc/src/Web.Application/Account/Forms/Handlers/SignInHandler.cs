@@ -22,7 +22,7 @@
 			User user = query.For<User>()
 				.With(new FindByLogin {Login = command.Login});
 
-			if (user == null || user.CheckPassword(command.Password) == false)
+			if (user == null || user.Password.Check(command.Password) == false)
 				throw new FormHandlerException("Неверный имя пользователя или пароль");
 
 			service.SignIn(user, command.RememberMe);

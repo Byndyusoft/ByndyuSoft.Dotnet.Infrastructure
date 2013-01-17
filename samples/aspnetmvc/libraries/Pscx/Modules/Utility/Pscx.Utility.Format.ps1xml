@@ -1,108 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
-  
+  <Controls>
+    <Control>
+      <Name>ParameterGroupingFormat</Name>
+      <CustomControl>
+        <CustomEntries>
+          <CustomEntry>
+            <CustomItem>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <Text>Command: </Text>
+                  <ExpressionBinding>
+                    <ScriptBlock>"{0}/{1}" -f $(if($_.command.ModuleName){$_.command.ModuleName}else{$_.Command.CommandType.ToString()+":"}),$_.command.Name</ScriptBlock>
+                  </ExpressionBinding>
+                  <NewLine/>
+                  <Text>Set:     </Text>
+                  <ExpressionBinding>
+                    <ScriptBlock>if($_.ParameterSet -eq "__AllParameterSets"){"Default"}else{$_.ParameterSet}</ScriptBlock>
+                  </ExpressionBinding>
+                  <NewLine/>
+                </CustomItem>
+              </Frame>
+            </CustomItem>
+          </CustomEntry>
+        </CustomEntries>
+      </CustomControl>
+    </Control>
+  </Controls>
   <ViewDefinitions>
-
     <View>
-      <Name>Microsoft.Feeds.Interop.IFeed</Name>
+      <Name>ParameterMetadataEx</Name>
       <ViewSelectedBy>
-        <TypeName>System.__ComObject#{0a1e6cad-0a47-4da2-a13d-5baaa5c8bd4f}</TypeName>
+        <TypeName>System.Management.Automation.ParameterMetadataEx</TypeName>
       </ViewSelectedBy>
+      <GroupBy>
+        <PropertyName>ParameterSet</PropertyName>
+        <CustomControlName>ParameterGroupingFormat</CustomControlName>
+      </GroupBy>
       <TableControl>
         <TableHeaders>
           <TableColumnHeader>
             <Label>Name</Label>
+            <Width>22</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Aliases</Label>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Position</Label>
             <Width>8</Width>
-            <Alignment>right</Alignment>
           </TableColumnHeader>
-          <TableColumnHeader />
           <TableColumnHeader>
-            <Label>Author</Label>
+            <Label>Mandatory</Label>
+            <Width>9</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Pipeline</Label>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ByName</Label>
+            <Width>6</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Provider</Label>
             <Width>15</Width>
-            <Alignment>left</Alignment>
           </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>PubDate</Label>
-            <Width>25</Width>
-            <Alignment>left</Alignment>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>LocalID</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Title</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Author</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>PubDate</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-
-    <View>
-      <Name>Microsoft.Feeds.Interop.IFeedFolder</Name>
-      <ViewSelectedBy>
-        <TypeName>System.__ComObject#{81f04ad1-4194-4d7d-86d6-11813cec163c}</TypeName>
-        <TypeName>System.__ComObject#{f7f915d8-2ede-42bc-98e7-a5d05063a757}</TypeName>
-        <TypeName>System.__ComObject#{33f2ea09-1398-4ab9-b6a4-f94b49d0a42e}</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
           <TableColumnHeader>
             <Label>Type</Label>
-            <Width>8</Width>
-            <Alignment>left</Alignment>
-          </TableColumnHeader>
-          <TableColumnHeader />
-          <TableColumnHeader>
-            <Label>ItemCount</Label>
-            <Width>10</Width>
-            <Alignment>right</Alignment>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>UnreadItemCount</Label>
-            <Width>15</Width>
-            <Alignment>right</Alignment>
           </TableColumnHeader>
         </TableHeaders>
         <TableRowEntries>
           <TableRowEntry>
             <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>Type</PropertyName>
-              </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Name</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>ItemCount</PropertyName>
+                <PropertyName>Aliases</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>UnreadItemCount</PropertyName>
+                <!--PropertyName>Position</PropertyName-->
+                <ScriptBlock>if($_.Position -lt 0){"Named"}else{$_.Position}</ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Mandatory</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ValueFromPipeline</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ValueFromPipelineByPropertyName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <!--PropertyName>Provider</PropertyName-->
+                <ScriptBlock>if($_.Provider){$_.Provider}else{"All"}</ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Type</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
         </TableRowEntries>
       </TableControl>
     </View>
-    
+    <View>
+      <Name>ExecutionTimeInfo</Name>
+      <ViewSelectedBy>
+        <TypeName>Pscx.Commands.Modules.Utility.ExecutionTimeInfo</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Id</Label>
+            <Width>4</Width>
+            <Alignment>right</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ExecutionTime</Label>
+            <Width>16</Width>
+            <Alignment>left</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>HistoryInfo</Label>
+            <Alignment>left</Alignment>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ExecutionTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>HistoryInfo</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
   </ViewDefinitions>
-
 </Configuration>
-
 <!-- SIG # Begin signature block -->
 <!-- MIIfVQYJKoZIhvcNAQcCoIIfRjCCH0ICAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB -->
 <!-- gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR -->
-<!-- AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUsO3sRTvkTNURpcjXUj1w/AK9 -->
-<!-- 76KgghqHMIIGbzCCBVegAwIBAgIQA4uW8HDZ4h5VpUJnkuHIOjANBgkqhkiG9w0B -->
+<!-- AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUqD5ZthmDTfqQTkjvZPR8iCQz -->
+<!-- eD+gghqHMIIGbzCCBVegAwIBAgIQA4uW8HDZ4h5VpUJnkuHIOjANBgkqhkiG9w0B -->
 <!-- AQUFADBiMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYD -->
 <!-- VQQLExB3d3cuZGlnaWNlcnQuY29tMSEwHwYDVQQDExhEaWdpQ2VydCBBc3N1cmVk -->
 <!-- IElEIENBLTEwHhcNMTIwNDA0MDAwMDAwWhcNMTMwNDE4MDAwMDAwWjBHMQswCQYD -->
@@ -248,23 +297,23 @@
 <!-- ZGlnaWNlcnQuY29tMS4wLAYDVQQDEyVEaWdpQ2VydCBBc3N1cmVkIElEIENvZGUg -->
 <!-- U2lnbmluZyBDQS0xAhAKFT0IddbjKM4R9plQj7wRMAkGBSsOAwIaBQCgeDAYBgor -->
 <!-- BgEEAYI3AgEMMQowCKACgAChAoAAMBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEE -->
-<!-- MBwGCisGAQQBgjcCAQsxDjAMBgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBRd -->
-<!-- +R7rHpxYytZIaxX1EfH5ep2qQTANBgkqhkiG9w0BAQEFAASCAQBulQG+V0ee6cnO -->
-<!-- PSY1qI2YQ9XmnXV3oS7yBRedrhpWGEZA4z6QZies9SkWGBoBVaB+L3PxSqQFOL7d -->
-<!-- KyS5JS9BvOOmdCjGchKaWSmijzxBMQfV6DcXbZQB1ejuv5t1J6lVggzgS7cg7Xgv -->
-<!-- LkfmADgVgfoNtvne3/nJ0sTMMSqSh17SBqub9HmdcmuLuKr+vh2LwjIA1e4HuAI+ -->
-<!-- WFc+nuqes2MHeF8Es0NNi62f3Tg2rS/9iVSKapqUICcWgG/ElYDMksVMmxBYbUjk -->
-<!-- 1ksGFqAiDlaGsKm2BL//1Z9H0Kocmg2f1oJ0WoZLgju8Nz59symcLReVS+oA3OgH -->
-<!-- 9C1qmY73oYICDzCCAgsGCSqGSIb3DQEJBjGCAfwwggH4AgEBMHYwYjELMAkGA1UE -->
+<!-- MBwGCisGAQQBgjcCAQsxDjAMBgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBRx -->
+<!-- KYT6vq4D6/0j0AOuo0zmKyjAjjANBgkqhkiG9w0BAQEFAASCAQBRPnoCUG+2CVUP -->
+<!-- hhKhcFlN4X/3mHtaqtaTBtec24aRMgjnJQ50siiEcnARNVmvkUHV+X9eyHdqrwUT -->
+<!-- ZyvS3BFfcg8Zc+5A1je/Eh2egZD79xcwUpnleCXL7WuAn7ndAtJf6EkxTs6Lltij -->
+<!-- JEKzWSak6XvaghtTbXsTupyl2tJMjRe5XEpEOJwH7fPze32tmAlEy1j/iBFKgJq+ -->
+<!-- jWd9IT3pW07ID3lCIUyxbywzVTpj9rE492K5VjETGrj8E9laTgkEBg0nyqbye1cr -->
+<!-- ZBQfg2n4hf4y5A1w30AKjKXcxb3fsdxaZjPVmNCjtotoIMR1ZBahlkuA0RdaTqT9 -->
+<!-- Z/AUzx+JoYICDzCCAgsGCSqGSIb3DQEJBjGCAfwwggH4AgEBMHYwYjELMAkGA1UE -->
 <!-- BhMCVVMxFTATBgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UECxMQd3d3LmRpZ2lj -->
 <!-- ZXJ0LmNvbTEhMB8GA1UEAxMYRGlnaUNlcnQgQXNzdXJlZCBJRCBDQS0xAhADi5bw -->
 <!-- cNniHlWlQmeS4cg6MAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcN -->
-<!-- AQcBMBwGCSqGSIb3DQEJBTEPFw0xMjEwMjEwMTU1MjZaMCMGCSqGSIb3DQEJBDEW -->
-<!-- BBRpWHAHDymGlO9FN3kBpMUEnNtmLjANBgkqhkiG9w0BAQEFAASCAQAgYnoGrrjq -->
-<!-- C5EYRb06jZURIbFLiVlKVH883qhVAzm11AFV5N6xzmfbDWUIZo6tfrSFh1P37IQX -->
-<!-- JfLesybc215PEtxsEUVvxnoVl4rEHgyt1+w1reRkBthYFWxvh3C5SOqg2owg13kb -->
-<!-- VIBV+J+4AebDhAlfeZ23TqPoumAKqwutqpr/bqNC//NGIuQA7qHcl+lXIRV9Vqf4 -->
-<!-- Dq9bBL0jgdjirUPujaC+kAVsrarsJenSGXEyfuRm21/hYMMsgxzGBmiHr5hMVjUz -->
-<!-- F6TfSeT5to4vcknpZFJd23Pihlo2paNkjJU6hCOz4lhJiDP8DUuV1e/OCJ23Lxqd -->
-<!-- X7C3rJbYaiux -->
+<!-- AQcBMBwGCSqGSIb3DQEJBTEPFw0xMjEwMjEwMTU1MjlaMCMGCSqGSIb3DQEJBDEW -->
+<!-- BBRnsV79nHqHJVw8ZWN3dshyL0qpKDANBgkqhkiG9w0BAQEFAASCAQBaExPPQfik -->
+<!-- c62sDqzgjAtiue53R1Cxm69iFAiXAyK51a9CjQcnrHjfpIFvhVzOlLNGXf+gaQxs -->
+<!-- 6ux3M6Om465vdcaiuE2DbGWHl5pRnnbHkQb+HTLLGVl4O7gFVRFDDXcaO8y03J5Q -->
+<!-- R8B+XudNXfUlJUfyA3ZH+PlQxcGMRk2qoLhbB+HxUzaZcA7NQMMhOc4Xzz3WP0KL -->
+<!-- EkJVecLOmqnuf02jZezwkl99T5fdNzWly6uDi2USJH7x7jibhdou4gXRmC6+J9tL -->
+<!-- q1TV9MwjwiddBYkrebZNjIgxJe/bV62dKas3SQ3Lhn/9IQ4eTfE3xT2DhVAFXJiP -->
+<!-- a40RtdA6edx3 -->
 <!-- SIG # End signature block -->

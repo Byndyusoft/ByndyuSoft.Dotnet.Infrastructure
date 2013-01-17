@@ -1,50 +1,23 @@
 ﻿TOPIC
-    PowerShell Community Extensions (version 2.0.0.0)
+    PowerShell Community Extensions (version 2.1.0.0)
 
 SHORT DESCRIPTION
     Describes the Windows PowerShell Community Extensions (PSCX) module and 
     how to use the contained cmdlets and functions.
 
 LONG DESCRIPTION
-    PowerShell Community Extensions is a PowerShell module that provides a
-    number of widely useful cmdlets.  PSCX is not affiliated with Microsoft 
-    or the Windows PowerShell team at Microsoft.  We are a few (at the moment)
-    passionate PowerShell users who wanted more cmdlets than Microsoft was 
-    able to deliver in v1 and v2.  So we have taken it upon ourselves to
-    create some of those cmdlets and make them available to the community.
+    PowerShell Community Extensions is a Windows PowerShell module that 
+    provides a number of widely useful cmdlets.  PSCX is not affiliated with 
+    Microsoft or the Windows PowerShell team at Microsoft.  We are a few (at 
+    the moment) passionate PowerShell users who wanted more cmdlets than 
+    Microsoft was able to deliver built into Windows PowerShell.  So we have 
+    taken it upon ourselves to create some of those cmdlets and make them 
+    available to the community.
         
 POWERSHELL COMPATIBILITY
-    Since PSCX 2.0 is module based, it only works on Windows PowerShell 2.0.  
-    There are three PSCX cmdlets that override PowerShell 2.0 built-in cmdlets
-    with the same names. Those cmdlets are:
-    
-    Get-Random
-    Start-Process
-    Select-Xml
-    
-    These cmdlets are provided via the Pscx.Deprecated module.  If you have
-    scripts that require the PSCX version of these cmdlets then import
-    the Pscx.Deprecated module.  If you import this module, these three 
-    PSCX cmdlets will hide the built-in ones.  If you would prefer to use the 
-    built-in versions in certain places, you can access them as shown below:
-    
-    Microsoft.PowerShell.Utility\Get-Random
-    Microsoft.PowerShell.Management\Start-Process
-    Microsoft.PowerShell.Utility\Select-Xml
-    
-    In order to get the help topic for these built-in cmdlets, use the 
-    qualified name when accessing help e.g.:
-    
-    PS> Get-Help Microsoft.PowerShell.Utility\Select-Xml -Full
-    
-    Finally, there is an alias defined for the Start-Process by PowerShell.
-    Since the Pscx.Deprecated\Start-Process overrides the built-in 
-    Start-Process, the alias will now resolve to the 
-    Pscx.Deprecated\Start-Process. If you want to redirect the start alias
-    back to the built-in Start-Process cmdlet, execute the following:
-    
-    PS> Set-Alias start Microsoft.PowerShell.Management\Start-Process 
-        -Option AllScope
+    Since PSCX 2.1 is module based, it works only in Windows PowerShell 2.0 
+    and 3.0.  It doesn't work in Windows PowerShell 1.0.  If you need PSCX
+    for Windows PowerShell 1.0, please download and install PSCX 1.2.
     
 PREFERENCE VARIABLES
     Previous versions of PSCX used global variables to store preference 
@@ -107,8 +80,9 @@ PREFERENCE VARIABLES
                                       
 
 CMDLETS
-    To see what cmdlets are provided by PSCX, execute the alias "gcmpscx" at
-    the PowerShell prompt.  The current PSCX cmdlets are listed below:
+    To see what cmdlets are provided by PSCX, execute the command:
+    Get-Command -Module Pscx* -CommandType Cmdlet
+    The current PSCX cmdlets are listed below:
 
     Get-ADObject
         Search for objects in the Active Directory/Global Catalog. 
@@ -370,6 +344,8 @@ CMDLETS
     Remove-ReparsePoint
         Removes NTFS reparse junctions and symbolic links. 
         
+    Get-RunningObject
+        
     Test-Script
         Determines whether a PowerShell script has any syntax errors using the 
         PowerShell script tokenizer. 
@@ -495,6 +471,10 @@ PROVIDERS
         PSCX Provider: Provides access to the Internet Explorer 7 RSS feed store. 
         
 FUNCTIONS
+    To see what functions are provided by PSCX, execute the command:
+    Get-Command -Module Pscx* -CommandType Function
+    The current PSCX functions are listed below:
+
     Add-DirectoryLength
         Calculates the sizes of the specified directory and adds that size as a 
         "Length" NoteProperty to the input DirectoryInfo object. 
@@ -519,8 +499,9 @@ FUNCTIONS
         Creates the registry entries required to create Windows Explorer context 
         menu "Open PowerShell Here" for both Directories and Drives 
         
-    Get-Help
-        Displays information about Windows PowerShell commands and concepts. 
+    Get-ExecutionTime
+        Gets the execution time for the specified Id of a command in the current 
+        session history. 
         
     Get-Help
         Displays information about Windows PowerShell commands and concepts. 
@@ -528,8 +509,11 @@ FUNCTIONS
     Get-Help
         Displays information about Windows PowerShell commands and concepts. 
         
-    Get-PropertyValue (gpv)
-        Gets the specified property's value from each input object. 
+    Get-Help
+        Displays information about Windows PowerShell commands and concepts. 
+        
+    Get-Parameter (gpar)
+        Enumerates the parameters of one or more commands. 
         
     Get-ScreenCss
         Generate CSS header for HTML "screen shot" of the host buffer. 
@@ -539,6 +523,9 @@ FUNCTIONS
         
     Get-ViewDefinition
         Gets the possible alternate views for the specified object. 
+        
+    Import-VisualStudioVars
+        Imports environment variables for the specified version of Visual Studio. 
         
     Invoke-BatchFile
         Invokes the specified batch file and retains any environment variable 
@@ -553,24 +540,11 @@ FUNCTIONS
     Invoke-Method (call)
         Function to call a single method on an incoming stream of piped objects. 
         
-    Invoke-NullCoalescing (??)
-        Similar to the C# ?? operator e.g. name = value ?? String.Empty 
-        
-    Invoke-Reflector (rf)
-        Quickly load Reflector, with the specified Type or Command selected. 
-        
-    Invoke-Ternary (?:)
-        Similar to the C# ? : operator e.g. name = (value != null) ? String.Empty 
-        : value 
-        
     less
         Less provides better paging of output from cmdlets. 
         
     Mount-VHD
         Mounts a Virtual Hard Drive (VHD) file. 
-        
-    New-HashObject (nho)
-        Create a PSObject from a dictionary such as a hashtable. 
         
     Out-Speech
         Outputs text as spoken words. 
@@ -605,12 +579,16 @@ FUNCTIONS
     Show-Tree
         Shows the specified path as a tree. 
         
+    Start-PowerShell
+        Starts a new Windows PowerShell process. 
+        
     Stop-RemoteProcess
         Stops a process on a remote machine. 
         
 PSCX ALIASES
-    To see what aliases get created by PSCX, execute "Get-Command -type Alias -module Pscx*" at
-    the PowerShell prompt.  The current PSCX defined aliases are listed below:
+    To see what aliases get created by PSCX, execute the command:
+    Get-Command -Module Pscx* -CommandType Alias
+    The current PSCX defined aliases are listed below:
 
     ?:            : alias for Invoke-Ternary filter
     ??            : alias for Invoke-NullCoalescing filter
@@ -622,6 +600,7 @@ PSCX ALIASES
     fhex          : alias for Format-Hex cmdlet
     fxml          : alias for Format-Xml cmdlet
     gcb           : alias for Get-Clipboard cmdlet
+    gpar          : alias for Get-Parameter function
     gpv           : alias for Get-PropertyValue filter
     gtn           : alias for Get-TypeName cmdlet
     igc           : alias for Invoke-GC function
@@ -632,12 +611,10 @@ PSCX ALIASES
     ql            : alias for QuoteList function
     qs            : alias for QuoteString function
     Resize-Bitmap : alias for Set-BitmapSize cmdlet
-    rf            : alias for Invoke-Reflector function
     rver          : alias for Resolve-ErrorRecord function
     rvhr          : alias for Resolve-HResult function
     rvwer         : alias for Resolve-WindowsError function
     skip          : alias for Skip-Object cmdlet
-    sls           : alias for Select-String cmdlet
     sro           : alias for Set-ReadOnly function
     su            : alias for Invoke-Elevated function
     swr           : alias for Set-Writable function
@@ -738,28 +715,32 @@ CONTRIBUTING TO PSCX
        r_keith_hill@hotmail.com.
 
 CREDITS
-	This is a list of people and/or groups who have directly or indirectly
-	helped by offering significant suggestions, code or linkable binaries
-	without which PSCX would be a lesser product. In no particular order:
-	
-	Wintellect 
-	http://www.wintellect.com/
-	
-	Mike Krueger/John Reilly #ZipLib
-	http://www.icsharpcode.net/OpenSource/SharpZipLib/
-	
-	Igor Pavlov / 7-Zip
-	http://www.7-zip.org/ 
-	
-	The nUnit Team
-	http://www.nunit.org/
-	
-	Eugene Sichkar
-	http://www.nomad-net.info/
-	
-	Richard Deeming / Trinet.Core.IO.Ntfs
-	http://www.codeproject.com/KB/cs/ntfsstreams.aspx
-	
+    This is a list of people and/or groups who have directly or indirectly
+    helped by offering significant suggestions, code, certs or linkable 
+    binaries without which PSCX would be a lesser product. In alphabetical 
+    order:
+    
+    DigiCert for donating code signing certificates.
+    http://www.digicert.com
+
+    Eugene Sichkar / 7z Wrapper
+    http://www.nomad-net.info/
+    
+    Igor Pavlov / 7-Zip
+    http://www.7-zip.org/ 
+    
+    Mike Krueger/John Reilly #ZipLib
+    http://www.icsharpcode.net/OpenSource/SharpZipLib/
+    
+    Richard Deeming / Trinet.Core.IO.Ntfs
+    http://www.codeproject.com/KB/cs/ntfsstreams.aspx
+    
+    The nUnit Team
+    http://www.nunit.org/
+    
+    Wintellect for PowerCollections.dll
+    http://www.wintellect.com/
+    
 SEE ALSO
     For more information, most of the cmdlets have help associated with 
     them e.g.:

@@ -4,6 +4,7 @@ namespace MvcSample.Infrastructure.NHibernate
 	using System.Collections.Generic;
 	using System.Text.RegularExpressions;
 	using ByndyuSoft.Infrastructure.Domain;
+	using Domain.Entities;
 	using FluentNHibernate;
 	using FluentNHibernate.Automapping;
 
@@ -11,6 +12,7 @@ namespace MvcSample.Infrastructure.NHibernate
 	{
 		private readonly ICollection<Type> components = new HashSet<Type>
 		                                                	{
+                                                                typeof(Password)
 		                                                	};
 
 		private readonly ICollection<Type> types = new HashSet<Type>
