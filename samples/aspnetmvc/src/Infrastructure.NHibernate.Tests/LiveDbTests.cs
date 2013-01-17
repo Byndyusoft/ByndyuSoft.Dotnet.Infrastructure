@@ -10,7 +10,7 @@ namespace MvcSample.Infrastructure.NHibernate.Tests
     using global::NHibernate.Tool.hbm2ddl;
 
     [TestFixture]
-//    [Ignore("For ORM only")]
+    [Ignore("For ORM only")]
     public class LiveDbTests
     {
         private static Configuration CreateConfiguration()

@@ -6,8 +6,8 @@ namespace MvcSample.Domain.Entities
 
 	public class User : IEntity
 	{
-		[Obsolete("Only for NH")]
-		protected User()
+		[Obsolete("Only for NH", true)]
+		public User()
 		{
 		}
 
