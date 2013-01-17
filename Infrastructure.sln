@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Common", "source\Infrastructure.Common\Infrastructure.Common.csproj", "{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Domain", "source\Infrastructure.Domain\Infrastructure.Domain.csproj", "{3F945C22-DAFE-4E48-A790-51FC090901AC}"
