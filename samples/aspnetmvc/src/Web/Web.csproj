@@ -45,25 +45,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ByndyuSoft.Infrastructure.Common, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ByndyuSoft.Infrastructure.Common, Version=1.0.12.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Infrastructure.Common.1.0.10\lib\ByndyuSoft.Infrastructure.Common.dll</HintPath>
+      <HintPath>..\..\packages\Infrastructure.Common.1.0.12\lib\ByndyuSoft.Infrastructure.Common.dll</HintPath>
     </Reference>
-    <Reference Include="ByndyuSoft.Infrastructure.Domain, Version=1.0.11.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ByndyuSoft.Infrastructure.Domain, Version=1.0.12.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Infrastructure.Domain.1.0.11.1\lib\ByndyuSoft.Infrastructure.Domain.dll</HintPath>
+      <HintPath>..\..\packages\Infrastructure.Domain.1.0.12\lib\ByndyuSoft.Infrastructure.Domain.dll</HintPath>
     </Reference>
-    <Reference Include="ByndyuSoft.Infrastructure.NHibernate, Version=1.0.11.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ByndyuSoft.Infrastructure.NHibernate, Version=1.0.12.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Infrastructure.NHibernate.1.0.11.1\lib\ByndyuSoft.Infrastructure.NHibernate.dll</HintPath>
+      <HintPath>..\..\packages\Infrastructure.NHibernate.1.0.12\lib\ByndyuSoft.Infrastructure.NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="ByndyuSoft.Infrastructure.NHibernate.Conventions, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ByndyuSoft.Infrastructure.NHibernate.Conventions, Version=1.0.12.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Infrastructure.NHibernate.Conventions.1.0.10\lib\ByndyuSoft.Infrastructure.NHibernate.Conventions.dll</HintPath>
+      <HintPath>..\..\packages\Infrastructure.NHibernate.Conventions.1.0.12\lib\ByndyuSoft.Infrastructure.NHibernate.Conventions.dll</HintPath>
     </Reference>
-    <Reference Include="ByndyuSoft.Infrastructure.Web, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ByndyuSoft.Infrastructure.Web, Version=1.0.12.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Infrastructure.Web.1.0.10\lib\ByndyuSoft.Infrastructure.Web.dll</HintPath>
+      <HintPath>..\..\packages\Infrastructure.Web.1.0.12\lib\ByndyuSoft.Infrastructure.Web.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>

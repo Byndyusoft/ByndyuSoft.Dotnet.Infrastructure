@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using ByndyuSoft.Infrastructure.Domain;
+    using ByndyuSoft.Infrastructure.Domain.Criterion;
     using ByndyuSoft.Infrastructure.NHibernate;
     using Domain.Entities;
     using Web.Application;
