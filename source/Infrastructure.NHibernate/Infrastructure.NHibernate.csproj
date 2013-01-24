@@ -82,7 +82,8 @@
     </Compile>
     <Compile Include="INHibernateInitializer.cs" />
     <Compile Include="ISessionProvider.cs" />
-    <Compile Include="LinqQueryBase.cs" />
+    <Compile Include="LinqQueryBase`2.cs" />
+    <Compile Include="LinqQueryBase`3.cs" />
     <Compile Include="Mappings\BaseMap.cs" />
     <Compile Include="NHibernateLinqProvider.cs" />
     <Compile Include="Mappings\TreeNodeMap.cs" />
