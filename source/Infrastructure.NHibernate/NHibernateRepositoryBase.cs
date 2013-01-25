@@ -1,8 +1,11 @@
 ﻿namespace ByndyuSoft.Infrastructure.NHibernate
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Domain;
     using global::NHibernate;
+    using global::NHibernate.Linq;
 
     ///<summary>
     ///</summary>
@@ -30,7 +33,12 @@
             get { return _sessionProvider.CurrentSession; }
         }
 
-        #region IRepository<TEntity> Members
+        public virtual IEnumerable<TEntity> All()
+        {
+            return Session
+                .Query<TEntity>()
+                .ToArray();
+        }
 
         public virtual TEntity Get(int id)
         {
@@ -46,7 +54,5 @@
         {
             Session.Delete(entity);
         }
-
-        #endregion
     }
 }
