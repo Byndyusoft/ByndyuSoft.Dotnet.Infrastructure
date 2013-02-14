@@ -7,11 +7,11 @@
     public class FormControllerBase : ControllerBase
     {
         private const string ModelStateKey = "ModelState";
-        private readonly IFormHandlerFactory formHandlerFactory;
+        private readonly IFormHandlerFactory _formHandlerFactory;
 
         protected FormControllerBase(IFormHandlerFactory formHandlerFactory)
         {
-            this.formHandlerFactory = formHandlerFactory;
+            this._formHandlerFactory = formHandlerFactory;
         }
 
         protected  ActionResult Form<TForm>(TForm form, ActionResult sucessResult) where TForm : IForm
@@ -35,7 +35,7 @@
             {
                 try
                 {
-                    formHandlerFactory.Create<TForm>().Execute(form);
+                    _formHandlerFactory.Create<TForm>().Execute(form);
 
                     return successResult();
                 }

@@ -15,21 +15,7 @@
 		/// <typeparam name="TCriterion"></typeparam>
 		/// <returns></returns>
 		[CanBeNull]
-		T With<TCriterion>(TCriterion criterion) where TCriterion : ICriterion;
-
-		/// <summary>
-		/// Добавить критерий для поиска доменной сущности по идентификатору
-		/// </summary>
-		/// <param name="id">Идентификатор доменной сущности</param>
-		/// <returns>Возвращает найденную доменную сущность, либо null</returns>
-		[CanBeNull]
-		T ById(int id);
-
-        /// <summary>
-        /// Добавить критерий для поиска всех объектов данного типа
-        /// </summary>
-        /// <returns>Возвращает найденную доменную сущность, либо null</returns>
-	    [CanBeNull]
-	    T All();
+		T With<TCriterion>(TCriterion criterion) 
+            where TCriterion : ICriterion;
 	}
 }

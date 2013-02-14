@@ -3,6 +3,7 @@
     using System.Linq;
     using ByndyuSoft.Infrastructure.Domain;
     using ByndyuSoft.Infrastructure.Domain.Criterion;
+    using ByndyuSoft.Infrastructure.Domain.Extensions;
     using ByndyuSoft.Infrastructure.NHibernate;
     using ByndyuSoft.Infrastructure.NHibernate.Conventions;
     using ByndyuSoft.Infrastructure.NHibernate.Mappings;
@@ -19,7 +20,7 @@
             var test1 = new TestClass();
             var test2 = new TestClass();
 
-            using (ITransaction tx = Session.BeginTransaction())
+            using (var tx = Session.BeginTransaction())
             {
                 Session.Save(test1);
                 Session.Save(test2);
@@ -28,12 +29,12 @@
             Session.Flush();
             Session.Clear();
 
-            using (ITransaction tx = Session.BeginTransaction())
+            using (var tx = Session.BeginTransaction())
             {
                 ILinqProvider linqProvider = new StubLinqProvider(Session);
                 IQueryFactory queryFactory = new QueryFactoryStub(linqProvider);
 
-                IQueryable<TestClass> result = new QueryFor<IQueryable<TestClass>>(queryFactory).All();
+                var result = new QueryFor<IQueryable<TestClass>>(queryFactory).All();
 
                 Assert.AreEqual(2, result.Count());
             }
@@ -42,16 +43,16 @@
 
     public class QueryFactoryStub : IQueryFactory
     {
-        private readonly ILinqProvider linqProvider;
+        private readonly ILinqProvider _linqProvider;
 
         public QueryFactoryStub(ILinqProvider linqProvider)
         {
-            this.linqProvider = linqProvider;
+            _linqProvider = linqProvider;
         }
 
         public IQuery<TCriterion, TResult> Create<TCriterion, TResult>() where TCriterion : ICriterion
         {
-            return (IQuery<TCriterion, TResult>) new QueryStub(linqProvider);
+            return (IQuery<TCriterion, TResult>) new QueryStub(_linqProvider);
         }
     }
 
