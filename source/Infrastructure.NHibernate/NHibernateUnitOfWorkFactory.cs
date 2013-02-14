@@ -6,7 +6,6 @@
     using global::NHibernate;
 
     ///<summary>
-    /// 
     ///</summary>
     [PublicAPI]
     public class NHibernateUnitOfWorkFactory : IUnitOfWorkFactory

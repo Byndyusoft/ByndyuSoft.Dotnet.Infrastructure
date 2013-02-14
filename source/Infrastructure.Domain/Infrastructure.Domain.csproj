@@ -78,6 +78,7 @@
     <Compile Include="Criterion\AllEntities.cs" />
     <Compile Include="Criterion\FindById.cs" />
     <Compile Include="Extensions\QueryBuilderExtensions.cs" />
+    <Compile Include="IEntityComponent.cs" />
     <Compile Include="IQueryBuilder.cs" />
     <Compile Include="IQueryFactory.cs" />
     <Compile Include="IQuery.cs" />

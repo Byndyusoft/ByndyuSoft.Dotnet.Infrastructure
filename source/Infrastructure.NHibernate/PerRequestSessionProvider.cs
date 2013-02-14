@@ -1,83 +1,94 @@
-﻿using System;
-using NHibernate;
-
-namespace ByndyuSoft.Infrastructure.NHibernate
+﻿namespace ByndyuSoft.Infrastructure.NHibernate
 {
+    using System;
+    using global::NHibernate;
+    using JetBrains.Annotations;
+
     /// <summary>
-    /// Провайдер для сессии на запрос.
+    ///   Провайдер для сессии на запрос.
     /// </summary>
+    [PublicAPI]
     public class PerRequestSessionProvider : ISessionProvider, IDisposable
     {
-        private readonly ISessionFactory sessionFactory;
-        private bool disposed;
-        private bool preventCommit;
-        private ISession session;
-        private ITransaction transaction;
+        private readonly ISessionFactory _sessionFactory;
+        private bool _disposed;
+        private bool _preventCommit;
+        private ISession _session;
+        private ITransaction _transaction;
 
         /// <summary>
-        /// Конструктор
+        ///   Конструктор
         /// </summary>
-        /// <param name="sessionFactory"></param>
+        /// <param name="sessionFactory"> </param>
         /// <exception cref="ArgumentNullException"></exception>
         public PerRequestSessionProvider(ISessionFactory sessionFactory)
         {
             if (sessionFactory == null)
                 throw new ArgumentNullException("sessionFactory");
 
-            this.sessionFactory = sessionFactory;
+            _sessionFactory = sessionFactory;
         }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            if (_disposed)
+                return;
+
+            if (_session == null)
+                return;
+
+            try
+            {
+                if (_preventCommit)
+                    _transaction.Rollback();
+                else
+                    _transaction.Commit();
+            }
+            catch
+            {
+                _transaction.Rollback();
+                throw;
+            }
+            finally
+            {
+                _transaction.Dispose();
+            }
+
+            _session.Dispose();
+            _session = null;
+            _transaction = null;
+            _disposed = true;
+        }
+
+        #endregion
+
+        #region ISessionProvider Members
 
         public ISession CurrentSession
         {
             get
             {
-                if (disposed)
-                    throw new InvalidOperationException("Object already disposed. Probably container has wrong lifestyle type");
+                if (_disposed)
+                    throw new InvalidOperationException(
+                        "Object already disposed. Probably container has wrong lifestyle type");
 
-                if (session != null)
-                    return session;
+                if (_session != null)
+                    return _session;
 
-                session = sessionFactory.OpenSession();
-                transaction = session.BeginTransaction();
+                _session = _sessionFactory.OpenSession();
+                _transaction = _session.BeginTransaction();
 
-                return session;
+                return _session;
             }
         }
+
+        #endregion
 
         public void PreventCommit()
         {
-            preventCommit = true;
-        }
-
-        public void Dispose()
-        {
-            if (disposed)
-                return;
-
-            if (session == null)
-                return;
-
-            try
-            {
-                if (preventCommit)
-                    transaction.Rollback();
-                else
-                    transaction.Commit();
-            }
-            catch
-            {
-                transaction.Rollback();
-                throw;
-            }
-            finally
-            {
-                transaction.Dispose();
-            }
-
-            session.Dispose();
-            session = null;
-            transaction = null;
-            disposed = true;
+            _preventCommit = true;
         }
     }
 }

@@ -2,20 +2,30 @@ namespace ByndyuSoft.Infrastructure.NHibernate
 {
     using Domain;
     using global::NHibernate;
+    using JetBrains.Annotations;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TCriterion"></typeparam>
+    /// <typeparam name="TResult"></typeparam>
+    [PublicAPI]
     public abstract class SessionQueryBase<TCriterion, TResult> : IQuery<TCriterion, TResult>
         where TCriterion : ICriterion
     {
-        private readonly ISessionProvider sessionProvider;
+        private readonly ISessionProvider _sessionProvider;
 
         protected SessionQueryBase(ISessionProvider sessionProvider)
         {
-            this.sessionProvider = sessionProvider;
+            _sessionProvider = sessionProvider;
         }
 
-        public virtual ISession Session
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual ISession Session
         {
-            get { return sessionProvider.CurrentSession; }
+            get { return _sessionProvider.CurrentSession; }
         }
 
         public abstract TResult Ask(TCriterion criterion);

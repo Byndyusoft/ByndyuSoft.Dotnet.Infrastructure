@@ -1,31 +1,44 @@
-using System;
-using JetBrains.Annotations;
-using NHibernate;
-
 namespace ByndyuSoft.Infrastructure.NHibernate
 {
-	public class StaticSessionProvider : ISessionProvider
-	{
-		private readonly ISession session;
-		private readonly object lockObject = new object();
+    using System;
+    using JetBrains.Annotations;
+    using global::NHibernate;
 
-		public StaticSessionProvider([NotNull] ISession session)
-		{
-			if (session == null)
-				throw new ArgumentNullException("session");
+    /// <summary>
+    /// 
+    /// </summary>
+    [PublicAPI]
+    public class StaticSessionProvider : ISessionProvider
+    {
+        private readonly object _lockObject = new object();
+        private readonly ISession _session;
 
-			this.session = session;
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="session"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public StaticSessionProvider([NotNull] ISession session)
+        {
+            if (session == null)
+                throw new ArgumentNullException("session");
 
-		public ISession CurrentSession
-		{
-			get
-			{
-				lock (lockObject)
-				{
-					return session;
-				}
-			}
-		}
-	}
+            _session = session;
+        }
+
+        #region ISessionProvider Members
+
+        public ISession CurrentSession
+        {
+            get
+            {
+                lock (_lockObject)
+                {
+                    return _session;
+                }
+            }
+        }
+
+        #endregion
+    }
 }

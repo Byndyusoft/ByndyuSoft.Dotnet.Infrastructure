@@ -33,6 +33,8 @@
             get { return _sessionProvider.CurrentSession; }
         }
 
+        #region IRepository<TEntity> Members
+
         public virtual IEnumerable<TEntity> All()
         {
             return Session
@@ -54,5 +56,7 @@
         {
             Session.Delete(entity);
         }
+
+        #endregion
     }
 }
