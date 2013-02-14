@@ -1,17 +1,17 @@
-ByndyuSoft.Infrastructure
-=========================
+## ByndyuSoft.Infrastructure
+
+### Description
 
 Infrastructure for regular .NET projects
 
-NuGet
-=========================
+### Contents
 
-Infrastructure.Common https://nuget.org/packages/Infrastructure.Common
+* Infrastructure.Common [nuget](https://nuget.org/packages/Infrastructure.Common) 
+* Infrastructure.Domain [nuget](https://nuget.org/packages/Infrastructure.Domain)
+* Infrastructure.NHibernate [nuget](https://nuget.org/packages/Infrastructure.NHibernate)
+* Infrastructure.Web [nuget](https://nuget.org/packages/Infrastructure.Web)
+* Infrastructure.NHibernate.Conventions [nuget](https://nuget.org/packages/Infrastructure.NHibernate.Conventions)
 
-Infrastructure.Domain https://nuget.org/packages/Infrastructure.Domain
+### Changelog 
 
-Infrastructure.NHibernate https://nuget.org/packages/Infrastructure.NHibernate
-
-Infrastructure.Web https://nuget.org/packages/Infrastructure.Web
-
-Infrastructure.NHibernate.Conventions https://nuget.org/packages/Infrastructure.NHibernate.Conventions
+For now changelog available only in [russian](https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure/blob/master/CHANGELOG.ru.md)

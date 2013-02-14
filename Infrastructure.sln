@@ -25,6 +25,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Web.Tests", "source\Infrastructure.Web.Tests\Infrastructure.Web.Tests.csproj", "{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D78331E-9D7F-41B1-A36A-DEFB2F5D5D64}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.ru.md = CHANGELOG.ru.md
+		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{FEA7E0FE-CDB6-4D64-8F78-952A37E8B960}"
 EndProject

@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("ru-RU")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("1.0.12.1")]
-[assembly: AssemblyFileVersion("1.0.12.1")]
+[assembly: AssemblyVersion("1.0.13.1")]
+[assembly: AssemblyFileVersion("1.0.13.1")]
