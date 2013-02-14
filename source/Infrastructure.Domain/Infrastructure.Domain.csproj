@@ -92,6 +92,8 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryFor.cs" />
+    <Compile Include="Sorting\SortOrder.cs" />
+    <Compile Include="Sorting\SortOrderExtensions.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="IUnitOfWorkFactory.cs" />

@@ -1,5 +1,8 @@
 namespace ByndyuSoft.Infrastructure.Common.Extensions
 {
+    using JetBrains.Annotations;
+
+    [PublicAPI]
 	public static class RussianLanguageExtensions
 	{
 		/// <summary>
