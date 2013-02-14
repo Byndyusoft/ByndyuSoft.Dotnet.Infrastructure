@@ -1,8 +1,6 @@
 ﻿namespace ByndyuSoft.Infrastructure.Domain
 {
-	using Criterion;
-
-	/// <summary>
+    /// <summary>
 	/// Стандартная реализация <see cref="IQueryFor{T}"/>
 	/// </summary>
 	/// <typeparam name="TResult">Результат возвращаемый запросом</typeparam>

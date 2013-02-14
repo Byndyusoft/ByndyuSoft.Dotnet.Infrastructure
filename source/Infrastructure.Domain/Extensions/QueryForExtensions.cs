@@ -1,6 +1,6 @@
 ﻿namespace ByndyuSoft.Infrastructure.Domain.Extensions
 {
-    using Criterion;
+    using Criteria;
     using JetBrains.Annotations;
 
     /// <summary>

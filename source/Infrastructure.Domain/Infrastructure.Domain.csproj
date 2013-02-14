@@ -75,8 +75,9 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Criterion\AllEntities.cs" />
-    <Compile Include="Criterion\FindById.cs" />
+    <Compile Include="Comparers\EntityEqualityComparer`1.cs" />
+    <Compile Include="Criteria\AllEntities.cs" />
+    <Compile Include="Criteria\FindById.cs" />
     <Compile Include="Extensions\QueryBuilderExtensions.cs" />
     <Compile Include="Extensions\QueryForExtensions.cs" />
     <Compile Include="IEntityComponent.cs" />

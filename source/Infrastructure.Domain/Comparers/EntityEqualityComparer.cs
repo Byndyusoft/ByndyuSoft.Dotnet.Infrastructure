@@ -1,42 +1,28 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace ByndyuSoft.Infrastructure.Domain.Comparers
+﻿namespace ByndyuSoft.Infrastructure.Domain.Comparers
 {
-	public class EntityEqualityComparer : IEqualityComparer
-	{
-		public new bool Equals(object x, object y)
-		{
-			if (x == null || y == null)
-				return false;
+    using System.Collections;
+    using JetBrains.Annotations;
 
-			if (x is IEntity && y is IEntity)
-				return ((IEntity)x).Id == ((IEntity)y).Id;
+    /// <summary>
+    /// 
+    /// </summary>
+    [PublicAPI]
+    public class EntityEqualityComparer : IEqualityComparer
+    {
+        public new bool Equals(object x, object y)
+        {
+            if (x == null || y == null)
+                return false;
 
-			return x.Equals(y);
-		}
+            if (x is IEntity && y is IEntity)
+                return ((IEntity) x).Id == ((IEntity) y).Id;
 
-		public int GetHashCode(object obj)
-		{
-			throw new NotImplementedException();
-		}
-	}
+            return x.Equals(y);
+        }
 
-	public class EntityEqualityComparer<TEntity> : IEqualityComparer<TEntity>
-		where TEntity : class, IEntity
-	{
-		public bool Equals(TEntity x, TEntity y)
-		{
-			if (x == null || y == null)
-				return false;
-
-			return x.Id == y.Id;
-		}
-
-		public int GetHashCode(TEntity obj)
-		{
-			return obj.Id.GetHashCode();
-		}
-	}
+        public int GetHashCode(object obj)
+        {
+            return ((IEntity) obj).Id.GetHashCode();
+        }
+    }
 }

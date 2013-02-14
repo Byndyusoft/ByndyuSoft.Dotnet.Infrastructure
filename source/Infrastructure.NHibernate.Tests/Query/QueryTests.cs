@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using ByndyuSoft.Infrastructure.Domain;
-    using ByndyuSoft.Infrastructure.Domain.Criterion;
+    using ByndyuSoft.Infrastructure.Domain.Criteria;
     using ByndyuSoft.Infrastructure.Domain.Extensions;
     using ByndyuSoft.Infrastructure.NHibernate;
     using ByndyuSoft.Infrastructure.NHibernate.Conventions;
