@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Infrastructure.Common</id>
+    <id>Infrastructure.Domain</id>
     <version>$version$</version>
-    <title>ByndyuSoft.Infrastructure.Common</title>
+    <title>ByndyuSoft.Infrastructure.Domain</title>
     <authors>Александр Бындю, eskat0n</authors>
     <owners>alexanderbyndyu</owners>
     <projectUrl>https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Infrastructure.Common</description>
+    <description>Infrastructure.Domain</description>
     <dependencies>
       <dependency id="JetBrains.Annotations" version="7.0" />
+      <dependency id="Iesi.Collections" version="3.3.1.4000" />
     </dependencies>
-    <tags>byndyusoft boilerplate infrastructure</tags>
   </metadata>
 </package>
