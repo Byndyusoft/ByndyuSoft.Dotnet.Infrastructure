@@ -99,6 +99,7 @@
     <Compile Include="IUnitOfWorkFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Infrastructure.Domain.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
