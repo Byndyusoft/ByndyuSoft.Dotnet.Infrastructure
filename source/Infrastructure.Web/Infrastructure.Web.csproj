@@ -119,6 +119,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Infrastructure.Web.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
