@@ -75,6 +75,7 @@
     <Compile Include="EntityMapConvention.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Infrastructure.NHibernate.Conventions.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

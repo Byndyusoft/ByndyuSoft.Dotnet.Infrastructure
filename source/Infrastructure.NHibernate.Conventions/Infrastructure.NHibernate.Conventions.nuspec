@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Infrastructure.NHibernate.Conventions</id>
+    <version>$version$</version>
+    <title>ByndyuSoft.Infrastructure.NHibernate.Conventions</title>
+    <authors>Александр Бындю, eskat0n</authors>
+    <owners>alexanderbyndyu</owners>
+    <projectUrl>https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Infrastructure.NHibernate.Conventions</description>
+    <dependencies>
+      <dependency id="Iesi.Collections" version="3.3.1.4000" />
+      <dependency id="NHibernate" version="3.3.1.4000" />
+      <dependency id="FluentNHibernate" version="1.3.0.733" />
+      <dependency id="JetBrains.Annotations" version="7.0" />
+    </dependencies>
+    <tags>nhibernate dataaccesslevel dal byndyusoft boilerplate infrastructure conventions fluentnhibernate</tags>
+  </metadata>
+</package>
