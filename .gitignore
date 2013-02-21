@@ -7,6 +7,7 @@ build
 packages
 !samples/*/build
 _ReSharper*
+MvcSample.sln.DotSettings
 
 # mstest test results
 TestResults

@@ -1,7 +1,7 @@
 ﻿namespace MvcSample.Infrastructure.NHibernate.Queries.User
 {
     using System.Linq;
-    using ByndyuSoft.Infrastructure.Domain.Criterion;
+    using ByndyuSoft.Infrastructure.Domain.Criteria;
     using ByndyuSoft.Infrastructure.NHibernate;
     using Domain.Entities;
     using global::NHibernate.Linq;

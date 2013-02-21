@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ByndyuSoft.Infrastructure.Domain, Version=1.0.12.1, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ByndyuSoft.Infrastructure.Domain, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Infrastructure.Domain.1.0.12\lib\ByndyuSoft.Infrastructure.Domain.dll</HintPath>
+      <HintPath>..\..\packages\Infrastructure.Domain.1.0.13.0\lib\net40\ByndyuSoft.Infrastructure.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
