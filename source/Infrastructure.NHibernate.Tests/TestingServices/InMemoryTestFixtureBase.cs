@@ -9,34 +9,34 @@
     using global::NHibernate.Tool.hbm2ddl;
 
     public abstract class InMemoryTestFixtureBase<TMapping, TConvention>
-		where TMapping : class, IMappingProvider
-		where TConvention : class
-	{
-		protected ISession Session;
+        where TMapping : class, IMappingProvider
+        where TConvention : class
+    {
+        protected ISession Session;
 
-		protected InMemoryTestFixtureBase()
-		{
-			TestFixtureSetup();
-		}
+        protected InMemoryTestFixtureBase()
+        {
+            TestFixtureSetup();
+        }
 
-		private void TestFixtureSetup()
-		{
-			Action<MappingConfiguration> mappings = (m => m.FluentMappings
-															.AddFromAssemblyOf<TMapping>()
-															.Conventions.AddFromAssemblyOf<TConvention>()
-															.ExportTo(Path.GetTempPath()));
+        private void TestFixtureSetup()
+        {
+            Action<MappingConfiguration> mappings = (m => m.FluentMappings
+                                                           .AddFromAssemblyOf<TMapping>()
+                                                           .Conventions.AddFromAssemblyOf<TConvention>()
+                                                           .ExportTo(Path.GetTempPath()));
 
-			Configuration configuration = new InMemorySQLiteInitializer(mappings)
-				.GetConfiguration();
+            Configuration configuration = new InMemorySQLiteInitializer(mappings)
+                .GetConfiguration();
 
-			Session = configuration.BuildSessionFactory().OpenSession();
+            Session = configuration.BuildSessionFactory().OpenSession();
 
-			BuildSchema(configuration, Session);
-		}
+            BuildSchema(configuration, Session);
+        }
 
-		private static void BuildSchema(Configuration configuration, ISession session)
-		{
-			new SchemaExport(configuration).Execute(true, true, false, session.Connection, null);
-		}
-	}
+        private static void BuildSchema(Configuration configuration, ISession session)
+        {
+            new SchemaExport(configuration).Execute(true, true, false, session.Connection, null);
+        }
+    }
 }

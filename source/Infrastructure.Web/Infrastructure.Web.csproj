@@ -120,7 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Infrastructure.Web.nuspec" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\LocalizedStrings.en-GB.resx" />
