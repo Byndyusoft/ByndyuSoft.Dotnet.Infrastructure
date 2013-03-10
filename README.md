@@ -11,6 +11,7 @@ Infrastructure for regular .NET projects
 * Infrastructure.NHibernate [nuget](https://nuget.org/packages/Infrastructure.NHibernate)
 * Infrastructure.Web [nuget](https://nuget.org/packages/Infrastructure.Web)
 * Infrastructure.NHibernate.Conventions [nuget](https://nuget.org/packages/Infrastructure.NHibernate.Conventions)
+* Infrastructure.Dapper [nuget](https://nuget.org/packages/Infrastructure.Dapper)
 
 ### Changelog 
 
