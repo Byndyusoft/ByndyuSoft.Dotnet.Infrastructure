@@ -1,11 +1,12 @@
 ﻿namespace ByndyuSoft.Infrastructure.Dapper
 {
+    using System;
     using System.Data;
 
     /// <summary>
     /// 
     /// </summary>
-    public interface IConnectionProvider
+    public interface IConnectionProvider: IDisposable
     {
         /// <summary>
         /// 

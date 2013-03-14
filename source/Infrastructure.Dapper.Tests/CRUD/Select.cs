@@ -1,51 +1,35 @@
 namespace Infrastructure.Dapper.Tests.CRUD
 {
-    using System.Collections.Generic;
-    using System.Data;
     using System.Linq;
-    using ByndyuSoft.Infrastructure.Dapper;
+
     using Dto;
+
     using NUnit.Framework;
-    using QueryObject;
 
     public class Select : InMemoryTestFixtureBase
     {
         [Test]
         public void SelectProductDtoById()
         {
-            using (IDbConnection dbConnection = new SqliteConnectionFactory().Create())
-            {
-                var product1 = new ProductDto {Name = "Product #1"};
-                dbConnection.Execute(new InsertProduct().Query(product1));
+            var product = new Product { Name = "Product #1" };
+            DapperRepository.Add(product);
 
-                QueryObject byId = new SelectProduct().ById(1);
-                ProductDto productDto = dbConnection.Query<ProductDto>(byId).SingleOrDefault();
+            var actualProduct = DapperRepository.Get(product.Id);
 
-                Assert.AreEqual(1, productDto.Id);
-                Assert.AreEqual("Product #1", productDto.Name);
-            }
+            Assert.AreEqual(1, actualProduct.Id);
+            Assert.AreEqual("Product #1", actualProduct.Name);
         }
 
         [Test]
         public void SelectAllProductsDto()
         {
-            using (IDbConnection dbConnection = new SqliteConnectionFactory().Create())
-            {
-                var product1 = new ProductDto {Name = "Product #1"};
-                dbConnection.Execute(new InsertProduct().Query(product1));
+            DapperRepository.Add(new Product { Name = "Product #1" });
+            DapperRepository.Add(new Product { Name = "Product #2" });
+            DapperRepository.Add(new Product { Name = "Product #3" });
 
-                var product2 = new ProductDto {Name = "Product #2"};
-                dbConnection.Execute(new InsertProduct().Query(product2));
+            var products = DapperRepository.All();
 
-                var product3 = new ProductDto {Name = "Product #3"};
-                dbConnection.Execute(new InsertProduct().Query(product3));
-
-                QueryObject all = new SelectProduct().All();
-
-                IEnumerable<ProductDto> productDtos = dbConnection.Query<ProductDto>(all);
-
-                Assert.AreEqual(3, productDtos.Count());
-            }
+            Assert.AreEqual(3, products.Count());
         }
     }
 }
