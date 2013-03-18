@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Dapper", "so
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Dapper.Tests", "source\Infrastructure.Dapper.Tests\Infrastructure.Dapper.Tests.csproj", "{9F8F23E9-6682-4C5B-862C-43D654DE19A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Raven", "source\Infrastructure.Raven\Infrastructure.Raven.csproj", "{BC707465-E44A-42CC-9F2C-B30D34A74746}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.RavenDB", "source\Infrastructure.Raven\Infrastructure.RavenDB.csproj", "{BC707465-E44A-42CC-9F2C-B30D34A74746}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
