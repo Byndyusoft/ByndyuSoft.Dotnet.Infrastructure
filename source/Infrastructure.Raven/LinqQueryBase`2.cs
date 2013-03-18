@@ -1,8 +1,8 @@
-namespace ByndyuSoft.Infrastructure.Raven
+namespace ByndyuSoft.Infrastructure.Raven.DB
 {
-    using Domain;    
-    using global::Raven.Client.Linq;
+    using Domain;
     using JetBrains.Annotations;
+    using global::Raven.Client.Linq;
 
     [PublicAPI]
     public abstract class LinqQueryBase<TCriterion, TResult> : IQuery<TCriterion, TResult>
@@ -10,15 +10,15 @@ namespace ByndyuSoft.Infrastructure.Raven
     {
         public IRavenSessionFactory SessionFactory { get; set; }
 
+        public abstract TResult Ask(TCriterion criterion);
+
         [PublicAPI]
-        [NotNull]        
+        [NotNull]
         protected IRavenQueryable<TEntity> Query<TEntity>()
             where TEntity : class
         {
             return SessionFactory.OpenSession()
-                .Query<TEntity>();
+                                 .Query<TEntity>();
         }
-
-        public abstract TResult Ask(TCriterion criterion);
     }
 }

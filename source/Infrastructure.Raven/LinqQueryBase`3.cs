@@ -1,9 +1,9 @@
-using ByndyuSoft.Infrastructure.Domain;
-using JetBrains.Annotations;
-using Raven.Client.Linq;
-
 namespace ByndyuSoft.Infrastructure.Raven.DB
 {
+    using Domain;
+    using JetBrains.Annotations;
+    using global::Raven.Client.Linq;
+
     [PublicAPI]
     public abstract class LinqQueryBase<TEntity, TCriterion, TResult> : IQuery<TCriterion, TResult>
         where TEntity : class
@@ -18,7 +18,7 @@ namespace ByndyuSoft.Infrastructure.Raven.DB
             get
             {
                 return SessionFactory.OpenSession()
-                    .Query<TEntity>();
+                                     .Query<TEntity>();
             }
         }
 

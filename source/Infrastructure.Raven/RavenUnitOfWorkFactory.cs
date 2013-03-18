@@ -1,9 +1,9 @@
-using System.Data;
-using ByndyuSoft.Infrastructure.Domain;
-using JetBrains.Annotations;
-
 namespace ByndyuSoft.Infrastructure.Raven.DB
 {
+    using System.Data;
+    using Domain;
+    using JetBrains.Annotations;
+
     [PublicAPI]
     public class RavenUnitOfWorkFactory : IUnitOfWorkFactory
     {

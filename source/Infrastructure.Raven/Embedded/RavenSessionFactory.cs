@@ -1,9 +1,9 @@
-using JetBrains.Annotations;
-using Raven.Client;
-using Raven.Client.Embedded;
-
 namespace ByndyuSoft.Infrastructure.Raven.DB.Embedded
 {
+    using JetBrains.Annotations;
+    using global::Raven.Client;
+    using global::Raven.Client.Embedded;
+
     [UsedImplicitly]
     public class RavenSessionFactory : IRavenSessionFactory
     {
