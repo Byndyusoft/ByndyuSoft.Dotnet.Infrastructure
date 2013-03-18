@@ -1,9 +1,9 @@
-namespace ByndyuSoft.Infrastructure.Raven
-{
-    using Domain;
-    using global::Raven.Client;
-    using JetBrains.Annotations;
+using ByndyuSoft.Infrastructure.Domain;
+using Raven.Client;
+using JetBrains.Annotations;
 
+namespace ByndyuSoft.Infrastructure.Raven.DB
+{
     [PublicAPI]
     public abstract class SessionQueryBase<TCriterion, TResult> : IQuery<TCriterion, TResult>
         where TCriterion : ICriterion

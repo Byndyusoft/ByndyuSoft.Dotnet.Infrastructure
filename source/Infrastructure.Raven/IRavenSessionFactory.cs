@@ -1,7 +1,7 @@
-namespace ByndyuSoft.Infrastructure.Raven
-{
-    using global::Raven.Client;
+using Raven.Client;
 
+namespace ByndyuSoft.Infrastructure.Raven.DB
+{
     public interface IRavenSessionFactory
     {
         IDocumentSession OpenSession();

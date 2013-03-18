@@ -1,9 +1,9 @@
-namespace ByndyuSoft.Infrastructure.Raven
-{
-    using Domain;
-    using JetBrains.Annotations;
-    using global::Raven.Client.Linq;
+using ByndyuSoft.Infrastructure.Domain;
+using JetBrains.Annotations;
+using Raven.Client.Linq;
 
+namespace ByndyuSoft.Infrastructure.Raven.DB
+{
     [PublicAPI]
     public abstract class LinqQueryBase<TEntity, TCriterion, TResult> : IQuery<TCriterion, TResult>
         where TEntity : class

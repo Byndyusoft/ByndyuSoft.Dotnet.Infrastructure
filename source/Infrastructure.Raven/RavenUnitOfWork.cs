@@ -1,9 +1,9 @@
-﻿namespace ByndyuSoft.Infrastructure.Raven
-{
-    using System;
-    using Domain;
-    using global::Raven.Client;
+﻿using System;
+using ByndyuSoft.Infrastructure.Domain;
+using Raven.Client;
 
+namespace ByndyuSoft.Infrastructure.Raven.DB
+{
     public class RavenUnitOfWork : IUnitOfWork
     {
         private readonly IDocumentSession _session;
