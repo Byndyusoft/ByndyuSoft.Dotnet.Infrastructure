@@ -43,6 +43,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Dapper", "so
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Dapper.Tests", "source\Infrastructure.Dapper.Tests\Infrastructure.Dapper.Tests.csproj", "{9F8F23E9-6682-4C5B-862C-43D654DE19A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuspec", ".nuspec", "{67E3AAAC-236D-4145-A8E0-00A1A333C4F4}"
+	ProjectSection(SolutionItems) = preProject
+		source\Infrastructure.Common\Infrastructure.Common.nuspec = source\Infrastructure.Common\Infrastructure.Common.nuspec
+		source\Infrastructure.Dapper\Infrastructure.Dapper.nuspec = source\Infrastructure.Dapper\Infrastructure.Dapper.nuspec
+		source\Infrastructure.Domain\Infrastructure.Domain.nuspec = source\Infrastructure.Domain\Infrastructure.Domain.nuspec
+		source\Infrastructure.NHibernate.Conventions\Infrastructure.NHibernate.Conventions.nuspec = source\Infrastructure.NHibernate.Conventions\Infrastructure.NHibernate.Conventions.nuspec
+		source\Infrastructure.NHibernate\Infrastructure.NHibernate.nuspec = source\Infrastructure.NHibernate\Infrastructure.NHibernate.nuspec
+		source\Infrastructure.Web\Infrastructure.Web.nuspec = source\Infrastructure.Web\Infrastructure.Web.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
