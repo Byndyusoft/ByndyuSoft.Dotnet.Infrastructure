@@ -63,6 +63,7 @@
     <Compile Include="RavenUnitOfWorkFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Infrastructure.RavenDB.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
