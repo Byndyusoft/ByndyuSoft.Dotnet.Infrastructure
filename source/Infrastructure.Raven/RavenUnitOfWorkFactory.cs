@@ -16,7 +16,7 @@ namespace ByndyuSoft.Infrastructure.Raven.DB
 
         public IUnitOfWork Create(IsolationLevel isolationLevel)
         {
-            return new RavenUnitOfWork(_sessionFactory.OpenSession());
+            return Create();
         }
 
         public IUnitOfWork Create()
