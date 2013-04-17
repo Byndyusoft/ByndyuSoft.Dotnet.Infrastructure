@@ -5,9 +5,7 @@ obj
 *.user
 build
 packages
+tests
 !samples/*/build
 _ReSharper*
 MvcSample.sln.DotSettings
-
-# mstest test results
-TestResults
