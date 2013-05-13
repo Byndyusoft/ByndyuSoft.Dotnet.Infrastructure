@@ -3,16 +3,15 @@
     using System;
     using System.Data;
 
-    using ByndyuSoft.Infrastructure.Common;
-
     /// <summary>
     /// 
     /// </summary>
-    public class DefaultDapperConnectionProvider : Disposable, IConnectionProvider
+    public class DefaultDapperConnectionProvider : IConnectionProvider
     {
-        private readonly IConnectionFactory connectionFactory;
-        private IDbConnection connection;
-        private IDbTransaction transaction;
+        private readonly IConnectionFactory _connectionFactory;
+        private IDbConnection _connection;
+        private IDbTransaction _transaction;
+        private bool _disposed;
 
         /// <summary>
         /// 
@@ -22,47 +21,59 @@
         public DefaultDapperConnectionProvider(IConnectionFactory connectionFactory)
         {
             if (connectionFactory == null)
+            {
                 throw new ArgumentNullException("connectionFactory");
+            }
 
-            this.connectionFactory = connectionFactory;
+            _connectionFactory = connectionFactory;
         }
 
         public IDbConnection CurrentConnection
         {
             get
             {
-                if (connection != null)
-                    return connection;
+                if (_connection != null)
+                {
+                    return _connection;
+                }
 
-                connection = connectionFactory.Create();
-                transaction = connection.BeginTransaction();
+                _connection = _connectionFactory.Create();
+                _transaction = _connection.BeginTransaction();
 
-                return connection;
+                return _connection;
             }
         }
 
-        protected override void DisposeCore()
+        public void Dispose()
         {
-            if (connection == null)
+            if (_disposed)
+            {
                 return;
+            }
+
+            if (_connection == null)
+            {
+                return;
+            }
 
             try
             {
-                transaction.Commit();
+                _transaction.Commit();
             }
             catch
             {
-                transaction.Rollback();
+                _transaction.Rollback();
                 throw;
             }
             finally
             {
-                transaction.Dispose();
+                _transaction.Dispose();
             }
 
-            connection.Dispose();
-            connection = null;
-            transaction = null;
+            _connection.Dispose();
+            _connection = null;
+            _transaction = null;
+            _disposed = true;
         }
     }
 }

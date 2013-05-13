@@ -1,27 +1,33 @@
 ﻿namespace Infrastructure.Dapper.Tests.QueryObject
 {
     using ByndyuSoft.Infrastructure.Dapper;
-    using ByndyuSoft.Infrastructure.Dapper.Criteria;
-    using ByndyuSoft.Infrastructure.Domain;
+    using ByndyuSoft.Infrastructure.Domain.Criteria;
 
-    public class DeleteAllProductsQuery : DbConnectionQueryBase<RemoveEntity, bool>
+    using Infrastructure.Dapper.Tests.Dto;
+
+    public class DeleteProductQuery : DbConnectionQueryBase<DeleteEntity<Product>, bool>
     {
-        public DeleteAllProductsQuery(IConnectionProvider connectionProvider)
+        public DeleteProductQuery(IConnectionProvider connectionProvider)
             : base(connectionProvider)
         {
         }
 
-        public override bool Ask(RemoveEntity criterion)
+        public override bool Ask(DeleteEntity<Product> criterion)
         {
-            return Connection.Execute(new DeleteProduct()) > 0;
+            return Connection.Execute(new DeleteProduct().ById(criterion.Entity.Id)) > 0;
         }
     }
 
-    public class DeleteProduct : QueryObject, ICriterion
+    public class DeleteProduct
     {
-        public DeleteProduct()
-            : base(@"delete from Product")
+        public QueryObject All()
         {
+            return new QueryObject("delete from Product");
+        }
+
+        public QueryObject ById(int productId)
+        {
+            return new QueryObject("delete from Product where Product.Product_Id = @Id", new { Id = productId });
         }
     }
 }

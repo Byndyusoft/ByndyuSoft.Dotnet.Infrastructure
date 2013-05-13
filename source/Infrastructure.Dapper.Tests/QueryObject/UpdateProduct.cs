@@ -1,28 +1,29 @@
 ﻿namespace Infrastructure.Dapper.Tests.QueryObject
 {
     using ByndyuSoft.Infrastructure.Dapper;
-    using ByndyuSoft.Infrastructure.Dapper.Criteria;
+    using ByndyuSoft.Infrastructure.Domain.Criteria;
+
+    using Infrastructure.Dapper.Tests.Dto;
 
     public class UpdateProduct
     {
-        public QueryObject NameForCurrentProduct(object entity)
+        public QueryObject NameForAllProducts(string newName)
         {
             return new QueryObject(@"update Product
-                                     set Name = @Name 
-                                     where Product_Id = @Id", entity);
+                                     set Name = @Name", new { Name = newName });
         }
     }
 
-    public class UpdateProductNameQuery : DbConnectionQueryBase<UpdateEntity, bool>
+    public class UpdateNameForAllProductsQuery : DbConnectionQueryBase<UpdateEntity<Product>, bool>
     {
-        public UpdateProductNameQuery(IConnectionProvider connectionProvider)
+        public UpdateNameForAllProductsQuery(IConnectionProvider connectionProvider)
             : base(connectionProvider)
         {
         }
 
-        public override bool Ask(UpdateEntity criterion)
+        public override bool Ask(UpdateEntity<Product> criterion)
         {
-            return Connection.Execute(new UpdateProduct().NameForCurrentProduct(criterion.QueryParams)) > 0;
+            return Connection.Execute(new UpdateProduct().NameForAllProducts(criterion.Entity.Name)) > 0;
         }
     }
 }

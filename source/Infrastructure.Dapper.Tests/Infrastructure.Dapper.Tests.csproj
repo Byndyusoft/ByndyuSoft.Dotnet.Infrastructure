@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUD\Delete.cs" />
     <Compile Include="Dto\Product.cs" />
     <Compile Include="CRUD\Fetch.cs" />
     <Compile Include="CRUD\Insert.cs" />

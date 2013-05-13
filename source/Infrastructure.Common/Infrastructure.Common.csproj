@@ -78,7 +78,6 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Check.cs" />
-    <Compile Include="Disposable.cs" />
     <Compile Include="EncodedStringWriter.cs" />
     <Compile Include="Extensions\Base64Extensions.cs" />
     <Compile Include="Extensions\CustomAttributeProviderExtensions.cs" />

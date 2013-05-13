@@ -1,11 +1,8 @@
 ﻿namespace Infrastructure.Dapper.Tests
 {
-    using System;
     using System.Collections.Generic;
-    using System.Data;
 
     using ByndyuSoft.Infrastructure.Dapper;
-    using ByndyuSoft.Infrastructure.Dapper.Criteria;
     using ByndyuSoft.Infrastructure.Domain;
     using ByndyuSoft.Infrastructure.Domain.Criteria;
 
@@ -18,25 +15,23 @@
     public class InMemoryTestFixtureBase
     {
         private IConnectionProvider connectionProvider;
-        private IQueryBuilder queryBuilder;
-
-        protected IDapperRepository<Product> DapperRepository { get; private set; }
+        protected IQueryBuilder QueryBuilder;
 
         [SetUp]
         public void Setup()
         {
             connectionProvider = new DefaultDapperConnectionProvider(new SqliteConnectionFactory());
-            queryBuilder = new QueryBuilderStub(connectionProvider);
-            DapperRepository = new DapperRepository<Product>(queryBuilder);
+            QueryBuilder = new QueryBuilderStub(connectionProvider);
 
-            queryBuilder.For<bool>().With(new CreateProductTable());
+            connectionProvider.CurrentConnection.Execute(new CreateProductTable().Query());
         }
 
         [TearDown]
         public void TearDown()
         {
-            queryBuilder.For<bool>().With(new RemoveEntity(null));
-            queryBuilder.For<bool>().With(new DropProductTable());
+            connectionProvider.CurrentConnection.Execute(new DeleteProduct().All());
+            connectionProvider.CurrentConnection.Execute(new DropProductTable().Query());
+
             connectionProvider.Dispose();
         }
     }
@@ -73,31 +68,33 @@
             object result = default(TResult);
 
             if (ReferenceEquals(resultType, typeof(IEnumerable<Product>)))
+            {
                 result = new SelectAllProductsQuery(this.provider).Ask(criterion as AllEntities);
+            }
 
             if (ReferenceEquals(resultType, typeof(Product))
                 && ReferenceEquals(criterionType, typeof(FindById)))
+            {
                 result = new SelectProductByIdQuery(this.provider).Ask(criterion as FindById);
+            }
 
             if (ReferenceEquals(resultType, typeof(Product))
-                && ReferenceEquals(criterionType, typeof(InsertEntity)))
-                result = new InsertProductQuery(this.provider).Ask(criterion as InsertEntity);
+                && ReferenceEquals(criterionType, typeof(InsertEntity<Product>)))
+            {
+                result = new InsertProductQuery(this.provider).Ask(criterion as InsertEntity<Product>);
+            }
 
             if (ReferenceEquals(resultType, typeof(bool))
-                && ReferenceEquals(criterionType, typeof(RemoveEntity)))
-                result = new DeleteAllProductsQuery(this.provider).Ask(criterion as RemoveEntity);
+                && ReferenceEquals(criterionType, typeof(DeleteEntity<Product>)))
+            {
+                result = new DeleteProductQuery(this.provider).Ask(criterion as DeleteEntity<Product>);
+            }
 
             if (ReferenceEquals(resultType, typeof(bool))
-                && ReferenceEquals(criterionType, typeof(UpdateEntity)))
-                result = new UpdateProductNameQuery(this.provider).Ask(criterion as UpdateEntity);
-
-            if (ReferenceEquals(resultType, typeof(bool))
-                && ReferenceEquals(criterionType, typeof(CreateProductTable)))
-                result = new CreateProductTableQuery(this.provider).Ask(criterion as CreateProductTable);
-
-            if (ReferenceEquals(resultType, typeof(bool))
-                && ReferenceEquals(criterionType, typeof(DropProductTable)))
-                result = new DropProductTableQuery(this.provider).Ask(criterion as DropProductTable);
+                && ReferenceEquals(criterionType, typeof(UpdateEntity<Product>)))
+            {
+                result = new UpdateNameForAllProductsQuery(this.provider).Ask(criterion as UpdateEntity<Product>);
+            }
 
             return (TResult)result;
         }

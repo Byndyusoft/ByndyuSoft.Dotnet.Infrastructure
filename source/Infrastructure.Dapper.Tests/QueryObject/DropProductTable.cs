@@ -1,28 +1,12 @@
 ﻿namespace Infrastructure.Dapper.Tests.QueryObject
 {
     using ByndyuSoft.Infrastructure.Dapper;
-    using ByndyuSoft.Infrastructure.Domain;
 
-    public class DropProductTableQuery : DbConnectionQueryBase<DropProductTable, bool>
+    public class DropProductTable
     {
-        public DropProductTableQuery(IConnectionProvider connectionProvider)
-            : base(connectionProvider)
+        public QueryObject Query()
         {
+            return new QueryObject("drop table Product");
         }
-
-        public override bool Ask(DropProductTable criterion)
-        {
-            return Connection.Execute(criterion) > 0;
-        }
-    }
-
-    public class DropProductTable : QueryObject, ICriterion
-    {
-        public DropProductTable()
-            : base(@"drop table Product")
-        {
-
-        }
-
     }
 }

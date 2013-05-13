@@ -1,5 +1,8 @@
 namespace Infrastructure.Dapper.Tests.CRUD
 {
+    using ByndyuSoft.Infrastructure.Domain.Criteria;
+    using ByndyuSoft.Infrastructure.Domain.Extensions;
+
     using Dto;
 
     using NUnit.Framework;
@@ -11,10 +14,12 @@ namespace Infrastructure.Dapper.Tests.CRUD
         {
             var product = new Product { Name = "New Product" };
 
-            DapperRepository.Add(product);
+            QueryBuilder.For<Product>().With(new InsertEntity<Product>(product));
+
             product.Name = "new name";
-            DapperRepository.AddOrUpdate(product);
-            Product result = DapperRepository.Get(product.Id);
+            QueryBuilder.For<bool>().With(new UpdateEntity<Product>(product));
+
+            Product result = QueryBuilder.For<Product>().ById(product.Id);
 
             StringAssert.AreEqualIgnoringCase("new name", result.Name);
         }

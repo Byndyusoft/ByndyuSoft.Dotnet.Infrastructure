@@ -82,7 +82,10 @@
     <Compile Include="Commands\ICommandFactory.cs" />
     <Compile Include="Comparers\EntityEqualityComparer`1.cs" />
     <Compile Include="Criteria\AllEntities.cs" />
+    <Compile Include="Criteria\DeleteEntity.cs" />
     <Compile Include="Criteria\FindById.cs" />
+    <Compile Include="Criteria\InsertEntity.cs" />
+    <Compile Include="Criteria\UpdateEntity.cs" />
     <Compile Include="Extensions\QueryBuilderExtensions.cs" />
     <Compile Include="Extensions\QueryForExtensions.cs" />
     <Compile Include="IEntityComponent.cs" />

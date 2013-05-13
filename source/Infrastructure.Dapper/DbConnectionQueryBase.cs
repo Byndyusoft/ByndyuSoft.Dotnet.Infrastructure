@@ -12,7 +12,7 @@
     public abstract class DbConnectionQueryBase<TCriterion, TResult> : IQuery<TCriterion, TResult>
         where TCriterion : ICriterion
     {
-        private readonly IConnectionProvider connectionProvider;
+        private readonly IConnectionProvider _connectionProvider;
 
         /// <summary>
         /// 
@@ -20,12 +20,15 @@
         /// <param name="connectionProvider"></param>
         protected DbConnectionQueryBase(IConnectionProvider connectionProvider)
         {
-            this.connectionProvider = connectionProvider;
+            _connectionProvider = connectionProvider;
         }
 
         protected IDbConnection Connection
         {
-            get { return this.connectionProvider.CurrentConnection; }
+            get
+            {
+                return _connectionProvider.CurrentConnection;
+            }
         }
 
         public abstract TResult Ask(TCriterion criterion);
