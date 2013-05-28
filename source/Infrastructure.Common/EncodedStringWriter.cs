@@ -8,27 +8,27 @@
 	/// </summary>
 	public class EncodedStringWriter : StringWriter
 	{
-		private readonly Encoding encoding;
+		private readonly Encoding _encoding;
 
-		/// <summary>
-		/// ctor
-		/// </summary>
-		/// <param name="encoding"></param>
-		public EncodedStringWriter(Encoding encoding)
+	    /// <summary>
+        ///     Creates new instance of <see cref="EncodedStringWriter"/> with specified encoding.
+	    /// </summary>
+	    /// <param name="encoding">Encoding for newly created instance of <see cref="EncodedStringWriter"/>.</param>
+	    public EncodedStringWriter(Encoding encoding)
 		{
-			this.encoding = encoding;
+			_encoding = encoding;
 		}
 
-		/// <summary>
-		/// Gets the <see cref="T:System.Text.Encoding"/> in which the output is written.
-		/// </summary>
-		/// <returns>
-		/// The Encoding in which the output is written.
-		/// </returns>
-		/// <filterpriority>1</filterpriority>
-		public override Encoding Encoding
+	    /// <summary>
+	    ///     Gets the <see cref="T:System.Text.Encoding" /> in which the output is written.
+	    /// </summary>
+	    /// <returns>
+	    ///     The Encoding in which the output is written.
+	    /// </returns>
+	    /// <filterpriority>1</filterpriority>
+	    public override Encoding Encoding
 		{
-			get { return encoding; }
+			get { return _encoding; }
 		}
 	}
 }

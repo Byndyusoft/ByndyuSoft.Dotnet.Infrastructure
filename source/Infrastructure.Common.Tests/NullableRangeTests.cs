@@ -3,6 +3,7 @@
     using ByndyuSoft.Infrastructure.Common;
     using NUnit.Framework;
 
+    [TestFixture]
     public class NullableRangeTests
     {
         [Test]

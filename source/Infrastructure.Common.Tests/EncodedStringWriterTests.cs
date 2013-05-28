@@ -5,12 +5,14 @@
     using ByndyuSoft.Infrastructure.Common;
     using NUnit.Framework;
 
+    [TestFixture]
     public class EncodedStringWriterTests
     {
         [Test]
         public void Constructor()
         {
             TextWriter stringWriter = new EncodedStringWriter(Encoding.ASCII);
+
             Assert.AreEqual(Encoding.ASCII, stringWriter.Encoding);
         }
     }

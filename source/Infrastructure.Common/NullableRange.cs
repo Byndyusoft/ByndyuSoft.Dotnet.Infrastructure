@@ -2,22 +2,46 @@
 {
 	using System;
 
-	public class NullableRange<T> : IEquatable<NullableRange<T>> where T : struct, IComparable<T>
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	public class NullableRange<T> : IEquatable<NullableRange<T>> 
+        where T : struct, IComparable<T>
 	{
-		public NullableRange(T? min, T? max) : this()
+	    /// <summary>
+	    ///     Creates instance of <see cref="NullableRange{T}" /> with boundaries specified.
+	    /// </summary>
+        /// <param name="min">Inclusive lower boundary value of newly created range.</param>
+        /// <param name="max">Inclusive upper boundary value of newly created range.</param>
+	    public NullableRange(T? min, T? max)
+            : this()
 		{
 			Min = min;
 			Max = max;
 		}
 
-		public NullableRange()
+	    /// <summary>
+	    ///     Creates empty instance of <see cref="NullableRange{T}" />.
+	    /// </summary>
+	    public NullableRange()
 		{
 		}
 
-		public T? Min { get; set; }
-		public T? Max { get; set; }
+	    /// <summary>
+	    ///     Inclusive lower boundary value of this range.
+	    /// </summary>
+	    public T? Min { get; set; }
 
-		public bool IsValid
+	    /// <summary>
+	    ///     Inclusive upper boundary value of this range.
+	    /// </summary>
+	    public T? Max { get; set; }
+
+	    /// <summary>
+        ///     Returns <value>true</value> if this range have valid boundary values, otherwise <value>false</value>.
+	    /// </summary>
+	    public bool IsValid
 		{
 			get
 			{
@@ -34,12 +58,17 @@
 			return other.Min.Equals(Min) && other.Max.Equals(Max);
 		}
 
-		public bool In(T? value)
-		{
-			return !value.HasValue ||
-			       ((!Min.HasValue || value.Value.CompareTo(Min.Value) >= 0) &&
-			        (!Max.HasValue || value.Value.CompareTo(Max.Value) <= 0));
-		}
+	    /// <summary>
+	    ///     Checks whether value given lies within boundaries of this range.
+	    /// </summary>
+	    /// <param name="value">Value to check.</param>
+        /// <returns><value>True</value> if range contains value, otherwise <value>false</value>.</returns>
+	    public bool In(T? value)
+	    {
+	        return !value.HasValue ||
+	               ((!Min.HasValue || value.Value.CompareTo(Min.Value) >= 0) &&
+	                (!Max.HasValue || value.Value.CompareTo(Max.Value) <= 0));
+	    }
 
 		public override bool Equals(object obj)
 		{
