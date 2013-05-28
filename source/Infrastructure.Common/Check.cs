@@ -4,10 +4,10 @@
 	using System.Globalization;
 	using JetBrains.Annotations;
 
-	/// <summary>
-	/// Check object invariants
-	/// </summary>
-	public static class Check
+    /// <summary>
+    ///     Check object invariants
+    /// </summary>
+    public static class Check
 	{
 		/// <summary>
 		/// Check is object null.

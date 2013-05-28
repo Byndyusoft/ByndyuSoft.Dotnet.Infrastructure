@@ -1,9 +1,7 @@
 ﻿namespace Infrastructure.NHibernate.Tests.TestingServices
 {
-    using System;
     using System.IO;
     using FluentNHibernate;
-    using FluentNHibernate.Cfg;
     using global::NHibernate;
     using global::NHibernate.Cfg;
     using global::NHibernate.Tool.hbm2ddl;
@@ -21,13 +19,12 @@
 
         private void TestFixtureSetup()
         {
-            Action<MappingConfiguration> mappings = (m => m.FluentMappings
-                                                           .AddFromAssemblyOf<TMapping>()
-                                                           .Conventions.AddFromAssemblyOf<TConvention>()
-                                                           .ExportTo(Path.GetTempPath()));
-
-            Configuration configuration = new InMemorySQLiteInitializer(mappings)
-                .GetConfiguration();
+            var configuration =
+                new InMemorySQLiteInitializer(m => m.FluentMappings
+                                                       .AddFromAssemblyOf<TMapping>()
+                                                       .Conventions.AddFromAssemblyOf<TConvention>()
+                                                       .ExportTo(Path.GetTempPath()))
+                    .GetConfiguration();
 
             Session = configuration.BuildSessionFactory().OpenSession();
 

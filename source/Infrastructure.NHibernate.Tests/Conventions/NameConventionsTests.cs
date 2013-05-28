@@ -3,12 +3,13 @@
     using ByndyuSoft.Infrastructure.NHibernate.Conventions;
     using NUnit.Framework;
 
+    [TestFixture]
     public class NameConventionsTests
     {
         [Test]
         public void TableNameTest()
         {
-            string tableName = NameConventions.GetTableName(typeof (ChainSelection));
+            var tableName = NameConventions.GetTableName(typeof (ChainSelection));
 
             Assert.AreEqual("CHAIN_SELECTION", tableName);
         }
@@ -16,7 +17,7 @@
         [Test]
         public void SequenceNameTest()
         {
-            string sequenceName = NameConventions.GetSequenceName(typeof (ChainSelection));
+            var sequenceName = NameConventions.GetSequenceName(typeof (ChainSelection));
 
             Assert.AreEqual("CHAIN_SELECTION_SEQ", sequenceName);
         }
@@ -24,7 +25,7 @@
         [Test]
         public void PrimaryKeyColumnNameTest()
         {
-            string primaryKeyColumnName = NameConventions.GetPrimaryKeyColumnName(typeof (ChainSelection));
+            var primaryKeyColumnName = NameConventions.GetPrimaryKeyColumnName(typeof (ChainSelection));
 
             Assert.AreEqual("CHAIN_SELECTION_ID", primaryKeyColumnName);
         }

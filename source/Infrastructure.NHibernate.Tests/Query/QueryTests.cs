@@ -12,6 +12,7 @@
     using global::NHibernate;
     using global::NHibernate.Linq;
 
+    [TestFixture]
     public class QueryTests : InMemoryTestFixtureBase<TestClassMap, PrimaryKeyConvention>
     {
         [Test]
@@ -29,7 +30,7 @@
             Session.Flush();
             Session.Clear();
 
-            using (var tx = Session.BeginTransaction())
+            using (Session.BeginTransaction())
             {
                 ILinqProvider linqProvider = new StubLinqProvider(Session);
                 IQueryFactory queryFactory = new QueryFactoryStub(linqProvider);
@@ -71,16 +72,17 @@
 
     public class StubLinqProvider : ILinqProvider
     {
-        private readonly ISession session;
+        private readonly ISession _session;
 
         public StubLinqProvider(ISession session)
         {
-            this.session = session;
+            _session = session;
         }
 
-        public IQueryable<TEntity> Query<TEntity>() where TEntity : class, IEntity, new()
+        public IQueryable<TEntity> Query<TEntity>()
+            where TEntity : class, IEntity, new()
         {
-            return session.Query<TEntity>();
+            return _session.Query<TEntity>();
         }
     }
 

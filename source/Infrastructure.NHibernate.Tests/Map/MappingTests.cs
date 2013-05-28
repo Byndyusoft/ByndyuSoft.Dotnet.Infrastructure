@@ -9,6 +9,7 @@
     using TestingServices;
     using global::NHibernate;
 
+    [TestFixture]
     public class MappingTests : InMemoryTestFixtureBase<TestTreeClassMap, PrimaryKeyConvention>
     {
         [Test]
@@ -18,7 +19,7 @@
             var testTreeChild = new TestTreeClass();
 
             testTreeParent.AddChild(testTreeChild);
-            using (ITransaction tx = Session.BeginTransaction())
+            using (var tx = Session.BeginTransaction())
             {
                 Session.Save(testTreeParent);
                 tx.Commit();
@@ -27,7 +28,7 @@
             Session.Clear();
             TestTreeClass child;
             TestTreeClass parent;
-            using (ITransaction tx = Session.BeginTransaction())
+            using (var tx = Session.BeginTransaction())
             {
                 child = Session.Get<TestTreeClass>(testTreeChild.Id);
                 parent = Session.Get<TestTreeClass>(testTreeParent.Id);
@@ -47,7 +48,7 @@
             var testTreeParent = new TestTreeClass();
             var testTreeChild = new TestTreeClass();
             testTreeParent.AddChild(testTreeChild);
-            using (ITransaction tx = Session.BeginTransaction())
+            using (var tx = Session.BeginTransaction())
             {
                 Session.Save(testTreeParent);
                 tx.Commit();
@@ -55,19 +56,19 @@
             Session.Flush();
             Session.Clear();
 
-            Console.WriteLine("BEFORE CLEAR PARENT");
-            using (ITransaction tx = Session.BeginTransaction())
+            Console.WriteLine(@"BEFORE CLEAR PARENT");
+            using (var tx = Session.BeginTransaction())
             {
                 Session.Get<TestTreeClass>(testTreeChild.Id).ClearParent();
                 tx.Commit();
             }
             Session.Flush();
             Session.Clear();
-            Console.WriteLine("AFTER CLEAR PARENT");
+            Console.WriteLine(@"AFTER CLEAR PARENT");
 
             TestTreeClass child;
             TestTreeClass parent;
-            using (ITransaction tx = Session.BeginTransaction())
+            using (var tx = Session.BeginTransaction())
             {
                 child = Session.Get<TestTreeClass>(testTreeChild.Id);
                 parent = Session.Get<TestTreeClass>(testTreeParent.Id);

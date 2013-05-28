@@ -5,28 +5,33 @@
     using Moq;
     using NUnit.Framework;
 
+    [TestFixture]
     public class ColumnNameUpperCaseConventionTests
     {
         [Test]
         public void UpperCase()
         {
             var mockPropertyInstance = new Mock<IPropertyInstance>();
-            mockPropertyInstance.Setup(instance => instance.Name).Returns("Test");
+            mockPropertyInstance
+                .Setup(x => x.Name)
+                .Returns("Test");
 
             new ColumnNameUpperCaseConvention().Apply(mockPropertyInstance.Object);
 
-            mockPropertyInstance.Verify(instance => instance.Column("TEST"));
+            mockPropertyInstance.Verify(x => x.Column("TEST"));
         }
 
         [Test]
         public void CamelCaseReplacedByUnderscore()
         {
             var mockPropertyInstance = new Mock<IPropertyInstance>();
-            mockPropertyInstance.Setup(instance => instance.Name).Returns("CamelCase");
+            mockPropertyInstance
+                .Setup(x => x.Name)
+                .Returns("CamelCase");
 
             new ColumnNameUpperCaseConvention().Apply(mockPropertyInstance.Object);
 
-            mockPropertyInstance.Verify(instance => instance.Column("CAMEL_CASE"));
+            mockPropertyInstance.Verify(x => x.Column("CAMEL_CASE"));
         }
     }
 }

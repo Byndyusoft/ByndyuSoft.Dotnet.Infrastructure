@@ -12,26 +12,27 @@
 
     public class InMemorySQLiteInitializer : INHibernateInitializer
     {
-        private readonly Action<MappingConfiguration> mappings;
+        private readonly Action<MappingConfiguration> _mappings;
 
         public InMemorySQLiteInitializer(Action<MappingConfiguration> action)
         {
-            mappings = action;
+            _mappings = action;
         }
 
         public Configuration GetConfiguration()
         {
-            SQLiteConfiguration persistenceConfigurer = SQLiteConfiguration.Standard
+            var persistenceConfigurer = SQLiteConfiguration.Standard
                 .Dialect<MySQLiteDialect>()
                 .InMemory()
                 .ShowSql();
 
-            FluentConfiguration cfg = Fluently.Configure()
+            var configuration = Fluently.Configure()
                 .Database(persistenceConfigurer)
                 .ExposeConfiguration(ExtendConfiguration)
                 .ProxyFactoryFactory<DefaultProxyFactoryFactory>()
-                .Mappings(mappings);
-            return cfg.BuildConfiguration();
+                .Mappings(_mappings);
+
+            return configuration.BuildConfiguration();
         }
 
         private static void ExtendConfiguration(Configuration c)
