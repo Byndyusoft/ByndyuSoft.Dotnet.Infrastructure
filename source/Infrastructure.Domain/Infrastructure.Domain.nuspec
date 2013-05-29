@@ -11,7 +11,6 @@
     <description>Infrastructure.Domain</description>
     <dependencies>
       <dependency id="JetBrains.Annotations" version="7.0" />
-      <dependency id="Iesi.Collections" version="3.3.1.4000" />
     </dependencies>
   </metadata>
 </package>
