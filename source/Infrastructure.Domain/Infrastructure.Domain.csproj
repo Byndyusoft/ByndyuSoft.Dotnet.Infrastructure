@@ -58,9 +58,6 @@
     <DocumentationFile>..\..\build\Release\ByndyuSoft.Infrastructure.Domain.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Iesi.Collections.3.3.1.4000\lib\Net35\Iesi.Collections.dll</HintPath>
-    </Reference>
     <Reference Include="JetBrains.Annotations, Version=6.1.0.0, Culture=neutral, PublicKeyToken=3f033448d4bb5376, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\JetBrains.Annotations.7.0\lib\net40\JetBrains.Annotations.dll</HintPath>
@@ -104,6 +101,8 @@
     <Compile Include="IUnitOfWorkFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CHANGELOG.ru.md" />
+    <None Include="CHANGELOG.md" />
     <None Include="Infrastructure.Domain.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
