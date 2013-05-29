@@ -1,83 +1,109 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ByndyuSoft.Infrastructure.Domain
+﻿namespace ByndyuSoft.Infrastructure.Domain
 {
-	public abstract class TreeNode<T> where T : TreeNode<T>
-	{
-		private readonly ICollection<T> ancestors = new HashSet<T>();
-		private readonly ICollection<T> children = new HashSet<T>();
-		private readonly ICollection<T> descendants = new HashSet<T>();
+    using System.Collections.Generic;
 
-		public virtual T Parent { get; private set; }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public abstract class TreeNode<T> 
+        where T : TreeNode<T>
+    {
+        private readonly ICollection<T> ancestors = new HashSet<T>();
+        private readonly ICollection<T> children = new HashSet<T>();
+        private readonly ICollection<T> descendants = new HashSet<T>();
 
-		public virtual IEnumerable<T> Children
-		{
-			get { return children; }
-		}
+        /// <summary>
+        ///     Parent node for current tree node
+        /// </summary>
+        public virtual T Parent { get; private set; }
 
-		public virtual IEnumerable<T> Ancestors
-		{
-			get { return ancestors; }
-		}
+        /// <summary>
+        ///     List of children nodes for current tree node
+        /// </summary>
+        public virtual IEnumerable<T> Children
+        {
+            get { return children; }
+        }
 
-		public virtual IEnumerable<T> Descendants
-		{
-			get { return descendants; }
-		}
+        /// <summary>
+        ///     List of all nodes which lies above current tree node (parent, grandparents, etc.)
+        /// </summary>
+        public virtual IEnumerable<T> Ancestors
+        {
+            get { return ancestors; }
+        }
 
-		protected T This
-		{
-			get { return (T)this; }
-		}
+        /// <summary>
+        ///     List of all nodes which lies under current tree node (children, grandchildren, etc.)
+        /// </summary>
+        public virtual IEnumerable<T> Descendants
+        {
+            get { return descendants; }
+        }
 
-		public virtual void AddChild(T child)
-		{
-			children.Add(child);
-			child.Parent = This;
+        protected T This
+        {
+            get { return (T) this; }
+        }
 
-			SetAncestorDescendantRelation(This, child);
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="child"></param>
+        public virtual void AddChild(T child)
+        {
+            children.Add(child);
+            child.Parent = This;
 
-		public virtual void ClearParent()
-		{
-			if (Parent != null)
-			{
-				UnSetAncestorDescendantRelation(Parent, This);
-				var collection = (ICollection<T>) Parent.Children;
-				collection.Remove(This);
-				Parent = null;				
-			}
-		}
+            SetAncestorDescendantRelation(This, child);
+        }
 
-		private static void UnSetAncestorDescendantRelation(T ancestor, T descendant)
-		{
-			ChangeAncestorDescendantRelation(ancestor, descendant, false);
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual void ClearParent()
+        {
+            if (Parent == null) 
+                return;
 
-		private static void SetAncestorDescendantRelation(T ancestor, T descendant)
-		{
-			ChangeAncestorDescendantRelation(ancestor, descendant, true);
-		}
+            UnSetAncestorDescendantRelation(Parent, This);
+            var collection = (ICollection<T>) Parent.Children;
+            collection.Remove(This);
+            Parent = null;
+        }
 
-		private static void ChangeAncestorDescendantRelation(T ancestor, T descendant, bool addRelation)
-		{
-			if (ancestor.Parent != null)
-				ChangeAncestorDescendantRelation(ancestor.Parent, descendant, addRelation);
-			foreach (T grandDescendant in descendant.children)
-				ChangeAncestorDescendantRelation(ancestor, grandDescendant, addRelation);
-			var ancestorDescendants = (ICollection<T>) ancestor.Descendants;
-			var descendantAncestors = (ICollection<T>) descendant.Ancestors;
-			if (addRelation)
-			{
-				ancestorDescendants.Add(descendant);
-				descendantAncestors.Add(ancestor);
-			}
-			else
-			{
-				ancestorDescendants.Remove(descendant);
-				descendantAncestors.Remove(ancestor);				
-			}
-		}
-	}
+        private static void UnSetAncestorDescendantRelation(T ancestor, T descendant)
+        {
+            ChangeAncestorDescendantRelation(ancestor, descendant, false);
+        }
+
+        private static void SetAncestorDescendantRelation(T ancestor, T descendant)
+        {
+            ChangeAncestorDescendantRelation(ancestor, descendant, true);
+        }
+
+        private static void ChangeAncestorDescendantRelation(T ancestor, T descendant, bool addRelation)
+        {
+            if (ancestor.Parent != null)
+                ChangeAncestorDescendantRelation(ancestor.Parent, descendant, addRelation);
+
+            foreach (var grandDescendant in descendant.children)
+                ChangeAncestorDescendantRelation(ancestor, grandDescendant, addRelation);
+
+            var ancestorDescendants = (ICollection<T>) ancestor.Descendants;
+            var descendantAncestors = (ICollection<T>) descendant.Ancestors;
+
+            if (addRelation)
+            {
+                ancestorDescendants.Add(descendant);
+                descendantAncestors.Add(ancestor);
+            }
+            else
+            {
+                ancestorDescendants.Remove(descendant);
+                descendantAncestors.Remove(ancestor);
+            }
+        }
+    }
 }

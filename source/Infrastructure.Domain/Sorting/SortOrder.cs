@@ -3,19 +3,19 @@
     using JetBrains.Annotations;
 
     /// <summary>
-    ///   Перечисление, содержащее направления сортировки
+    ///   Sort order enumeration
     /// </summary>
     [PublicAPI]
     public enum SortOrder
     {
         /// <summary>
-        ///   Сортировка по возрастанию
+        ///   Ascending order of sort
         /// </summary>
         [PublicAPI]
         Asc = 1,
 
         /// <summary>
-        ///   Сортировка по убыванию
+        ///   Descending order of sort
         /// </summary>
         [PublicAPI]
         Desc = 2
