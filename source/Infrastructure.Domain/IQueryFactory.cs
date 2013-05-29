@@ -1,12 +1,12 @@
 ﻿namespace ByndyuSoft.Infrastructure.Domain
 {
     /// <summary>
-    ///   Фабрика объектов запросов
+    ///     Фабрика объектов запросов
     /// </summary>
     public interface IQueryFactory
     {
         /// <summary>
-        ///   Создать запрос, возвращающий необходимые результаты с определенными критериями
+        ///     Создать запрос, возвращающий необходимые результаты с определенными критериями
         /// </summary>
         /// <typeparam name="TCriterion"> </typeparam>
         /// <typeparam name="TResult"> </typeparam>

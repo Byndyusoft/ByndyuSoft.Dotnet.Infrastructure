@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace ByndyuSoft.Infrastructure.Domain
+﻿namespace ByndyuSoft.Infrastructure.Domain
 {
     /// <summary>
-    /// Интерфейс для построителя запросов
+    ///     Интерфейс для построителя запросов
     /// </summary>
     public interface IQueryBuilder
     {
         /// <summary>
-        /// Начать строить запрос для результата
+        ///     Начать строить запрос для результата
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
         /// <returns></returns>

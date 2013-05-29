@@ -3,13 +3,11 @@
     using JetBrains.Annotations;
 
     /// <summary>
-    /// 
     /// </summary>
     [PublicAPI]
     public static class QueryBuilderExtensions
     {
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="queryBuilder"></param>
         /// <param name="criterion"></param>

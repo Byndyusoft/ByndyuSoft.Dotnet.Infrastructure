@@ -3,7 +3,7 @@
     using JetBrains.Annotations;
 
     /// <summary>
-    ///   Интерфейс для объектов запросов к базе
+    ///     Интерфейс для объектов запросов к базе
     /// </summary>
     /// <typeparam name="TCriterion"> </typeparam>
     /// <typeparam name="TResult"> </typeparam>
@@ -11,7 +11,7 @@
         where TCriterion : ICriterion
     {
         /// <summary>
-        ///   Получить результат из базы
+        ///     Получить результат из базы
         /// </summary>
         /// <param name="criterion"> </param>
         /// <returns> </returns>

@@ -55,6 +55,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuspec", ".nuspec", "{67E3
 		source\Infrastructure.Web\Infrastructure.Web.nuspec = source\Infrastructure.Web\Infrastructure.Web.nuspec
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".changelogs", ".changelogs", "{6C66CC5B-1068-4AAD-8742-C447B036F2BB}"
+	ProjectSection(SolutionItems) = preProject
+		source\Infrastructure.Domain\CHANGELOG.md = source\Infrastructure.Domain\CHANGELOG.md
+		source\Infrastructure.Domain\CHANGELOG.ru.md = source\Infrastructure.Domain\CHANGELOG.ru.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

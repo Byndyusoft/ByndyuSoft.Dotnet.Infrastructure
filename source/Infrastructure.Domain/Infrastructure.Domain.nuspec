@@ -4,14 +4,13 @@
     <id>Infrastructure.Domain</id>
     <version>$version$</version>
     <title>ByndyuSoft.Infrastructure.Domain</title>
-    <authors>Александр Бындю, eskat0n</authors>
+    <authors>eskat0n, Alexander Byndyu</authors>
     <owners>alexanderbyndyu</owners>
     <projectUrl>https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Infrastructure.Domain</description>
     <dependencies>
       <dependency id="JetBrains.Annotations" version="7.0" />
-      <dependency id="Iesi.Collections" version="3.3.1.4000" />
     </dependencies>
   </metadata>
 </package>
