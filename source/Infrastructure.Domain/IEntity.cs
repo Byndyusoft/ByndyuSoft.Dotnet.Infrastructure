@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace ByndyuSoft.Infrastructure.Domain
+﻿namespace ByndyuSoft.Infrastructure.Domain
 {
-	/// <summary>
-	/// Интерфейс сущности доменной модели
-	/// </summary>
-	public interface IEntity
-	{
-		///<summary>
-		///</summary>
-		int Id { get; set; }
-	}
+    /// <summary>
+    ///     Интерфейс сущности доменной модели
+    /// </summary>
+    public interface IEntity
+    {
+        /// <summary>
+        /// </summary>
+        int Id { get; set; }
+    }
 }

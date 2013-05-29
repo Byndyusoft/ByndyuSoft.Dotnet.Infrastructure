@@ -3,10 +3,9 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class TreeNode<T> 
+    public abstract class TreeNode<T>
         where T : TreeNode<T>
     {
         private readonly ICollection<T> ancestors = new HashSet<T>();
@@ -48,7 +47,6 @@
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="child"></param>
         public virtual void AddChild(T child)
@@ -60,11 +58,10 @@
         }
 
         /// <summary>
-        /// 
         /// </summary>
         public virtual void ClearParent()
         {
-            if (Parent == null) 
+            if (Parent == null)
                 return;
 
             UnSetAncestorDescendantRelation(Parent, This);
@@ -88,7 +85,7 @@
             if (ancestor.Parent != null)
                 ChangeAncestorDescendantRelation(ancestor.Parent, descendant, addRelation);
 
-            foreach (var grandDescendant in descendant.children)
+            foreach (T grandDescendant in descendant.children)
                 ChangeAncestorDescendantRelation(ancestor, grandDescendant, addRelation);
 
             var ancestorDescendants = (ICollection<T>) ancestor.Descendants;

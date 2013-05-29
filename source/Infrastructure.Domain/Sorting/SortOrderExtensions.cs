@@ -3,13 +3,11 @@
     using JetBrains.Annotations;
 
     /// <summary>
-    /// 
     /// </summary>
     [PublicAPI]
     public static class SortOrderExtensions
     {
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="sortOrder"></param>
         /// <returns></returns>
@@ -22,7 +20,6 @@
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="sortOrder"></param>
         /// <param name="default"></param>
