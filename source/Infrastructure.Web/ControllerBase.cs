@@ -4,7 +4,9 @@
     using System.Text;
     using System.Web.Mvc;
 
-    public class ControllerBase : Controller
+    /// <summary>
+    /// </summary>
+    public abstract class ControllerBase : Controller
 	{
 	    protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)
 		{
@@ -26,9 +28,10 @@
 					throw new ArgumentNullException("context");
 
 				var response = context.HttpContext.Response;
-			    response.ContentType = !String.IsNullOrEmpty(ContentType)
+			    response.ContentType = !string.IsNullOrEmpty(ContentType)
 			                               ? ContentType
 			                               : "application/json";
+
                 if (ContentEncoding != null)
                     response.ContentEncoding = ContentEncoding;
 
