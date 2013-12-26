@@ -63,6 +63,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".changelogs", ".changelogs"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.PetaPoco.Tests", "source\Infrastructure.PetaPoco.Tests\Infrastructure.PetaPoco.Tests.csproj", "{91C50714-1740-4BEF-97CE-FCBACA93A243}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.OrmLite.Tests", "source\Infrastructure.OrmLight.Tests\Infrastructure.OrmLite.Tests.csproj", "{536558CC-22E8-49BA-9315-A650A11A6244}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{91C50714-1740-4BEF-97CE-FCBACA93A243}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91C50714-1740-4BEF-97CE-FCBACA93A243}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91C50714-1740-4BEF-97CE-FCBACA93A243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536558CC-22E8-49BA-9315-A650A11A6244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536558CC-22E8-49BA-9315-A650A11A6244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536558CC-22E8-49BA-9315-A650A11A6244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536558CC-22E8-49BA-9315-A650A11A6244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,6 +138,7 @@ Global
 		{9F8F23E9-6682-4C5B-862C-43D654DE19A1} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 		{BC707465-E44A-42CC-9F2C-B30D34A74746} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 		{91C50714-1740-4BEF-97CE-FCBACA93A243} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
+		{536558CC-22E8-49BA-9315-A650A11A6244} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC} = {B96FF3A9-9219-41C2-B54F-839356FD620A}
 		{FDFF70B4-9626-48C9-9003-1785B0B809CA} = {B96FF3A9-9219-41C2-B54F-839356FD620A}
 	EndGlobalSection
