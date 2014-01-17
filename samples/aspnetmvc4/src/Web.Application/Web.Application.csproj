@@ -148,6 +148,7 @@
     <Compile Include="Infrastructure\Paging\HtmlHelperPagingExtensions.cs" />
     <Compile Include="Infrastructure\Paging\Pager.cs" />
     <Compile Include="Staff\Commands\Contexts\CreateStaffCommandContext.cs" />
+    <Compile Include="Staff\Commands\Contexts\DeleteStaffCommandContext.cs" />
     <Compile Include="Staff\Commands\Contexts\EditStaffCommandContext.cs" />
     <Compile Include="Staff\Criteria\FindStaffById.cs" />
     <Compile Include="Staff\Criteria\FindStaffListViewModelForPage.cs" />
