@@ -1,11 +1,11 @@
-﻿namespace Infrastructure.OrmLite.Dtos
+﻿namespace Mvc4Sample.Infrastructure.OrmLite.Dtos
 {
     using ServiceStack.DataAnnotations;
 
     [Alias("USERS")]
     public class UserDto
     {
-        public long USER_ID { get; set; }
+        public int USER_ID { get; set; }
 
         public string NAME { get; set; }
 
