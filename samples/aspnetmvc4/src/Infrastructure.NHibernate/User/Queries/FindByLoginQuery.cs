@@ -6,9 +6,9 @@ namespace Mvc4Sample.Infrastructure.NHibernate.User.Queries
     using Domain.Entities;
     using Web.Application.Account.Criteria;
 
-    public class FindByLoginOrEmailQuery : LinqQueryBase<User, FindByLogin, User>
+    public class FindByLoginQuery : LinqQueryBase<User, FindByLogin, User>
     {
-        public FindByLoginOrEmailQuery(ILinqProvider linqProvider)
+        public FindByLoginQuery(ILinqProvider linqProvider)
             : base(linqProvider)
         {
         }
