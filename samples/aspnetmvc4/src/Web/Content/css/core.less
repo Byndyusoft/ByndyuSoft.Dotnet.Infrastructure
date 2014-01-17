@@ -1,0 +1,314 @@
+body {
+    font-size: .7em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+textarea {
+	font-size: .7em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* Styles for main layout
+-----------------------------------------------------------*/
+#navigation {
+    float: left;
+    clear: left; 
+    width: 12%;
+}
+
+#main {
+    float: right;
+    position: relative; 
+    width: 85%;
+}
+
+#top-panel {
+    border-bottom: 1px solid #ddd;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+#title {
+    float: left;
+    clear: left; 
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+
+#main-buttons {
+    float: right;
+    position: relative; 
+    text-align: right;
+    margin-top: 5px;
+}
+
+.additional-buttons {
+	text-align: right;
+	margin: 10px 0px;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset {
+    border:1px solid #ddd;
+    padding:1em;
+    margin:0 0 0 0;
+}
+
+legend {
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+	text-align: right;
+	float: left;
+	width: 162px;
+	margin-right: 6px;
+	padding-top: 8px;
+	clear: both;
+}
+
+.editor-field {
+    margin:0.5em 0 0 0;
+}
+
+.editor-field, .field-validation-error {
+	position: relative;
+}
+.editor-field {
+    width: 700px;
+    margin-right: 12px;
+}
+.field-validation-error {
+    width: auto;
+}
+.editor-field input.text-box, .editor-field textarea, .editor-field .long-field {
+	width: 50%; 
+	box-sizing: border-box;
+}
+.editor-field .short-field {
+	width: 198px;
+}	
+.t-popup {
+	z-index: 100;
+}
+.t-dropdown {
+	width: 95%;
+	max-width: 250px;
+}
+
+/* Styles for display fields
+-----------------------------------------------------------*/
+.display-label {
+    font-weight: bold;
+    float: left;
+    width: 160px;
+    margin: 0 8px 0 0;
+    text-align: right;
+}
+
+.display-label label:after {
+	content: ":";
+}
+
+.editor-label label:after {
+    display: inline-block;
+    width: 9px;
+    content: ' ';
+}
+
+.display-field {
+	margin: 0px 0 10px 0;
+    display: table;
+}
+
+.display-field .display-label {
+	float: left;
+	margin: 0 5px 0 0;	
+}
+
+.display-field p {
+	padding: 0;
+	padding-bottom: 8px;
+}
+.display-field p:last-of-type {
+	padding-bottom: 0;
+}
+
+.display-field .display-field {	}
+
+.display-range { display: table; }
+	.display-range label { width: 120px; }
+	.display-range-min { display: table-row; }
+	.display-range-max { display: table-row; }
+
+.long-field{
+	width: 228px;
+}
+
+.upper-cased-field {
+    text-transform: uppercase;
+}
+
+.wrapper {
+	display: table;
+	width: 100%;
+	position: relative;
+	margin-bottom: 14px;
+}
+
+.required label:after {
+    content: ' *' !important;
+	color: red;
+}
+
+.checkbox-label { float: inherit; }
+
+/* Fields 
+---------------------------------------- */
+input[type=file] { margin-left: -1px; }
+input.hasDatepicker {
+	font-size: 1em;
+	border: 1px solid #90919A;  	
+	width: auto !important;
+	margin-left: 0;
+	padding: 2px;	
+}
+fieldset textarea {
+	width: 545px;
+	height: 150px;
+	}
+.select-all-checkbox {
+	border-bottom: 1px solid gray;
+	margin-bottom: 2px;
+	padding-bottom: 2px;
+	width: 50%;
+}
+input.password { width: auto !important; }
+
+fieldset.editor-form fieldset.editor-form { padding-left: 0px; }
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+	float: right;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Contractor details
+-----------------------------------------------------------*/
+
+#details-summary {
+    float: right;
+    position: relative;
+    width: 68%;
+}
+
+#details-properties {
+    float: left;
+    clear: left;
+    width: 30%;
+}
+
+#details-actions {
+    margin-top: 10px;
+}
+
+/* Clear UI utilities
+-----------------------------------------------------------*/
+.clearfix:before, .clearfix:after { content: "."; display: block; height: 0; visibility: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.clearall {
+	clear:both;
+	height:0;
+	line-height:0;
+	font-size:0;
+}
+
+#purr-container {
+	position: fixed;
+	top: 45px;
+	right: 20px;
+	text-align: center;
+	z-index: 10000;
+}
+#purr-container .info-balloon {
+	cursor: pointer;			
+	color: #FFF;
+	background-color: green;
+	padding: 14px;
+	margin: 0px 0px 10px 0px;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.t-simple-text {
+	height: 100%;
+	width: 100%;
+	border: none;
+	background: none;
+	font-size: 100%;
+	color: inherit;
+	text-align: left;
+	display: table-cell;
+	word-wrap: break-word;
+	max-width: 100px;
+	min-width: 95px;
+	min-height: 25px;
+}
+
+.near-deadline-date-cell {
+	background: yellow;
+}
+
+.expired-deadline-date-cell {
+	background: #FC8484;
+}
+
+
+
+.t-button:hover {
+	background: #25A0DA;
+	color: white;
+}

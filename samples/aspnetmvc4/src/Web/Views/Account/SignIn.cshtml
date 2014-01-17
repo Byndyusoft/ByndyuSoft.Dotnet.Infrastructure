@@ -1,0 +1,35 @@
+﻿@model Mvc4Sample.Web.Application.Account.Forms.SignIn
+           
+@{
+    ViewBag.Title = "Вход в систему";
+}
+
+<h2>Вход</h2>
+<p>
+    Пожалуйста, введите ваше имя пользователя и пароль.
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true, "Попытка входа неудачна.")
+    <div>
+        <fieldset>
+                @Html.EditorForModel()
+            <p>
+                <input type="submit" value="Войти" />
+            </p>
+        </fieldset>
+    </div>
+}
+
+<div>
+    <h2>Для работы с системой необходимо сделать следующее:</h2>
+    <ol>
+        <li>В MSSQL создать базу данных с названием MvcSample. Создать пользователя с именем MvcSample и паролем MvcSample, который будет иметь все права на эту базу данных;</li>
+        <li>Открыть MvcSample.sln в VS2012;</li>
+        <li>Собрать проект, при этом должны скачаться все необходимые библиотеки через Nuget;</li>
+        <li>Запустить migrate.bat;</li>
+        <li>Запустить в классе LiveDbTests тест AddUser;</li>
+        <li>Запустить проект, в качестве логина ввести <i>login</i> и пароль <i>123</i>;</li>
+        <li>Если вход прошел успешно, то должна появится надпись "ASP.NET MVC Sample + ByndyuSoft.Infrastructure".</li>
+    </ol>
+</div>

@@ -1,0 +1,1 @@
+psake Migrate -framework '4.0'

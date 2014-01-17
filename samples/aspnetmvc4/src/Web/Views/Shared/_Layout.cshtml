@@ -1,0 +1,29 @@
+﻿@using Mvc4Sample.Web.Application.Account
+@using Mvc4Sample.Web.Application.Staff
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+		
+        @Html.Css("~/Content/css/core.less")
+        
+        @Html.Script("~/Scripts/jquery-1.8.0.min.js")
+        @Html.Script("~/Scripts/jquery.validate.min.js")
+        @Html.Script("~/Scripts/jquery.validate.unobtrusive.min.js")
+        @Html.Script("~/Scripts/jquery.unobtrusive-ajax.min.js")
+        @Html.Script("~/Scripts/jquery-ui-1.8.23.min.js")
+    </head>
+
+    <body>
+        @if (Request.IsAuthenticated)
+        {
+            @(Html.ActionLink<AccountController>(x => x.SignOut(null), "Выход"))
+
+            @(Html.ActionLink<StaffController>(x => x.CreateStaff(), "Добавить посох"))
+            
+            @(Html.ActionLink<StaffController>(x => x.List(1), "Список посохов"))
+        }
+
+        @RenderBody()
+    </body>
+</html>
