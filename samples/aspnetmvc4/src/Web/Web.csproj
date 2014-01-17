@@ -59,13 +59,13 @@
     <Reference Include="ByndyuSoft.Infrastructure.Web">
       <HintPath>..\Web\bin\ByndyuSoft.Infrastructure.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Castle.Core.3.1.0\lib\net35\Castle.Core.dll</HintPath>
+      <HintPath>..\..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Windsor, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+      <HintPath>..\..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations">
       <HintPath>..\Web\bin\JetBrains.Annotations.dll</HintPath>
@@ -288,6 +288,10 @@
     <ProjectReference Include="..\Infrastructure.NHibernate\Infrastructure.NHibernate.csproj">
       <Project>{CA74C057-A620-415A-B1BA-E5745CF1E8B9}</Project>
       <Name>Infrastructure.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.OrmLite\Infrastructure.OrmLite.csproj">
+      <Project>{68519F1B-6F3E-4A53-BE96-06012A0B7F36}</Project>
+      <Name>Infrastructure.OrmLite</Name>
     </ProjectReference>
     <ProjectReference Include="..\Web.Application\Web.Application.csproj">
       <Project>{6F5EFF02-E77D-4CEF-9648-8491315FE774}</Project>

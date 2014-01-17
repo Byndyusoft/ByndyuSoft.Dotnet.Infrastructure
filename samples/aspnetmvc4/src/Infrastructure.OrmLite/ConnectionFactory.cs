@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.OrmLite
+﻿namespace Mvc4Sample.Infrastructure.OrmLite
 {
     using System.Configuration;
     using System.Data;
