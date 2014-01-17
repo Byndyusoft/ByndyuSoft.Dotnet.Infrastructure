@@ -16,6 +16,12 @@
         {
         }
 
+        public Password(string hash, string salt)
+        {
+            Hash = hash;
+            Salt = salt;
+        }
+
         public Password(string password)
         {
             Salt = MakeSalt();

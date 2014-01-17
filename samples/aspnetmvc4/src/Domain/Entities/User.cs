@@ -38,7 +38,16 @@ namespace Mvc4Sample.Domain.Entities
 
         public virtual void SetPassword([NotNull] string password)
         {
+            if (password == null) throw new ArgumentNullException("password");
+
             Password = new Password(password);
+        }
+
+        public virtual void SetPassword([NotNull] Password password)
+        {
+            if (password == null) throw new ArgumentNullException("password");
+
+            Password = password;
         }
     }
 }
