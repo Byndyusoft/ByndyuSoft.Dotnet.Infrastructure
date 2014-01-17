@@ -6,6 +6,7 @@
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using Mvc4Sample.Infrastructure.OrmLite.Dtos;
 
     public class FormHandlerAndCommandsInstaller : IWindsorInstaller
     {
@@ -21,7 +22,7 @@
             container.Register(formHandlers,
                                Component.For<IFormHandlerFactory>().AsFactory().LifestyleTransient());
 
-            var commands = Types.FromAssemblyNamed("Mvc4Sample.Infrastructure.NHibernate")
+            var commands = Types.FromAssemblyContaining<UserDto>()
                     .BasedOn(typeof(ICommand<>))
                     .WithService
                     .AllInterfaces()

@@ -5,12 +5,13 @@ namespace Web.Installers
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using Mvc4Sample.Infrastructure.OrmLite.Dtos;
 
     public class QueryInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            var queries = Types.FromAssemblyNamed("Mvc4Sample.Infrastructure.NHibernate")
+            var queries = Types.FromAssemblyContaining<UserDto>()
                                .BasedOn(typeof (IQuery<,>))
                                .WithService
                                .AllInterfaces()
