@@ -96,9 +96,7 @@
     <Compile Include="Staff\Commands\EditStaffCommand.cs" />
     <Compile Include="Staff\Queries\FindStaffByIdQuery.cs" />
     <Compile Include="Staff\Queries\FindStaffListViewModelForPageQuery.cs" />
-    <Compile Include="User\Queries\AllUsersQuery.cs" />
     <Compile Include="User\Queries\FindByLoginOrEmailQuery.cs" />
-    <Compile Include="User\Queries\FindUserByIdQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
