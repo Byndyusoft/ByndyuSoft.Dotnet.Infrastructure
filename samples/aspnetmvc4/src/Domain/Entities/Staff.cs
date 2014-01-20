@@ -22,6 +22,12 @@
             CreatedAt = DateTime.UtcNow;
         }
 
+        public Staff([NotNull] string name, int quantity, DateTime createdAt)
+            : this(name, quantity)
+        {
+            CreatedAt = createdAt;
+        }
+
         public virtual int Id { get; set; }
 
         [NotNull]
