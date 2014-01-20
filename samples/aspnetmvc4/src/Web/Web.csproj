@@ -189,8 +189,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Installers\AccountInstaller.cs" />
+    <Compile Include="Installers\CommandsInstaller.cs" />
     <Compile Include="Installers\ControllersInstaller.cs" />
-    <Compile Include="Installers\FormHandlerAndCommandsInstaller.cs" />
+    <Compile Include="Installers\FormHandlersInstaller.cs" />
     <Compile Include="Installers\NHibernateInstaller.cs" />
     <Compile Include="Installers\QueryInstaller.cs" />
     <Compile Include="Installers\WindsorInstaller.cs" />
