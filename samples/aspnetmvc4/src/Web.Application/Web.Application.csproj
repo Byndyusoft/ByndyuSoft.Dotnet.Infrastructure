@@ -151,7 +151,6 @@
     <Compile Include="Account\Services\Impl\CustomIdentity.cs" />
     <Compile Include="Account\Services\Impl\FormsAuthenticationService.cs" />
     <Compile Include="Account\Services\Impl\RoleType.cs" />
-    <Compile Include="Infrastructure\AnyQueriesExtensions.cs" />
     <Compile Include="Infrastructure\Config.cs" />
     <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
     <Compile Include="Infrastructure\MapExtensions.cs" />

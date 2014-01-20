@@ -5,7 +5,6 @@ namespace Mvc4Sample.Infrastructure.NHibernate.Staff.Queries
     using ByndyuSoft.Infrastructure.NHibernate;
     using ByndyuSoft.Infrastructure.Web.Mvc.Paging;
     using Domain.Entities;
-    using Web.Application.Infrastructure;
     using Web.Application.Staff.Criteria;
     using Web.Application.Staff.ViewModels;
 
@@ -22,7 +21,8 @@ namespace Mvc4Sample.Infrastructure.NHibernate.Staff.Queries
             return new StaffListViewModel
                 {
                     Staff = Query.OrderByDescending(x => x.CreatedAt)
-                                 .Page(criterion.Page, criterion.PageSize)
+                                 .Skip(criterion.PageSize*(criterion.Page - 1))
+                                 .Take(criterion.PageSize)
                                  .AsEnumerable()
                                  .Select(x => new StaffViewModel
                                      {
