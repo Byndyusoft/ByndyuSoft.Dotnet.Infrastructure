@@ -6,7 +6,7 @@
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
     using JetBrains.Annotations;
-    using Mvc4Sample.Infrastructure.OrmLite.Dtos;
+    using Mvc4Sample.Web.Application.Infrastructure;
 
     [UsedImplicitly]
     public class CommandsInstaller : IWindsorInstaller
@@ -15,7 +15,7 @@
         {
             container.AddFacility<TypedFactoryFacility>();
 
-            var commands = Types.FromAssemblyContaining<UserDto>()
+            var commands = Types.FromAssemblyNamed(Config.CommandsAssemblyName)
                                 .BasedOn(typeof (ICommand<>))
                                 .WithService
                                 .AllInterfaces()

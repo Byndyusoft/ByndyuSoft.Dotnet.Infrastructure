@@ -6,7 +6,7 @@ namespace Web.Installers
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
     using JetBrains.Annotations;
-    using Mvc4Sample.Infrastructure.OrmLite.Dtos;
+    using Mvc4Sample.Web.Application.Infrastructure;
     using ServiceStack.OrmLite;
     using ServiceStack.OrmLite.SqlServer;
 
@@ -17,7 +17,7 @@ namespace Web.Installers
         {
             OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
 
-            var queries = Types.FromAssemblyContaining<UserDto>()
+            var queries = Types.FromAssemblyNamed(Config.QueriesAssemblyName)
                                .BasedOn(typeof (IQuery<,>))
                                .WithService
                                .AllInterfaces()

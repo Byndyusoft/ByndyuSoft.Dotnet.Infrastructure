@@ -95,6 +95,7 @@
       <HintPath>..\..\packages\NHibernate.3.3.2.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -145,6 +146,7 @@
     <Compile Include="Account\Services\Impl\FormsAuthenticationService.cs" />
     <Compile Include="Account\Services\Impl\RoleType.cs" />
     <Compile Include="Infrastructure\AnyQueriesExtensions.cs" />
+    <Compile Include="Infrastructure\Config.cs" />
     <Compile Include="Infrastructure\Paging\HtmlHelperPagingExtensions.cs" />
     <Compile Include="Infrastructure\Paging\Pager.cs" />
     <Compile Include="Staff\Commands\Contexts\CreateStaffCommandContext.cs" />
