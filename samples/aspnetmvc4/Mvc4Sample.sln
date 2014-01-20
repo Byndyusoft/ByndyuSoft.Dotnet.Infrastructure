@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Application", "src\Web.Application\Web.Application.csproj", "{6F5EFF02-E77D-4CEF-9648-8491315FE774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Model", "src\Domain\Domain.Model.csproj", "{DCBF412A-9F01-4793-B2C9-2938C2889118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate", "src\Infrastructure.NHibernate\Infrastructure.NHibernate.csproj", "{CA74C057-A620-415A-B1BA-E5745CF1E8B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate.Tests", "src\Infrastructure.NHibernate.Tests\Infrastructure.NHibernate.Tests.csproj", "{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "src\Migrations\Migrations.csproj", "{8EC6E349-A1DF-479E-B744-D9DA7D1F0F67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Application.Tests", "src\Web.Application.Tests\Web.Application.Tests.csproj", "{07351244-E5AB-44DB-BD91-EC23D916A454}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F23E4770-EFE7-4508-B738-C56BF027CE0B}"
+	ProjectSection(SolutionItems) = preProject
+		build\default.ps1 = build\default.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6F0B2B35-3771-453D-B802-F4D5CDF94616}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A968A88A-A0BE-4361-A5FC-383097C93281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Model.Tests", "src\Domain.Model.Tests\Domain.Model.Tests.csproj", "{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2E39F475-B530-4927-8DB9-88A648CD0B36}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\nuget.exe = .nuget\nuget.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "src\Web\Web.csproj", "{E089A4F6-7099-4A2D-8904-4396CC9E8B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.OrmLite", "src\Infrastructure.OrmLite\Infrastructure.OrmLite.csproj", "{68519F1B-6F3E-4A53-BE96-06012A0B7F36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F5EFF02-E77D-4CEF-9648-8491315FE774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5EFF02-E77D-4CEF-9648-8491315FE774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5EFF02-E77D-4CEF-9648-8491315FE774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5EFF02-E77D-4CEF-9648-8491315FE774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCBF412A-9F01-4793-B2C9-2938C2889118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCBF412A-9F01-4793-B2C9-2938C2889118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCBF412A-9F01-4793-B2C9-2938C2889118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCBF412A-9F01-4793-B2C9-2938C2889118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA74C057-A620-415A-B1BA-E5745CF1E8B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA74C057-A620-415A-B1BA-E5745CF1E8B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA74C057-A620-415A-B1BA-E5745CF1E8B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA74C057-A620-415A-B1BA-E5745CF1E8B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC6E349-A1DF-479E-B744-D9DA7D1F0F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC6E349-A1DF-479E-B744-D9DA7D1F0F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC6E349-A1DF-479E-B744-D9DA7D1F0F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC6E349-A1DF-479E-B744-D9DA7D1F0F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07351244-E5AB-44DB-BD91-EC23D916A454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07351244-E5AB-44DB-BD91-EC23D916A454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07351244-E5AB-44DB-BD91-EC23D916A454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07351244-E5AB-44DB-BD91-EC23D916A454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E089A4F6-7099-4A2D-8904-4396CC9E8B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E089A4F6-7099-4A2D-8904-4396CC9E8B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E089A4F6-7099-4A2D-8904-4396CC9E8B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E089A4F6-7099-4A2D-8904-4396CC9E8B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68519F1B-6F3E-4A53-BE96-06012A0B7F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68519F1B-6F3E-4A53-BE96-06012A0B7F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68519F1B-6F3E-4A53-BE96-06012A0B7F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68519F1B-6F3E-4A53-BE96-06012A0B7F36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DCBF412A-9F01-4793-B2C9-2938C2889118} = {A968A88A-A0BE-4361-A5FC-383097C93281}
+		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1} = {A968A88A-A0BE-4361-A5FC-383097C93281}
+		{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5} = {6F0B2B35-3771-453D-B802-F4D5CDF94616}
+		{CA74C057-A620-415A-B1BA-E5745CF1E8B9} = {6F0B2B35-3771-453D-B802-F4D5CDF94616}
+		{68519F1B-6F3E-4A53-BE96-06012A0B7F36} = {6F0B2B35-3771-453D-B802-F4D5CDF94616}
+	EndGlobalSection
+EndGlobal

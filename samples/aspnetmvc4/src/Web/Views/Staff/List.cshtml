@@ -1,0 +1,30 @@
+﻿@using Mvc4Sample.Web.Application.Infrastructure.Paging
+@model Mvc4Sample.Web.Application.Staff.ViewModels.StaffListViewModel
+
+<table class="table table-bordered">
+    <tr>
+        <td>Имя</td>
+        <td>Количество</td>
+        <td>Дата создания</td>
+        <td>Действия</td>
+    </tr>
+    @foreach (var staff in Model.Staff)
+    {
+        <tr>
+            <td>@staff.Name</td>
+            <td>@staff.Quantity</td>
+            <td>@staff.CreatedAt</td>
+            <td>
+                @using (Html.BeginForm("DeleteStaff", "Staff", FormMethod.Post))
+                {
+                    @Html.Hidden("Id", staff.Id)
+
+                    <input type="submit" value="Удалить" class="btn btn-danger"/>
+                }
+                @Html.ActionLink("Редактровать", "EditStaff", "Staff", new {id = staff.Id}, new {@class = "btn btn-primary"})
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.Pager(Model.PageInfo)
