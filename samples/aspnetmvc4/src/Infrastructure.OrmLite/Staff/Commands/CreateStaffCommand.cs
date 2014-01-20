@@ -1,5 +1,6 @@
 ﻿namespace Mvc4Sample.Infrastructure.OrmLite.Staff.Commands
 {
+    using ByndyuSoft.Infrastructure.Dapper;
     using ByndyuSoft.Infrastructure.Domain.Commands;
     using Domain.Entities;
     using Dtos;
@@ -13,7 +14,7 @@
         {
             OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
 
-            using (var connection = ConnectionFactory.Open())
+            using (var connection = new ConnectionFactory().Create())
             {
                 var staff = new Staff(commandContext.Form.Name, commandContext.Form.Quantity);
 

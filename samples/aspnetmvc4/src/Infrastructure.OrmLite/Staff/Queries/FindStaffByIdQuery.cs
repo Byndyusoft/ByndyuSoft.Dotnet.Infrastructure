@@ -1,6 +1,7 @@
 ﻿namespace Mvc4Sample.Infrastructure.OrmLite.Staff.Queries
 {
     using System.Linq;
+    using ByndyuSoft.Infrastructure.Dapper;
     using ByndyuSoft.Infrastructure.Domain;
     using Domain.Entities;
     using Dtos;
@@ -14,7 +15,7 @@
         {
             OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
 
-            using (var connection = ConnectionFactory.Open())
+            using (var connection = new ConnectionFactory().Create())
             {
                 var staffDto = connection.Select<StaffDto>(x => x.STAFF_ID == criterion.Id)
                                          .Single();

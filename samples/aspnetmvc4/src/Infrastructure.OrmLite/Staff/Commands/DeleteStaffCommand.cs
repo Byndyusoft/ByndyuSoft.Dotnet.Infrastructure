@@ -1,5 +1,6 @@
 ﻿namespace Mvc4Sample.Infrastructure.OrmLite.Staff.Commands
 {
+    using ByndyuSoft.Infrastructure.Dapper;
     using ByndyuSoft.Infrastructure.Domain.Commands;
     using Dtos;
     using ServiceStack.OrmLite;
@@ -9,7 +10,7 @@
     {
         public void Execute(DeleteStaffCommandContext commandContext)
         {
-            using (var connection = ConnectionFactory.Open())
+            using (var connection = new ConnectionFactory().Create())
             {
                 connection.Delete<StaffDto>(x => x.STAFF_ID == commandContext.Id);
             }

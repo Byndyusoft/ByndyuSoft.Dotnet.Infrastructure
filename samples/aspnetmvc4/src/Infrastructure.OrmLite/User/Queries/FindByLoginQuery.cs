@@ -1,6 +1,7 @@
 ﻿namespace Mvc4Sample.Infrastructure.OrmLite.User.Queries
 {
     using System.Linq;
+    using ByndyuSoft.Infrastructure.Dapper;
     using ByndyuSoft.Infrastructure.Domain;
     using Domain.Entities;
     using Dtos;
@@ -14,7 +15,7 @@
         {
             OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
 
-            using (var connection = ConnectionFactory.Open())
+            using (var connection = new ConnectionFactory().Create())
             {
                 var userDto = connection.Select<UserDto>(x => x.LOGIN == criterion.Login)
                                         .Single();

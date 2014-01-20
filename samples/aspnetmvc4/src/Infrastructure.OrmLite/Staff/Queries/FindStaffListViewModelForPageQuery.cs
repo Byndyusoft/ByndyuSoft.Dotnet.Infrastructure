@@ -1,6 +1,7 @@
 ﻿namespace Mvc4Sample.Infrastructure.OrmLite.Staff.Queries
 {
     using System.Linq;
+    using ByndyuSoft.Infrastructure.Dapper;
     using ByndyuSoft.Infrastructure.Domain;
     using ByndyuSoft.Infrastructure.Web.Mvc.Paging;
     using Dtos;
@@ -15,13 +16,13 @@
         {
             OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
 
-            using (var connection = ConnectionFactory.Open())
+            using (var connection = new ConnectionFactory().Create())
             {
                 var totalCount = connection.Scalar<int>("SELECT COUNT(*) FROM STAFF");
 
                 var offset = (criterion.Page - 1)*criterion.PageSize;
 
-                var staffOnPage = connection.Select<StaffDto>("SELECT * FROM STAFF ORDER BY CREATED_AT DESC OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY", new { offset, pageSize = criterion.PageSize });
+                var staffOnPage = connection.Select<StaffDto>("SELECT * FROM STAFF ORDER BY CREATED_AT DESC OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY", new {offset, pageSize = criterion.PageSize});
 
                 return new StaffListViewModel
                     {
