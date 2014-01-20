@@ -5,4 +5,31 @@
 <h2>Профиль</h2>
 <p>
     ASP.NET MVC4 Sample + ByndyuSoft.Infrastructure
+    
+    <div>
+        <h2>Для работы с системой необходимо сделать следующее:</h2>
+        <ol>
+            <li>В MSSQL создать базу данных с названием Mvc4Sample. Создать пользователя с именем Mvc4Sample и паролем Mvc4Sample, который будет иметь все права на эту базу данных;</li>
+            <li>Открыть Mvc4Sample.sln в VS2012;</li>
+            <li>Собрать проект, при этом должны скачаться все необходимые библиотеки через Nuget;</li>
+            <li>Запустить migrate.bat;</li>
+            <li>Запустить в классе LiveDbTests тест AddUser;</li>
+            <li>Запустить проект, в качестве логина ввести <i>login</i> и пароль <i>123</i>;</li>
+            <li>Если вход прошел успешно, то должна появится надпись "ASP.NET MVC4 Sample + ByndyuSoft.Infrastructure".</li>
+        </ol>
+        <h2>Для смены сборки с командами и запросами:</h2>
+        <ol>
+            <li>Для смены сборки, содержащей команды, в файле Web.config в значении параметра CommandsAssemblyName укажите новое имя сборки (Доступные в примере: Mvc4Sample.Infrastructure.NHibernate и Mvc4Sample.Infrastructure.OrmLite)</li>
+            <li>Для смены сборки, содержащей запросы, в файле Web.config в значении параметра QueriesAssemblyName укажите новое имя сборки (Доступные в примере: Mvc4Sample.Infrastructure.NHibernate и Mvc4Sample.Infrastructure.OrmLite)</li>
+            <li>
+                Вид параметров конфигурации, в случае использования для запросов и команд сборки Mvc4Sample.Infrastructure.OrmLite:
+                <div>
+                    @("<add key=\"QueriesAssemblyName\" value=\"Mvc4Sample.Infrastructure.OrmLite\" />")
+                </div>
+                <div>
+                    @("<add key=\"CommandsAssemblyName\" value=\"Mvc4Sample.Infrastructure.OrmLite\" />")
+                </div>
+            </li>
+        </ol>
+    </div>
 </p>
