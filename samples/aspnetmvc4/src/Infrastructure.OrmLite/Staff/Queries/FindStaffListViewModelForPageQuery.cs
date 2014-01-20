@@ -20,9 +20,11 @@
             {
                 var totalCount = connection.Scalar<int>("SELECT COUNT(*) FROM STAFF");
 
-                var offset = (criterion.Page - 1)*criterion.PageSize;
-
-                var staffOnPage = connection.Select<StaffDto>("SELECT * FROM STAFF ORDER BY CREATED_AT DESC OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY", new {offset, pageSize = criterion.PageSize});
+                var staffOnPage = connection.Select<StaffDto>("SELECT * FROM STAFF ORDER BY CREATED_AT DESC OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY", new
+                    {
+                        offset = (criterion.Page - 1)*criterion.PageSize,
+                        pageSize = criterion.PageSize
+                    });
 
                 return new StaffListViewModel
                     {

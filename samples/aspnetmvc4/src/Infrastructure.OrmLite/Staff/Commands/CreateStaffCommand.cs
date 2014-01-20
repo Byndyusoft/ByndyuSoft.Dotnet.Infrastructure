@@ -18,7 +18,19 @@
             {
                 var staff = new Staff(commandContext.Form.Name, commandContext.Form.Quantity);
 
-                connection.InsertOnly(new StaffDto {NAME = staff.Name, QUANTITY = staff.Quantity, CREATED_AT = staff.CreatedAt}, ev => ev.Insert(p => new {p.NAME, p.QUANTITY, p.CREATED_AT}));
+                connection.InsertOnly(
+                    new StaffDto
+                        {
+                            NAME = staff.Name,
+                            QUANTITY = staff.Quantity,
+                            CREATED_AT = staff.CreatedAt
+                        },
+                    ev => ev.Insert(p => new
+                        {
+                            p.NAME,
+                            p.QUANTITY,
+                            p.CREATED_AT
+                        }));
             }
         }
     }
