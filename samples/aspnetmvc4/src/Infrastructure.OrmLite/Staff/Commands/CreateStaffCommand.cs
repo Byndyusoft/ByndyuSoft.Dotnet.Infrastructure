@@ -5,15 +5,12 @@
     using Domain.Entities;
     using Dtos;
     using ServiceStack.OrmLite;
-    using ServiceStack.OrmLite.SqlServer;
     using Web.Application.Staff.Commands.Contexts;
 
     public class CreateStaffCommand : ICommand<CreateStaffCommandContext>
     {
         public void Execute(CreateStaffCommandContext commandContext)
         {
-            OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
-
             using (var connection = new ConnectionFactory().Create())
             {
                 var staff = new Staff(commandContext.Form.Name, commandContext.Form.Quantity);

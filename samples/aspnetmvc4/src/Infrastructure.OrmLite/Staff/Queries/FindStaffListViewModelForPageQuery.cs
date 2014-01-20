@@ -6,7 +6,6 @@
     using ByndyuSoft.Infrastructure.Web.Mvc.Paging;
     using Dtos;
     using ServiceStack.OrmLite;
-    using ServiceStack.OrmLite.SqlServer;
     using Web.Application.Staff.Criteria;
     using Web.Application.Staff.ViewModels;
 
@@ -14,8 +13,6 @@
     {
         public StaffListViewModel Ask(FindStaffListViewModelForPage criterion)
         {
-            OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
-
             using (var connection = new ConnectionFactory().Create())
             {
                 var totalCount = connection.Scalar<int>("SELECT COUNT(*) FROM STAFF");

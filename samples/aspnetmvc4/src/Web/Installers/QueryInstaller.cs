@@ -6,11 +6,15 @@ namespace Web.Installers
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
     using Mvc4Sample.Infrastructure.OrmLite.Dtos;
+    using ServiceStack.OrmLite;
+    using ServiceStack.OrmLite.SqlServer;
 
     public class QueryInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
+            OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
+
             var queries = Types.FromAssemblyContaining<UserDto>()
                                .BasedOn(typeof (IQuery<,>))
                                .WithService

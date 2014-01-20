@@ -6,15 +6,12 @@
     using Domain.Entities;
     using Dtos;
     using ServiceStack.OrmLite;
-    using ServiceStack.OrmLite.SqlServer;
     using Web.Application.Account.Criteria;
 
     public class FindByLoginQuery : IQuery<FindByLogin, User>
     {
         public User Ask(FindByLogin criterion)
         {
-            OrmLiteConfig.DialectProvider = new SqlServerOrmLiteDialectProvider();
-
             using (var connection = new ConnectionFactory().Create())
             {
                 var userDto = connection.Select<UserDto>(x => x.LOGIN == criterion.Login)
