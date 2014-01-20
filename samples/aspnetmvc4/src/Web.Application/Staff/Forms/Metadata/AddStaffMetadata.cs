@@ -11,6 +11,7 @@
                 .Required("Обязательное поле");
 
             Configure(x => x.Quantity)
+                .DisplayName("Количество")
                 .Optional();
         }
     }

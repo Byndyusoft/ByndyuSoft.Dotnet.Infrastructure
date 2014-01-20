@@ -5,25 +5,39 @@
     <head>
         <title>@ViewBag.Title</title>
 		
-        @Html.Css("~/Content/css/core.less")
+        @Html.Css("~/Content/css/bootstrap.min.css")
+        @Html.Css("~/Content/css/nav.css")
         
-        @Html.Script("~/Scripts/jquery-1.8.0.min.js")
+        @Html.Script("~/Scripts/jquery-2.0.3.min.js")
         @Html.Script("~/Scripts/jquery.validate.min.js")
         @Html.Script("~/Scripts/jquery.validate.unobtrusive.min.js")
         @Html.Script("~/Scripts/jquery.unobtrusive-ajax.min.js")
-        @Html.Script("~/Scripts/jquery-ui-1.8.23.min.js")
+        @Html.Script("~/Scripts/jquery-ui-1.10.3.min.js")
     </head>
 
     <body>
-        @if (Request.IsAuthenticated)
-        {
-            @(Html.ActionLink<AccountController>(x => x.SignOut(null), "Выход"))
 
-            @(Html.ActionLink<StaffController>(x => x.CreateStaff(), "Добавить посох"))
-            
-            @(Html.ActionLink<StaffController>(x => x.List(1), "Список посохов"))
-        }
+        <div class="container">
+            @if (Request.IsAuthenticated)
+            {
+                <div class="masthead">
+                    <h3 class="text-muted">MVC4 Sample</h3>
+                    <ul class="nav nav-justified">
+                        @*                        <li class="active"><a href="#">Home</a></li>*@
+                        <li>@(Html.ActionLink<StaffController>(x => x.CreateStaff(), "Добавить посох"))</li>
+                        <li>@(Html.ActionLink<StaffController>(x => x.List(1), "Список посохов"))</li>
+                        <li>@(Html.ActionLink<AccountController>(x => x.SignOut(null), "Выход"))</li>
+                    </ul>
+                </div>
+            }
 
-        @RenderBody()
+            <div class="row">
+                @RenderBody()
+            </div>
+
+            <div class="footer">
+                <p>&copy; ByndyuSoft @DateTime.UtcNow.Year</p>
+            </div>
+        </div>
     </body>
 </html>

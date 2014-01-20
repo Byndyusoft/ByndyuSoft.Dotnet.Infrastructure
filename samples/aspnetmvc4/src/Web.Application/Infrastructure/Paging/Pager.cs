@@ -79,16 +79,16 @@
 
         private void FillPagination(TagBuilder mainContainer)
         {
-            var ul = new TagBuilder("ul");
-            ul.AddCssClass("pages");
+            var div = new TagBuilder("div");
+            div.AddCssClass("btn-group");
 
-            FillLeftArrow(ul);
+            FillLeftArrow(div);
 
-            FillPages(ul);
+            FillPages(div);
 
-            FillRightArrow(ul);
+            FillRightArrow(div);
 
-            mainContainer.InnerHtml += ul;
+            mainContainer.InnerHtml += div;
         }
 
         private void FillLeftArrow(TagBuilder ul)
@@ -155,7 +155,7 @@
 
         private static void MarkAsCurrentPage(TagBuilder tag)
         {
-            tag.AddCssClass("active-page");
+            tag.AddCssClass("active");
         }
 
         private bool ItIsCurrentPage(int i)
@@ -182,16 +182,20 @@
 
         private TagBuilder GetTag(int page, string innerHtml)
         {
-            var li = new TagBuilder("li");
+            var div = new TagBuilder("button");
+            div.Attributes.Add("type", "button");
+
+            div.AddCssClass("btn");
+            div.AddCssClass("btn-default");
 
             var href = new TagBuilder("a");
 
             href.Attributes.Add("href", string.Format("{0}?page={1}{2}", _virtualPath, page, _restQueryPart));
             href.InnerHtml += innerHtml;
 
-            li.InnerHtml += href;
+            div.InnerHtml += href;
 
-            return li;
+            return div;
         }
     }
 }

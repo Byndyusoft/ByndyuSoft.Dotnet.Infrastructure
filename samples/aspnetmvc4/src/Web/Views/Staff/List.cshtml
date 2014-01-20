@@ -1,7 +1,7 @@
 ﻿@using Mvc4Sample.Web.Application.Infrastructure.Paging
 @model Mvc4Sample.Web.Application.Staff.ViewModels.StaffListViewModel
 
-<table>
+<table class="table table-bordered">
     <tr>
         <td>Имя</td>
         <td>Количество</td>
@@ -19,9 +19,9 @@
                 {
                     @Html.Hidden("Id", staff.Id)
 
-                    <input type="submit" value="Удалить" />
+                    <input type="submit" value="Удалить" class="btn btn-danger"/>
                 }
-                @Html.ActionLink("Редактровать", "EditStaff", "Staff", new {id = staff.Id}, null)
+                @Html.ActionLink("Редактровать", "EditStaff", "Staff", new {id = staff.Id}, new {@class = "btn btn-primary"})
             </td>
         </tr>
     }
