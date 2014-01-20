@@ -2,9 +2,9 @@
 {
     using MvcExtensions;
 
-    public class AddStaffMetadata : ModelMetadataConfiguration<CreateStaffForm>
+    public class CreateStaffFormMetadata : ModelMetadataConfiguration<CreateStaffForm>
     {
-        public AddStaffMetadata()
+        public CreateStaffFormMetadata()
         {
             Configure(x => x.Name)
                 .DisplayName("Имя")

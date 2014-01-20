@@ -2,7 +2,7 @@
 {
     using ByndyuSoft.Infrastructure.Web.Forms;
 
-    public class DeleteStaff : IForm
+    public class DeleteStaffForm : IForm
     {
         public int Id { get; set; }
     }

@@ -50,7 +50,7 @@
         }
 
         [HttpPost]
-        public ActionResult DeleteStaff(DeleteStaff form, int page = 1)
+        public ActionResult DeleteStaff(DeleteStaffForm form, int page = 1)
         {
             return Form(form, this.RedirectToAction(x => x.List(page)));
         }

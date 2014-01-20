@@ -4,7 +4,7 @@
     using ByndyuSoft.Infrastructure.Web.Forms;
     using CommandsContexts;
 
-    public class DeleteStaffHandler : IFormHandler<DeleteStaff>
+    public class DeleteStaffHandler : IFormHandler<DeleteStaffForm>
     {
         private readonly ICommandBuilder _commandBuilder;
 
@@ -13,7 +13,7 @@
             _commandBuilder = commandBuilder;
         }
 
-        public void Execute(DeleteStaff form)
+        public void Execute(DeleteStaffForm form)
         {
             _commandBuilder
                 .Execute(new DeleteStaffCommandContext {Id = form.Id});

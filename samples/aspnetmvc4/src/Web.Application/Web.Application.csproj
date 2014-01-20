@@ -165,12 +165,12 @@
     <Compile Include="Staff\Criteria\FindStaffById.cs" />
     <Compile Include="Staff\Criteria\FindStaffListViewModelForPage.cs" />
     <Compile Include="Staff\Forms\CreateStaffForm.cs" />
-    <Compile Include="Staff\Forms\DeleteStaff.cs" />
+    <Compile Include="Staff\Forms\DeleteStaffForm.cs" />
     <Compile Include="Staff\Forms\EditStaffForm.cs" />
     <Compile Include="Staff\Forms\Handlers\CreateStaffHandler.cs" />
     <Compile Include="Staff\Forms\Handlers\DeleteStaffHandler.cs" />
     <Compile Include="Staff\Forms\Handlers\EditStaffHandler.cs" />
-    <Compile Include="Staff\Forms\Metadata\AddStaffMetadata.cs" />
+    <Compile Include="Staff\Forms\Metadata\CreateStaffFormMetadata.cs" />
     <Compile Include="Staff\Forms\Metadata\EditStaffFormMetadata.cs" />
     <Compile Include="Staff\Profiles\StaffProfile.cs" />
     <Compile Include="Staff\StaffController.cs" />
