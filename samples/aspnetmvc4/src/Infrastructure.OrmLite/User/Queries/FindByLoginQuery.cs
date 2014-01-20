@@ -1,6 +1,5 @@
 ﻿namespace Mvc4Sample.Infrastructure.OrmLite.User.Queries
 {
-    using System;
     using System.Linq;
     using ByndyuSoft.Infrastructure.Domain;
     using Domain.Entities;
