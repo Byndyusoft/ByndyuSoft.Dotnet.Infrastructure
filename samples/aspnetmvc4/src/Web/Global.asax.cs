@@ -12,6 +12,7 @@
     using Castle.Windsor;
     using Castle.Windsor.Installer;
     using Mvc4Sample.Web.Application.Account.Profiles;
+    using Mvc4Sample.Web.Application.Infrastructure;
     using EnumerableExtensions = MvcExtensions.EnumerableExtensions;
 
     public class MvcApplication : HttpApplication

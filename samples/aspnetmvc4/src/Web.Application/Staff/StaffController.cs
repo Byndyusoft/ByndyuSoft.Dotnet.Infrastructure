@@ -6,6 +6,7 @@
     using Criteria;
     using Domain.Entities;
     using Forms;
+    using Infrastructure;
     using Microsoft.Web.Mvc;
     using ViewModels;
 
@@ -14,7 +15,8 @@
     {
         private readonly IQueryBuilder _queryBuilder;
 
-        public StaffController(IFormHandlerFactory formHandlerFactory, IQueryBuilder queryBuilder) : base(formHandlerFactory)
+        public StaffController(IFormHandlerFactory formHandlerFactory, IQueryBuilder queryBuilder)
+            : base(formHandlerFactory)
         {
             _queryBuilder = queryBuilder;
         }
@@ -38,12 +40,7 @@
                 .For<Staff>()
                 .With(new FindStaffById {Id = id});
 
-            return View(new EditStaffForm
-                {
-                    Id = staffForEditing.Id,
-                    Name = staffForEditing.Name,
-                    Quantity = staffForEditing.Quantity
-                });
+            return View(staffForEditing.MapTo<EditStaffForm>());
         }
 
         [HttpPost]

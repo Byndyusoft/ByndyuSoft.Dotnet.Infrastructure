@@ -1,4 +1,4 @@
-﻿namespace Web
+﻿namespace Mvc4Sample.Web.Application.Infrastructure
 {
     using System;
     using System.Web;
@@ -26,6 +26,7 @@
             {
                 throw new HttpException(404, string.Format("The controller for path '{0}' could not be found.", requestContext.HttpContext.Request.Path));
             }
+
             return (IController) _kernel.Resolve(controllerType);
         }
     }
