@@ -80,6 +80,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff\Commands\CreateStaffCommand.cs" />
     <Compile Include="Staff\Commands\DeleteStaffCommand.cs" />
+    <Compile Include="Staff\Commands\EditStaffCommand.cs" />
+    <Compile Include="Staff\Queries\FindStaffByIdQuery.cs" />
     <Compile Include="Staff\Queries\FindStaffListViewModelForPageQuery.cs" />
     <Compile Include="User\Queries\FindByLoginQuery.cs" />
   </ItemGroup>
