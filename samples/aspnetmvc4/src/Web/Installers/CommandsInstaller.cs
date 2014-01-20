@@ -5,8 +5,10 @@
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using JetBrains.Annotations;
     using Mvc4Sample.Infrastructure.OrmLite.Dtos;
 
+    [UsedImplicitly]
     public class CommandsInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)

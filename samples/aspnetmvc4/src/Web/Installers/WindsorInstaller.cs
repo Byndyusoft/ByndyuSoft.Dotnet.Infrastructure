@@ -8,8 +8,10 @@
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using JetBrains.Annotations;
     using MvcExtensions;
 
+    [UsedImplicitly]
     public class WindsorInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)

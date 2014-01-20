@@ -5,10 +5,12 @@ namespace Web.Installers
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using JetBrains.Annotations;
     using Mvc4Sample.Infrastructure.OrmLite.Dtos;
     using ServiceStack.OrmLite;
     using ServiceStack.OrmLite.SqlServer;
 
+    [UsedImplicitly]
     public class QueryInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
