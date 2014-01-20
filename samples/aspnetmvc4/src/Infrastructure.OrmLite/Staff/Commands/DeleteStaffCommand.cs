@@ -4,7 +4,7 @@
     using ByndyuSoft.Infrastructure.Domain.Commands;
     using Dtos;
     using ServiceStack.OrmLite;
-    using Web.Application.Staff.Commands.Contexts;
+    using Web.Application.Staff.CommandsContexts;
 
     public class DeleteStaffCommand : ICommand<DeleteStaffCommandContext>
     {

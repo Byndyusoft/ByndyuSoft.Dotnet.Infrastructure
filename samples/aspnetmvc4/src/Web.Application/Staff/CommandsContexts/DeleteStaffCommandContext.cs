@@ -1,4 +1,4 @@
-﻿namespace Mvc4Sample.Web.Application.Staff.Commands.Contexts
+namespace Mvc4Sample.Web.Application.Staff.CommandsContexts
 {
     using ByndyuSoft.Infrastructure.Domain.Commands;
 

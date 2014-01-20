@@ -3,7 +3,7 @@
     using ByndyuSoft.Infrastructure.Domain;
     using ByndyuSoft.Infrastructure.Domain.Commands;
     using Domain.Entities;
-    using Web.Application.Staff.Commands.Contexts;
+    using Web.Application.Staff.CommandsContexts;
 
     public class CreateStaffCommand : ICommand<CreateStaffCommandContext>
     {

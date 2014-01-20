@@ -2,7 +2,7 @@
 {
     using ByndyuSoft.Infrastructure.Domain.Commands;
     using ByndyuSoft.Infrastructure.Web.Forms;
-    using Commands.Contexts;
+    using CommandsContexts;
 
     public class DeleteStaffHandler : IFormHandler<DeleteStaff>
     {
