@@ -153,9 +153,11 @@
     <Compile Include="Account\Services\Impl\RoleType.cs" />
     <Compile Include="Infrastructure\AnyQueriesExtensions.cs" />
     <Compile Include="Infrastructure\Config.cs" />
+    <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
     <Compile Include="Infrastructure\MapExtensions.cs" />
     <Compile Include="Infrastructure\Paging\HtmlHelperPagingExtensions.cs" />
     <Compile Include="Infrastructure\Paging\Pager.cs" />
+    <Compile Include="Infrastructure\PopulateModelBase.cs" />
     <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
     <Compile Include="Staff\Commands\Contexts\CreateStaffCommandContext.cs" />
     <Compile Include="Staff\Commands\Contexts\DeleteStaffCommandContext.cs" />
@@ -174,9 +176,7 @@
     <Compile Include="Staff\StaffController.cs" />
     <Compile Include="Staff\ViewModels\StaffListViewModel.cs" />
     <Compile Include="Staff\ViewModels\StaffViewModel.cs" />
-    <Compile Include="CustomAuthorizeAttribute.cs" />
     <Compile Include="Account\Profiles\UserProfile.cs" />
-    <Compile Include="PopulateModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

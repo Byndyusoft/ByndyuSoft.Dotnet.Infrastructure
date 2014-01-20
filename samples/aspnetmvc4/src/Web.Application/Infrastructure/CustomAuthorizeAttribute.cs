@@ -1,4 +1,4 @@
-﻿namespace Mvc4Sample.Web.Application
+namespace Mvc4Sample.Web.Application.Infrastructure
 {
     using System;
     using System.Collections.Generic;
@@ -10,11 +10,11 @@
 
     public class CustomAuthorizeAttribute : AuthorizeAttribute
     {
-        private readonly IEnumerable<RoleType> roleTypes;
+        private readonly IEnumerable<RoleType> _roleTypes;
 
         public CustomAuthorizeAttribute(params RoleType[] roleTypes)
         {
-            this.roleTypes = roleTypes;
+            _roleTypes = roleTypes;
         }
 
         protected override bool AuthorizeCore(HttpContextBase httpContext)
@@ -25,9 +25,9 @@
             if (httpContext.User == null)
                 return false;
 
-            if (roleTypes.Any())
+            if (_roleTypes.Any())
             {
-                return roleTypes.Any(x => httpContext.User.IsInRole(x.ToString()));
+                return _roleTypes.Any(x => httpContext.User.IsInRole(x.ToString()));
             }
 
             return httpContext.Request.IsAuthenticated;
