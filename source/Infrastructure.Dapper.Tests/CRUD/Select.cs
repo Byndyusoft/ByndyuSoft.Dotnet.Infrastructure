@@ -1,51 +1,43 @@
 namespace Infrastructure.Dapper.Tests.CRUD
 {
     using System.Collections.Generic;
-    using System.Data;
     using System.Linq;
-    using ByndyuSoft.Infrastructure.Dapper;
+
+    using ByndyuSoft.Infrastructure.Domain.Criteria;
+
     using Dto;
+
     using NUnit.Framework;
-    using QueryObject;
+
+    using ByndyuSoft.Infrastructure.Domain.Extensions;
 
     public class Select : InMemoryTestFixtureBase
     {
         [Test]
         public void SelectProductDtoById()
         {
-            using (IDbConnection dbConnection = new SqliteConnectionFactory().Create())
-            {
-                var product1 = new ProductDto {Name = "Product #1"};
-                dbConnection.Execute(new InsertProduct().Query(product1));
+            var product = new Product { Name = "Product #1" };
 
-                QueryObject byId = new SelectProduct().ById(1);
-                ProductDto productDto = dbConnection.Query<ProductDto>(byId).SingleOrDefault();
+            QueryBuilder.For<Product>().With(new InsertEntity<Product>(product));
 
-                Assert.AreEqual(1, productDto.Id);
-                Assert.AreEqual("Product #1", productDto.Name);
-            }
+            var actualProduct = QueryBuilder.For<Product>().ById(product.Id);
+
+            Assert.NotNull(actualProduct);
+            Assert.AreEqual(1, actualProduct.Id);
+            Assert.AreEqual("Product #1", actualProduct.Name);
         }
 
         [Test]
         public void SelectAllProductsDto()
         {
-            using (IDbConnection dbConnection = new SqliteConnectionFactory().Create())
-            {
-                var product1 = new ProductDto {Name = "Product #1"};
-                dbConnection.Execute(new InsertProduct().Query(product1));
+            QueryBuilder.For<Product>().With(new InsertEntity<Product>(new Product { Name = "Product #1" }));
+            QueryBuilder.For<Product>().With(new InsertEntity<Product>(new Product { Name = "Product #2" }));
+            QueryBuilder.For<Product>().With(new InsertEntity<Product>(new Product { Name = "Product #3" }));
 
-                var product2 = new ProductDto {Name = "Product #2"};
-                dbConnection.Execute(new InsertProduct().Query(product2));
+            var products = QueryBuilder.For<IEnumerable<Product>>().All();
 
-                var product3 = new ProductDto {Name = "Product #3"};
-                dbConnection.Execute(new InsertProduct().Query(product3));
-
-                QueryObject all = new SelectProduct().All();
-
-                IEnumerable<ProductDto> productDtos = dbConnection.Query<ProductDto>(all);
-
-                Assert.AreEqual(3, productDtos.Count());
-            }
+            Assert.NotNull(products);
+            Assert.AreEqual(3, products.Count());
         }
     }
 }

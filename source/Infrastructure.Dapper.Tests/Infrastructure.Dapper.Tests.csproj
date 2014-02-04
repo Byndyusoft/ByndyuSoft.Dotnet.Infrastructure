@@ -53,7 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dto\ProductDto.cs" />
+    <Compile Include="CRUD\Delete.cs" />
+    <Compile Include="Dto\Product.cs" />
     <Compile Include="CRUD\Fetch.cs" />
     <Compile Include="CRUD\Insert.cs" />
     <Compile Include="InMemoryTestFixtureBase.cs" />
@@ -80,9 +81,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj">
+      <Project>{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}</Project>
+      <Name>Infrastructure.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure.Dapper\Infrastructure.Dapper.csproj">
       <Project>{3A94E407-85EC-41E8-925F-D40B68E133AE}</Project>
       <Name>Infrastructure.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Domain\Infrastructure.Domain.csproj">
+      <Project>{3F945C22-DAFE-4E48-A790-51FC090901AC}</Project>
+      <Name>Infrastructure.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
