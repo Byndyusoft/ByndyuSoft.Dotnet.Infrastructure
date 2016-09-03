@@ -1,7 +1,5 @@
 ﻿namespace ByndyuSoft.Infrastructure.Domain
 {
-    using JetBrains.Annotations;
-
     /// <summary>
     ///     Интерфейс для задания критериев запроса
     /// </summary>
@@ -14,7 +12,6 @@
         /// <param name="criterion"></param>
         /// <typeparam name="TCriterion"></typeparam>
         /// <returns></returns>
-        [CanBeNull]
         T With<TCriterion>(TCriterion criterion)
             where TCriterion : ICriterion;
     }

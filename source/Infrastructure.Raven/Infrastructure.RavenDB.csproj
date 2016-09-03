@@ -66,12 +66,6 @@
     <None Include="Infrastructure.RavenDB.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Infrastructure.Domain\Infrastructure.Domain.csproj">
-      <Project>{3f945c22-dafe-4e48-a790-51fc090901ac}</Project>
-      <Name>Infrastructure.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
