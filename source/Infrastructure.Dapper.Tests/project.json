@@ -1,0 +1,19 @@
+﻿{
+  "dependencies": {
+    "dotnet-test-nunit": "3.4.0-beta-2",
+    "Moq": "4.5.21",
+    "NUnit": "3.4.1",
+    "System.Data.SQLite": "1.0.102",
+    "Infrastructure.Dapper": "1.2.0" 
+  },
+  "frameworks": {
+    "net46": {
+    }
+  },
+  "testRunner": "nunit",
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "copyToOutput": {
+      "includeFiles": [ "x64/SQLite.Interop.dll", "x86/SQLite.Interop.dll" ] }
+  }
+}

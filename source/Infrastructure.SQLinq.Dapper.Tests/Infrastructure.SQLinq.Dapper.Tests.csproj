@@ -85,10 +85,6 @@
       <Project>{565f172a-2ca7-4b4e-9cae-4858cd54a283}</Project>
       <Name>Infrastructure.SQLinq.Dapper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure.Dapper\Infrastructure.Dapper.csproj">
-      <Project>{3a94e407-85ec-41e8-925f-d40b68e133ae}</Project>
-      <Name>Infrastructure.Dapper</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
