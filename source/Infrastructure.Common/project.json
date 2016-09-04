@@ -1,0 +1,30 @@
+{
+  "buildOptions": {
+    "embed": [ "Resources.resx" ]
+  },
+  "copyright": "Copyright © ByndyuSoft 2016",
+  "dependencies": {
+    "JetBrains.Annotations": "10.1.5"
+  },
+  "description": "Common helper classes and extension methods for ByndyuSoft.Infrastructure",
+  "frameworks": {
+    "net40": {
+      "frameworkAssemblies": {
+        "System.Xml.Linq": "4.0.0.0" 
+      }
+    }
+  },
+  "packOptions": {
+    "authors": [ "eskat0n", "Alexander Byndyu" ],
+    "owners": [ "alexanderbyndyu" ],
+    "projectUrl": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure.git"
+    },
+    "tags": [ "extensions", "byndyusoft", "boilerplate", "infrastructure" ],
+    "requireLicenseAcceptance": false
+  },
+  "title": "ByndyuSoft.Infrastructure.Common",
+  "version": "1.2.0-*"
+}

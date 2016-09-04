@@ -124,10 +124,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj">
-      <Project>{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}</Project>
-      <Name>Infrastructure.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Infrastructure.NHibernate.Conventions\Infrastructure.NHibernate.Conventions.csproj">
       <Project>{055EBF24-DF76-491B-9941-549428BFCB1C}</Project>
       <Name>Infrastructure.NHibernate.Conventions</Name>
