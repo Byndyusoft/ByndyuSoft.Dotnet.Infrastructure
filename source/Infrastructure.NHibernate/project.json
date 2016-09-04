@@ -1,0 +1,31 @@
+﻿{
+  "buildOptions": {
+    "xmlDoc": true
+  },
+  "copyright": "Copyright © ByndyuSoft 2016",
+  "dependencies": {
+    "FluentNHibernate": "2.0.3",
+    "Infrastructure.Domain": "1.2.0",
+    "Infrastructure.NHibernate.Conventions": "1.2.0",
+    "JetBrains.Annotations": "10.1.5",
+    "NHibernate": "4.0.4.4000"
+  },
+  "description": "Infrastructure.NHibernate",
+  "frameworks": {
+    "net40": {
+    }
+  },
+  "packOptions": {
+    "authors": [ "eskat0n", "Alexander Byndyu" ],
+    "owners": [ "alexanderbyndyu" ],
+    "projectUrl": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure.git"
+    },
+    "tags": [ "nhibernate", "dataaccesslevel", "dal", "byndyusoft", "boilerplate", "infrastructure", "orm" ],
+    "requireLicenseAcceptance": false
+  },
+  "title": "Infrastructure.NHibernate",
+  "version": "1.2.0-*"
+}

@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate", "source\Infrastructure.NHibernate\Infrastructure.NHibernate.csproj", "{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate.Tests", "source\Infrastructure.NHibernate.Tests\Infrastructure.NHibernate.Tests.csproj", "{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Web", "source\Infrastructure.Web\Infrastructure.Web.csproj", "{FDFF70B4-9626-48C9-9003-1785B0B809CA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.NHibernate.Conventions", "source\Infrastructure.NHibernate.Conventions\Infrastructure.NHibernate.Conventions.csproj", "{055EBF24-DF76-491B-9941-549428BFCB1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B8A73791-1311-443E-9E5C-4AFC7DA4FABC}"
 	ProjectSection(SolutionItems) = preProject
@@ -71,28 +65,22 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.Common", "so
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.Common.Tests", "source\Infrastructure.Common.Tests\Infrastructure.Common.Tests.xproj", "{E5754827-E6BE-4BEC-9C3E-02DFEC09545B}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.NHibernate", "source\Infrastructure.NHibernate\Infrastructure.NHibernate.xproj", "{7FCCAB13-65F8-469A-941E-C7B391AA64F7}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.NHibernate.Tests", "source\Infrastructure.NHibernate.Tests\Infrastructure.NHibernate.Tests.xproj", "{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Infrastructure.NHibernate.Conventions", "source\Infrastructure.NHibernate.Conventions\Infrastructure.NHibernate.Conventions.xproj", "{055EBF24-DF76-491B-9941-549428BFCB1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FDFF70B4-9626-48C9-9003-1785B0B809CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FDFF70B4-9626-48C9-9003-1785B0B809CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDFF70B4-9626-48C9-9003-1785B0B809CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDFF70B4-9626-48C9-9003-1785B0B809CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{055EBF24-DF76-491B-9941-549428BFCB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{055EBF24-DF76-491B-9941-549428BFCB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{055EBF24-DF76-491B-9941-549428BFCB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{055EBF24-DF76-491B-9941-549428BFCB1C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -137,15 +125,24 @@ Global
 		{E5754827-E6BE-4BEC-9C3E-02DFEC09545B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5754827-E6BE-4BEC-9C3E-02DFEC09545B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5754827-E6BE-4BEC-9C3E-02DFEC09545B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FCCAB13-65F8-469A-941E-C7B391AA64F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCCAB13-65F8-469A-941E-C7B391AA64F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FCCAB13-65F8-469A-941E-C7B391AA64F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FCCAB13-65F8-469A-941E-C7B391AA64F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055EBF24-DF76-491B-9941-549428BFCB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055EBF24-DF76-491B-9941-549428BFCB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055EBF24-DF76-491B-9941-549428BFCB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055EBF24-DF76-491B-9941-549428BFCB1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8AE4D6FF-EFFE-4086-9E7C-F5EF1CF61D99} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
-		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 		{FDFF70B4-9626-48C9-9003-1785B0B809CA} = {B96FF3A9-9219-41C2-B54F-839356FD620A}
-		{055EBF24-DF76-491B-9941-549428BFCB1C} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 		{01BFF889-3691-4BB4-9BF6-AB7EBAEB81FC} = {B96FF3A9-9219-41C2-B54F-839356FD620A}
 		{3A94E407-85EC-41E8-925F-D40B68E133AE} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 		{9F8F23E9-6682-4C5B-862C-43D654DE19A1} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
@@ -157,5 +154,8 @@ Global
 		{CADCA47A-5ACC-550B-B2F1-AA789EEF46DB} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 		{CADCA47A-5ACC-660B-B2F1-AA789EEF46DB} = {FEA7E0FE-CDB6-4D64-8F78-952A37E8B960}
 		{E5754827-E6BE-4BEC-9C3E-02DFEC09545B} = {FEA7E0FE-CDB6-4D64-8F78-952A37E8B960}
+		{7FCCAB13-65F8-469A-941E-C7B391AA64F7} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
+		{8D4AFCBD-AE4F-484C-9A4E-2116B618BCDD} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
+		{055EBF24-DF76-491B-9941-549428BFCB1C} = {4A05DE99-D83F-44C7-B037-33BDEC668B7E}
 	EndGlobalSection
 EndGlobal

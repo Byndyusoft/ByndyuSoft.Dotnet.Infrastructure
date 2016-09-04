@@ -1,0 +1,26 @@
+﻿{
+  "copyright": "Copyright © ByndyuSoft 2016",
+  "dependencies": {
+    "FluentNHibernate": "2.0.3",
+    "JetBrains.Annotations": "10.1.5",
+    "NHibernate": "4.0.4.4000"
+  },
+  "description": "Infrastructure.NHibernate.Conventions",
+  "frameworks": {
+    "net40": {
+    }
+  },
+  "packOptions": {
+    "authors": [ "eskat0n", "Alexander Byndyu" ],
+    "owners": [ "alexanderbyndyu" ],
+    "projectUrl": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure.git"
+    },
+    "tags": [ "nhibernate", "dataaccesslevel", "dal", "byndyusoft", "boilerplate", "infrastructure", "conventions", "fluentnhibernate" ],
+    "requireLicenseAcceptance": false
+  },
+  "title": "ByndyuSoft.Infrastructure.NHibernate.Conventions",
+  "version": "1.2.0-*"
+}
