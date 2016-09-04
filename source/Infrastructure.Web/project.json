@@ -1,0 +1,30 @@
+﻿{
+  "copyright": "Copyright © ByndyuSoft 2016",
+  "dependencies": {
+    "Infrastructure.Common": "1.2.0",
+    "Microsoft.AspNet.Mvc": "5.2.3",
+    "Mvc3Futures": "3.0.20105",
+    "Newtonsoft.Json": "9.0.1"
+  },
+  "description": "Infrastructure.Web",
+  "frameworks": {
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Web": "4.0.0"
+      }
+    }
+  },
+  "packOptions": {
+    "authors": [ "eskat0n", "Alexander Byndyu" ],
+    "owners": [ "alexanderbyndyu" ],
+    "projectUrl": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure.git"
+    },
+    "requireLicenseAcceptance": false,
+    "tags": [ "asp.net", "byndyusoft", "boilerplate", "infrastructure", "webapplication" ]
+  },
+  "title": "ByndyuSoft.Infrastructure.Web",
+  "version": "1.2.0-*"
+}
