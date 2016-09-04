@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>565F172A-2CA7-4B4E-9CAE-4858CD54A283s</ProjectGuid>
+    <ProjectGuid>59fb8a1f-a436-440a-807f-b13885a44b4f</ProjectGuid>
     <RootNamespace>Infrastructure.SQLinq.Dapper</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
