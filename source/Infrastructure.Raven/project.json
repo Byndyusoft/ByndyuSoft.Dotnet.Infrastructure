@@ -2,7 +2,7 @@
   "buildOptions": {
     "xmlDoc": true
   },
-  "copyright": "Copyright © \"ByndyuSoft\" 2016",
+  "copyright": "Copyright © ByndyuSoft 2016",
   "dependencies": {
     "Infrastructure.Domain": "1.2.0",
     "JetBrains.Annotations": "10.1.5",
@@ -12,7 +12,7 @@
   },
   "description": "Infrastructure.RavenDB",
   "frameworks": {
-    "net451": {
+    "net45": {
     }
   },
   "packOptions": {
