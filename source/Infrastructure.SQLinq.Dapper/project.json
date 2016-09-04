@@ -1,0 +1,27 @@
+﻿{
+  "copyright": "Copyright © ByndyuSoft 2016",
+  "dependencies": {
+    "SQLinq": "2.0.0"
+  },
+  "description": "Infrastructure.SQLinq.Dapper",
+  "frameworks": {
+    "net40": {
+      "frameworkAssemblies": {
+        "System.Data": "4.0.0"
+      }
+    }
+  },
+  "packOptions": {
+    "authors": [ "Alexander Byndyu" ],
+    "owners": [ "alexanderbyndyu" ],
+    "projectUrl": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure.git"
+    },
+    "tags": [ "dapper", "byndyusoft", "infrastructure", "SqLinq" ],
+    "requireLicenseAcceptance": false
+  },
+  "title": "ByndyuSoft.Infrastructure.SQLinq.Dapper",
+  "version": "1.2.0-*"
+}
