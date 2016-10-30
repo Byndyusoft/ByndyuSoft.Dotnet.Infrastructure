@@ -1,3 +1,5 @@
+#if !NET_CORE
+
 namespace ByndyuSoft.Infrastructure.Raven.DB.Embedded
 {
     using JetBrains.Annotations;
@@ -21,3 +23,5 @@ namespace ByndyuSoft.Infrastructure.Raven.DB.Embedded
         }
     }
 }
+
+#endif 

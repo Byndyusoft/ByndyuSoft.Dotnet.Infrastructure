@@ -1,19 +1,26 @@
-﻿{
+{
   "buildOptions": {
     "xmlDoc": true
   },
   "copyright": "Copyright © ByndyuSoft 2016",
   "dependencies": {
     "Infrastructure.Domain": "1.2.0",
-    "JetBrains.Annotations": "10.1.5",
-    "RavenDB.Client": "3.0.30153",
-    "RavenDB.Database": "3.0.30153",
-    "RavenDB.Embedded": "3.0.30153"
+    "JetBrains.Annotations": "10.2.1",
+    "RavenDB.Client": "3.5.0"
   },
   "description": "Infrastructure.RavenDB",
   "frameworks": {
     "net45": {
-    }
+      "dependencies": {
+        "RavenDB.Embedded": "3.5.0",
+        "RavenDB.Database": "3.5.0"
+      }
+    },
+    "netstandard1.3": {
+      "buildOptions": {
+        "define": ["NET_CORE"]
+      }
+    } 
   },
   "packOptions": {
     "authors": [ "eskat0n" ],
