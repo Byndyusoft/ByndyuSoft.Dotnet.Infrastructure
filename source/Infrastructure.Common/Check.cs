@@ -18,7 +18,7 @@
 		{
 			if (obj == null)
 			{
-				throw new ArgumentNullException(paramName, string.Format(CultureInfo.CurrentCulture, Resources.ArgumentNullException, paramName));
+				throw new ArgumentNullException(paramName, string.Format(CultureInfo.CurrentCulture, "Parameter {0} is null", paramName));
 			}
 		}
 	}
