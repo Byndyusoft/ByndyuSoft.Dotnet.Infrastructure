@@ -1,20 +1,18 @@
-﻿{
+{
   "buildOptions": {
     "xmlDoc": true
   },
   "copyright": "Copyright © ByndyuSoft 2016",
   "dependencies": {
     "Dapper": "1.50.2",
-    "JetBrains.Annotations": "10.1.5",
-    "MiniProfiler": "3.2.0.157"
+    "JetBrains.Annotations": "10.2.1"
   },
   "description": "Infrastructure.Dapper",
   "frameworks": {
     "net45": {
-      "frameworkAssemblies": {
-        "System.Configuration":  "4.0.0" 
-      }
-    }
+    },
+    "netstandard1.3": {
+    } 
   },
   "packOptions": {
     "authors": [ "Alexander Byndyu" ],
