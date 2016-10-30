@@ -1,8 +1,8 @@
-﻿{
+{
   "copyright": "Copyright © ByndyuSoft 2016",
   "dependencies": {
     "FluentNHibernate": "2.0.3",
-    "JetBrains.Annotations": "10.1.5",
+    "JetBrains.Annotations": "10.2.1",
     "NHibernate": "4.0.4.4000"
   },
   "description": "Infrastructure.NHibernate.Conventions",

@@ -1,4 +1,4 @@
-﻿{
+{
   "buildOptions": {
     "xmlDoc": true
   },
@@ -7,7 +7,7 @@
     "FluentNHibernate": "2.0.3",
     "Infrastructure.Domain": "1.2.0",
     "Infrastructure.NHibernate.Conventions": "1.2.0",
-    "JetBrains.Annotations": "10.1.5",
+    "JetBrains.Annotations": "10.2.1",
     "NHibernate": "4.0.4.4000"
   },
   "description": "Infrastructure.NHibernate",
