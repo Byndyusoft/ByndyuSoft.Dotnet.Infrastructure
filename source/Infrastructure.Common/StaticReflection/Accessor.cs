@@ -76,7 +76,7 @@
 
 			public IAccessor<TObject, TProperty> From<TProperty>(string memberName)
 			{
-				MemberInfo[] member = typeof (TObject).GetMember(memberName,
+				MemberInfo[] member = typeof (TObject).GetTypeInfo().GetMember(memberName,
 				                                                 BindingFlags.Instance |
 				                                                 BindingFlags.Public |
 				                                                 BindingFlags.NonPublic);

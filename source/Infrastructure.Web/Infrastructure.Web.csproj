@@ -131,12 +131,6 @@
       <LastGenOutput>LocalizedStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj">
-      <Project>{4CA1CD9D-ECA4-45BD-BBB6-83A27A9EA101}</Project>
-      <Name>Infrastructure.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

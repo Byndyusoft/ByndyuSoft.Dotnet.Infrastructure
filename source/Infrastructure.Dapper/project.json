@@ -1,0 +1,30 @@
+{
+  "buildOptions": {
+    "xmlDoc": true
+  },
+  "copyright": "Copyright © ByndyuSoft 2016",
+  "dependencies": {
+    "Dapper": "1.50.2",
+    "JetBrains.Annotations": "10.2.1"
+  },
+  "description": "Infrastructure.Dapper",
+  "frameworks": {
+    "net45": {
+    },
+    "netstandard1.3": {
+    } 
+  },
+  "packOptions": {
+    "authors": [ "Alexander Byndyu" ],
+    "owners": [ "alexanderbyndyu" ],
+    "projectUrl": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/AlexanderByndyu/ByndyuSoft.Infrastructure.git"
+    },
+    "tags": [ "dapper", "byndyusoft", "infrastructure", "queryobject" ],
+    "requireLicenseAcceptance": false
+  },
+  "title": "ByndyuSoft.Infrastructure.Dapper",
+  "version": "1.2.0-*"
+}

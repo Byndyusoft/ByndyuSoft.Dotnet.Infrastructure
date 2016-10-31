@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "dotnet-test-nunit": "3.4.0-beta-2",
+    "Infrastructure.Common": "1.2.0",
+    "Moq": "4.5.23",
+    "NUnit": "3.5.0"
+  },
+  "frameworks": {
+    "net46": {
+    }
+  },
+  "testRunner": "nunit",
+  "version": "1.0.0-*"
+}

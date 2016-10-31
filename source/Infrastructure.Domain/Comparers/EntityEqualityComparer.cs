@@ -1,12 +1,10 @@
 ﻿namespace ByndyuSoft.Infrastructure.Domain.Comparers
 {
     using System.Collections;
-    using JetBrains.Annotations;
 
     /// <summary>
     /// 
     /// </summary>
-    [PublicAPI]
     public class EntityEqualityComparer : IEqualityComparer
     {
         public new bool Equals(object x, object y)

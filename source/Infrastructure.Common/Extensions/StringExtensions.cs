@@ -61,7 +61,7 @@
         [PublicAPI]
         public static bool LikewiseContains(this string input, string value)
         {
-            return Contains(input, value, StringComparison.InvariantCultureIgnoreCase);
+            return Contains(input, value, StringComparison.OrdinalIgnoreCase);
         }
 	}
 }

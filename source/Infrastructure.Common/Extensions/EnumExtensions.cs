@@ -20,10 +20,10 @@
 		[CanBeNull]
 		public static string GetDescription(this Enum member)
 		{
-			if (member.GetType().IsEnum == false)
+			if (member.GetType().GetTypeInfo().IsEnum == false)
 				throw new ArgumentOutOfRangeException("member", "member is not enum");
 
-			FieldInfo fieldInfo = member.GetType().GetField(member.ToString());
+			FieldInfo fieldInfo = member.GetType().GetTypeInfo().GetField(member.ToString());
 
 			if (fieldInfo == null)
 				return null;
@@ -41,7 +41,7 @@
 		/// </summary>
 		public static IEnumerable<KeyValuePair<int, string>> ToKeyValuePairs<TEnum>() where TEnum : struct, IConvertible
 		{
-			if (typeof (TEnum).IsEnum == false)
+			if (typeof (TEnum).GetTypeInfo().IsEnum == false)
 				throw new ArgumentException("TEnum must be an enumerated type");
 
 			List<KeyValuePair<int, string>> items = Enum.GetValues(typeof (TEnum))

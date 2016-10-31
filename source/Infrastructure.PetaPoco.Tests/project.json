@@ -1,0 +1,23 @@
+﻿{
+  "buildOptions": {
+    "copyToOutput": {
+      "includeFiles": [ "x64/SQLite.Interop.dll", "x86/SQLite.Interop.dll" ]
+    }
+  },
+  "dependencies": {
+    "dotnet-test-nunit": "3.4.0-beta-2",
+    "Moq": "4.5.23",
+    "NUnit": "3.5.0",
+    "PetaPoco": "5.1.228",
+    "System.Data.SQLite.Core": "1.0.103"
+  },
+  "frameworks": {
+    "net46": {
+      "frameworkAssemblies": {
+        "System.Data": "4.0.0"
+      }
+    }
+  },
+  "testRunner": "nunit",
+  "version": "1.0.0-*"
+}
