@@ -39,17 +39,19 @@
 
         private static string HashPassword(string password, string salt)
         {
-            Encoding encoding = Encoding.UTF8;
-            byte[] passwordBytes = encoding.GetBytes(password)
-                .Union(salt.FromBase64())
-                .ToArray();
+            var encoding = Encoding.UTF8;
+
+            var passwordBytes = encoding.GetBytes(password)
+                                        .Concat(salt.FromBase64())
+                                        .ToArray();
+
             return hashAlgorithm.ComputeHash(passwordBytes).ToBase64();
         }
 
         private static string MakeSalt()
         {
             return Enumerable.Range(0, 5)
-                .Select(_ => (byte) random.Next())
+                .Select(_ => (byte)random.Next())
                 .ToBase64();
         }
     }
