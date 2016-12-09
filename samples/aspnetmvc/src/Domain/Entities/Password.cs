@@ -35,7 +35,7 @@
         {
             Encoding encoding = Encoding.UTF8;
             byte[] passwordBytes = encoding.GetBytes(password)
-                .Union(salt.FromBase64())
+                .Concat(salt.FromBase64())
                 .ToArray();
             return hashAlgorithm.ComputeHash(passwordBytes).ToBase64();
         }
