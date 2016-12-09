@@ -9,7 +9,7 @@
     public sealed class Password
     {
         private static readonly Random random = new Random();
-        private static readonly HashAlgorithm hashAlgorithm = MD5.Create();
+        private static readonly HashAlgorithm hashAlgorithm = SHA512.Create();
 
         [Obsolete("Only for NHibernate")]
         protected Password()
