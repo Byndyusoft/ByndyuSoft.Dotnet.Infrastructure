@@ -8,7 +8,7 @@
 
     public sealed class Password
     {
-        private static readonly Random random = new Random();
+        private static readonly int SaltLength = 15;
         private static readonly HashAlgorithm hashAlgorithm = SHA512.Create();
 
         [Obsolete("Only for NHibernate")]
@@ -42,9 +42,13 @@
 
         private static string MakeSalt()
         {
-            return Enumerable.Range(0, 5)
-                .Select(_ => (byte) random.Next())
-                .ToBase64();
+            using (RNGCryptoServiceProvider rngCryptoServiceProvider = new RNGCryptoServiceProvider())
+            {
+                byte[] salt = new byte[SaltLength];
+                rngCryptoServiceProvider.GetBytes(salt);
+
+                return salt.ToBase64();
+            }
         }
     }
 }
