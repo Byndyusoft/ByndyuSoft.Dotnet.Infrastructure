@@ -41,8 +41,8 @@
       <HintPath>..\..\packages\Infrastructure.Common.1.0.13.0\lib\net40\ByndyuSoft.Infrastructure.Common.dll</HintPath>
     </Reference>
     <Reference Include="ByndyuSoft.Infrastructure.Domain, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Infrastructure.Domain.1.1.0\lib\net40\ByndyuSoft.Infrastructure.Domain.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ByndyuSoft.Infrastructure.NHibernate, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
