@@ -1,6 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F23E4770-EFE7-4508-B738-C56BF027CE0B}"
+	ProjectSection(SolutionItems) = preProject
+		build\default.ps1 = build\default.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6F0B2B35-3771-453D-B802-F4D5CDF94616}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A968A88A-A0BE-4361-A5FC-383097C93281}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2E39F475-B530-4927-8DB9-88A648CD0B36}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\nuget.exe = .nuget\nuget.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "src\Web\Web.csproj", "{F8D751EA-65AF-4B38-83D5-FD8C942A6F29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Application", "src\Web.Application\Web.Application.csproj", "{6F5EFF02-E77D-4CEF-9648-8491315FE774}"
@@ -15,23 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "src\Migration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Application.Tests", "src\Web.Application.Tests\Web.Application.Tests.csproj", "{07351244-E5AB-44DB-BD91-EC23D916A454}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F23E4770-EFE7-4508-B738-C56BF027CE0B}"
-	ProjectSection(SolutionItems) = preProject
-		build\default.ps1 = build\default.ps1
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6F0B2B35-3771-453D-B802-F4D5CDF94616}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A968A88A-A0BE-4361-A5FC-383097C93281}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Model.Tests", "src\Domain.Model.Tests\Domain.Model.Tests.csproj", "{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2E39F475-B530-4927-8DB9-88A648CD0B36}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\nuget.exe = .nuget\nuget.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,18 +73,14 @@ Global
 		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90E707BB-C02A-400C-85D2-78720549E9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90E707BB-C02A-400C-85D2-78720549E9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90E707BB-C02A-400C-85D2-78720549E9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90E707BB-C02A-400C-85D2-78720549E9AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DCBF412A-9F01-4793-B2C9-2938C2889118} = {A968A88A-A0BE-4361-A5FC-383097C93281}
-		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1} = {A968A88A-A0BE-4361-A5FC-383097C93281}
-		{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5} = {6F0B2B35-3771-453D-B802-F4D5CDF94616}
 		{CA74C057-A620-415A-B1BA-E5745CF1E8B9} = {6F0B2B35-3771-453D-B802-F4D5CDF94616}
+		{E74E9E04-DAA7-4A9F-8916-92E6EFE8E5C5} = {6F0B2B35-3771-453D-B802-F4D5CDF94616}
+		{B536A85F-8A49-45A3-B74B-15D6A1EF05B1} = {A968A88A-A0BE-4361-A5FC-383097C93281}
 	EndGlobalSection
 EndGlobal

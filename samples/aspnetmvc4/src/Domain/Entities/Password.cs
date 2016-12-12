@@ -3,13 +3,13 @@
     using System;
     using System.Linq;
     using System.Security.Cryptography;
-    using System.Text;
     using ByndyuSoft.Infrastructure.Common.Extensions;
 
     public sealed class Password
     {
-        private static readonly Random random = new Random();
-        private static readonly HashAlgorithm hashAlgorithm = MD5.Create();
+        private static readonly int SaltLength = 15;
+        private static readonly int HashLength = 512;
+        private static readonly int PbkdfIterrationsCount = 3;
 
         [Obsolete("Only for NHibernate")]
         protected Password()
@@ -34,23 +34,30 @@
 
         public bool Check(string oldPassword)
         {
-            return Hash == HashPassword(oldPassword, Salt);
+            string targerHash = HashPassword(oldPassword, Salt);
+
+            bool areSame = true;
+            for (int i = 0; i < targerHash.Length; i++)
+                areSame &= (Hash[i] == targerHash[i]);
+
+            return areSame;
         }
 
         private static string HashPassword(string password, string salt)
         {
-            Encoding encoding = Encoding.UTF8;
-            byte[] passwordBytes = encoding.GetBytes(password)
-                .Union(salt.FromBase64())
-                .ToArray();
-            return hashAlgorithm.ComputeHash(passwordBytes).ToBase64();
+            Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(password, salt.FromBase64().ToArray(), PbkdfIterrationsCount);
+            return Convert.ToBase64String(pbkdf2.GetBytes(HashLength));
         }
 
         private static string MakeSalt()
         {
-            return Enumerable.Range(0, 5)
-                .Select(_ => (byte) random.Next())
-                .ToBase64();
+            using (RNGCryptoServiceProvider rngCryptoServiceProvider = new RNGCryptoServiceProvider())
+            {
+                byte[] salt = new byte[SaltLength];
+                rngCryptoServiceProvider.GetBytes(salt);
+
+                return salt.ToBase64();
+            }
         }
     }
 }
